@@ -43,7 +43,7 @@ Desenvolvedores:
     </td>
     <td align="center">
       <a href="https://github.com/paulo-campos-57">
-        <img src="https://avatars.githubusercontent.com/u/119381419?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
+        <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
         <sub>
           <b>Paulo Campos</b>
         </sub>
