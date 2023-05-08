@@ -11,7 +11,7 @@ Desenvolvedores:
   <tr>
     <td align="center">
       <a href="https://github.com/paixaoao">
-        <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
+        <img src="https://avatars.githubusercontent.com/u/126728380?v=4" width="100px;" alt="Foto Paixas"/><br>
         <sub>
           <b>Arthur Paixão</b>
         </sub>
@@ -35,7 +35,7 @@ Desenvolvedores:
     </td>
     <td align="center">
       <a href="https://github.com/paulo-campos-57">
-        <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
+        <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Megas"/><br>
         <sub>
           <b>Paulo Campos</b>
         </sub>
@@ -51,7 +51,7 @@ Desenvolvedores:
     </td>
     <td align="center">
       <a href="https://github.com/virnaamaral">
-        <img src="https://avatars.githubusercontent.com/u/116957619?v=4" width="100px;" alt="Foto Diogo"/><br>
+        <img src="https://avatars.githubusercontent.com/u/116957619?v=4" width="100px;" alt="Foto Virnas"/><br>
         <sub>
           <b>Virna Amaral</b>
         </sub>
@@ -59,3 +59,41 @@ Desenvolvedores:
     </td>
   </tr>
 </table>
+
+Designers:
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/paixaoao">
+        <img src="https://avatars.githubusercontent.com/u/126728380?v=4" width="100px;" alt="Foto Clara"/><br>
+        <sub>
+          <b>Clara Wanderley</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/EstelaLacerda">
+        <img src="https://avatars.githubusercontent.com/u/117921412?v=4" width="100px;" alt="Foto Peter Beans"/><br>
+        <sub>
+          <b>Pedro Feijão</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/MatheusGom">
+        <img src="https://avatars.githubusercontent.com/u/117746778?v=4" width="100px;" alt="Foto Rik"/><br>
+        <sub>
+          <b>Ricardo Francisco</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/paulo-campos-57">
+        <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Yanne"/><br>
+        <sub>
+          <b>Yanne Lopes</b> 
+        </sub>
+      </a>
+    </td>
+</table>
+<!-- Falta botar fotas do people de designas -->
