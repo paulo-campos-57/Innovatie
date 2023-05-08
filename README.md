@@ -38,6 +38,7 @@ Desenvolvedores:
         <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
         <sub>
           <b>Paulo Campos</b>
+          pmc3@cesar.school
         </sub>
       </a>
     </td>
