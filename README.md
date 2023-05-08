@@ -51,7 +51,7 @@ Desenvolvedores:
     </td>
     <td align="center">
       <a href="https://github.com/virnaamaral">
-        <img src="https://avatars.githubusercontent.com/u/116087739?v=4" width="100px;" alt="Foto Diogo"/><br>
+        <img src="https://avatars.githubusercontent.com/u/116957619?v=4" width="100px;" alt="Foto Diogo"/><br>
         <sub>
           <b>Virna Amaral</b>
         </sub>
