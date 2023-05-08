@@ -1,15 +1,6 @@
 # Innovatie
 Repositório da disciplina de Projetos 2, Cesar School
 
-Grupo:
-  CC:
-    - Arthur Paixão - aptm@cesar.school <br>
-    - Estela Lacetda - elo@cesar.school <br>
-    - Matheus Gomes - mga@cesar.school <br>
-    - Paulo Campos - pmc3@cesar.school <br>
-    - Sofia Valadares - svc3@cesar.school <br>
-    - Virna Amaral - vfpa@cesar.school <br>
-
 
 ## 🤝 Colaboradores
 
@@ -19,10 +10,10 @@ Desenvolvedores:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/Kal-0">
+      <a href="https://github.com/paixaoao">
         <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
         <sub>
-          <b>Caio Cesar</b>
+          <b>Arthur Paixão</b>
         </sub>
       </a>
     </td>
@@ -51,10 +42,10 @@ Desenvolvedores:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/mell-brayner">
+      <a href="https://github.com/paulo-campos-57">
         <img src="https://avatars.githubusercontent.com/u/119381419?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
         <sub>
-          <b>Mell Brayner</b>
+          <b>Paulo Campos</b>
         </sub>
       </a>
     </td>
