@@ -18,14 +18,6 @@ Desenvolvedores:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Fiend3333">
-        <img src="https://avatars.githubusercontent.com/u/116087739?v=4" width="100px;" alt="Foto Diogo"/><br>
-        <sub>
-          <b>Diogo Henrique</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
       <a href="https://github.com/EstelaLacerda">
         <img src="https://avatars.githubusercontent.com/u/117921412?v=4" width="100px;" alt="Foto Stora"/><br>
         <sub>
@@ -54,6 +46,14 @@ Desenvolvedores:
         <img src="https://avatars.githubusercontent.com/u/113111708?v=4" width="100px;" alt="Foto Sofia Valadares"/><br>
         <sub>
           <b>Sofia Valadares</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/virnaamaral">
+        <img src="https://avatars.githubusercontent.com/u/116087739?v=4" width="100px;" alt="Foto Diogo"/><br>
+        <sub>
+          <b>Virna Amaral</b>
         </sub>
       </a>
     </td>
