@@ -1,10 +1,8 @@
-# Innovatie
-Repositório da disciplina de Projetos 2, Cesar School
+## 🤝 Equipe Innovatie
 
+Somos estudantes de ciência da computação e design do 2º período da instituição Cesar School. Escolhemos o nome "Innovatie" - Inovação em holandês - por conta das fortes influências holandesas na nossa cidade, principalmente na região do Recife Antigo, local onde se instala o maior polo tecnológico do Nordeste.
 
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+# Membros
 
 Desenvolvedores:
 <table>
@@ -64,32 +62,32 @@ Designers:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/paixaoao">
-        <img src="https://avatars.githubusercontent.com/u/126728380?v=4" width="100px;" alt="Foto Clara"/><br>
+      <a href="#">
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123559383080/Clara.jpg" width="100px;" alt="Foto Clara"/><br>
         <sub>
           <b>Clara Wanderley</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/EstelaLacerda">
-        <img src="https://avatars.githubusercontent.com/u/117921412?v=4" width="100px;" alt="Foto Peter Beans"/><br>
+      <a href="#">
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123962052630/Pedro.jpg" width="100px;" alt="Foto Peter Beans"/><br>
         <sub>
           <b>Pedro Feijão</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/MatheusGom">
-        <img src="https://avatars.githubusercontent.com/u/117746778?v=4" width="100px;" alt="Foto Rik"/><br>
+      <a href="#">
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264124427604079/Ricardo.jpg" width="100px;" alt="Foto Rik"/><br>
         <sub>
           <b>Ricardo Francisco</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/paulo-campos-57">
-        <img src="https://avatars.githubusercontent.com/u/77108503?v=4" width="100px;" alt="Foto Yanne"/><br>
+      <a href="#">
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264125203566623/Yanne.jpg" width="100px;" alt="Foto Yanne"/><br>
         <sub>
           <b>Yanne Lopes</b> 
         </sub>
