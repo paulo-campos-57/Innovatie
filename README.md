@@ -12,8 +12,8 @@ O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplica�
 # 💾 Tecnologias Utilizadas
 
 - <b>Linguagem de Programação:</b> C.
-- <b>Bibliotecas:</b> stdio.h, stdlib, string.h.
-- <b>IDEs:</b> Replit, Dev-C++ Visual Studio Code.
+- <b>Bibliotecas:</b> stdio.h, stdlib, string.h, func_lib.h.
+- <b>IDEs:</b> Replit, Dev-C++, Visual Studio Code.
 
 ## Repositórios:
 - <[Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)><br></br>
