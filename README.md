@@ -18,7 +18,7 @@ O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplica�
 ## Repositórios:
 - <[Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)><br></br>
 - <[Notion](https://www.notion.so/PLANEJAMENTO-1d370349e78f4f49bb5170af11fed319)><br></br>
-- <[Miro](https://miro.com/app/board/uXjVPcL-PG8=/)><br></br>
+- <[Miro](https://miro.com/app/board/uXjVPcL-PG8=/)>
 
 # 🤝 Equipe Innovatie
 
