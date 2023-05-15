@@ -1,10 +1,12 @@
+# 🧑‍⚕‍ LEIMER
+
+O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplicação, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
+
 # 🤝 Equipe Innovatie
 
 Somos estudantes de ciência da computação e design do 2º período da instituição Cesar School. Escolhemos o nome "Innovatie" - Inovação em holandês - por conta das fortes influências holandesas na nossa cidade, principalmente na região do Recife Antigo, local onde se instala o maior polo tecnológico do Nordeste.
 
-## Membros
-
-Desenvolvedores:
+## 💻 Desenvolvedores:
 <table>
   <tr>
     <td align="center">
@@ -58,12 +60,12 @@ Desenvolvedores:
   </tr>
 </table>
 
-Designers:
+## 🎨 Designers:
 <table>
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123559383080/Clara.jpg" width="100px height="100px";" alt="Foto Clara"/><br>
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123559383080/Clara.jpg" width="100px;" height="100px;" object-fit: cover; alt="Foto Clara"/><br>
         <sub>
           <b>Clara Wanderley</b>
         </sub>
@@ -71,7 +73,7 @@ Designers:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123962052630/Pedro.jpg" width="100px;" alt="Foto Peter Beans"/><br>
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123962052630/Pedro.jpg" width="100px;" height="100px;" alt="Foto Peter Beans"/><br>
         <sub>
           <b>Pedro Feijão</b>
         </sub>
@@ -79,7 +81,7 @@ Designers:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264124427604079/Ricardo.jpg" width="100px;" alt="Foto Rik"/><br>
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264124427604079/Ricardo.jpg" width="100px;" height="100px;" alt="Foto Rik"/><br>
         <sub>
           <b>Ricardo Francisco</b>
         </sub>
@@ -87,7 +89,7 @@ Designers:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264125203566623/Yanne.jpg" width="100px;" alt="Foto Yanne"/><br>
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264125203566623/Yanne.jpg" width="100px;" height="100px;" alt="Foto Yanne"/><br>
         <sub>
           <b>Yanne Lopes</b> 
         </sub>
