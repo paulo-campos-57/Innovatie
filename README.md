@@ -1,6 +1,19 @@
-# 🧑‍⚕‍ LEIMER
+# ⚕️ LEIMER
 
 O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplicação, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
+
+# ⚙️ Funcionalidades
+
+- Sistema de Frequência: um checkmark para marcar a presença de ambos preceptores e e residentes, onde os residentes preenchem e os preceptores validam a presença.
+- Agenda:  uma agenda eletrônica para o gerenciamento de atividades dos preceptores e residentes.
+- Quadro de avisos: um quadro de avisos para informar os residentes de atividades, localizações e horários.
+- Sistema de Feedback: um sistema de feedback, onde os preceptores e residentes podem avaliar o desempenho um do outro para ajudarem a criar um ambiente de aprendizado por ambas as partes.
+
+# 💾 Tecnologias Utilizadas
+
+- Linguagem de Programação: C.
+- Bibliotecas: stdio.h, stdlib, string.h.
+- IDEs: Replit, Visual Studio Code.
 
 # 🤝 Equipe Innovatie
 
