@@ -1,8 +1,8 @@
-## 🤝 Equipe Innovatie
+# 🤝 Equipe Innovatie
 
 Somos estudantes de ciência da computação e design do 2º período da instituição Cesar School. Escolhemos o nome "Innovatie" - Inovação em holandês - por conta das fortes influências holandesas na nossa cidade, principalmente na região do Recife Antigo, local onde se instala o maior polo tecnológico do Nordeste.
 
-# Membros
+## Membros
 
 Desenvolvedores:
 <table>
@@ -63,7 +63,7 @@ Designers:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123559383080/Clara.jpg" width="100px;" alt="Foto Clara"/><br>
+        <img src="https://cdn.discordapp.com/attachments/739288910013661257/1106264123559383080/Clara.jpg" width="100px height="100px";" alt="Foto Clara"/><br>
         <sub>
           <b>Clara Wanderley</b>
         </sub>
