@@ -4,16 +4,21 @@ O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplica�
 
 # ⚙️ Funcionalidades
 
-- Sistema de Frequência: um checkmark para marcar a presença de ambos preceptores e e residentes, onde os residentes preenchem e os preceptores validam a presença.
-- Agenda:  uma agenda eletrônica para o gerenciamento de atividades dos preceptores e residentes.
-- Quadro de avisos: um quadro de avisos para informar os residentes de atividades, localizações e horários.
-- Sistema de Feedback: um sistema de feedback, onde os preceptores e residentes podem avaliar o desempenho um do outro para ajudarem a criar um ambiente de aprendizado por ambas as partes.
+- <b>Sistema de Frequência:</b> um checkmark para marcar a presença de ambos preceptores e e residentes, onde os residentes preenchem e os preceptores validam a presença.
+- <b>Agenda:</b> uma agenda eletrônica para o gerenciamento de atividades dos preceptores e residentes.
+- <b>Quadro de avisos:</b> um quadro de avisos para informar os residentes de atividades, localizações e horários.
+- <b>Sistema de Feedback:</b> um sistema de feedback, onde os preceptores e residentes podem avaliar o desempenho um do outro para ajudarem a criar um ambiente de aprendizado por ambas as partes.
 
 # 💾 Tecnologias Utilizadas
 
-- Linguagem de Programação: C.
-- Bibliotecas: stdio.h, stdlib, string.h.
-- IDEs: Replit, Visual Studio Code.
+- <b>Linguagem de Programação:</b> C.
+- <b>Bibliotecas:</b> stdio.h, stdlib, string.h.
+- <b>IDEs:</b> Replit, Dev-C++ Visual Studio Code.
+
+## Repositórios:
+- <[Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)><br></br>
+- <[Notion](https://www.notion.so/PLANEJAMENTO-1d370349e78f4f49bb5170af11fed319)><br></br>
+- <[Miro](https://miro.com/app/board/uXjVPcL-PG8=/)><br></br>
 
 # 🤝 Equipe Innovatie
 
