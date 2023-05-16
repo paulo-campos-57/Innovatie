@@ -18,10 +18,10 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 - <b>IDEs:</b> Replit, Dev-C++, Visual Studio Code.
 
 ## 📂 Repositórios:
-- <[Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)><br></br>
-- <[Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)><br></br>
-- <[Notion](https://www.notion.so/PLANEJAMENTO-1d370349e78f4f49bb5170af11fed319)><br></br>
-- <[Miro](https://miro.com/app/board/uXjVPcL-PG8=/)>
+- [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
+- [Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)<br></br>
+- [Notion](https://www.notion.so/PLANEJAMENTO-1d370349e78f4f49bb5170af11fed319)<br></br>
+- [Miro](https://miro.com/app/board/uXjVPcL-PG8=/)
 
 # 🤝 Equipe Innovatie
 
