@@ -34,7 +34,7 @@ void menu_preceptor() {
 }
 
 
-void menu_preceptor() {
+void menu_gestor() {
     printf("Bem-Vindo, Gestor!\n\n");
     printf("[1] Gerar Código de Cadastro\n");    
     printf("[2] Remover Usuário\n");
