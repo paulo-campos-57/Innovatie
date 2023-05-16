@@ -2,6 +2,8 @@
 
 O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplicação, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
 
+Para mais detalhes da nossa solução e do nosso processo para chegar até ela, no nosso [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
+
 # ⚙️ Funcionalidades
 
 - <b>Sistema de Frequência:</b> um checkmark para marcar a presença de ambos preceptores e e residentes, onde os residentes preenchem e os preceptores validam a presença.
@@ -16,6 +18,7 @@ O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplica�
 - <b>IDEs:</b> Replit, Dev-C++, Visual Studio Code.
 
 ## 📂 Repositórios:
+- <[Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)><br></br>
 - <[Google Drive](https://drive.google.com/drive/folders/0ACNmXMagBrTvUk9PVA)><br></br>
 - <[Notion](https://www.notion.so/PLANEJAMENTO-1d370349e78f4f49bb5170af11fed319)><br></br>
 - <[Miro](https://miro.com/app/board/uXjVPcL-PG8=/)>
