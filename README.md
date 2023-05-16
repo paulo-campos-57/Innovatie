@@ -1,6 +1,9 @@
+
+<img src="https://cdn.discordapp.com/attachments/1080907218507026443/1090001501113565246/tipografia3_1.png" alt="Logo">
+  
 # ⚕️ LEIMER
 
-O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a nossa aplicação, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
+O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a aplicação da equipe Innovatie, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
 
 Para mais detalhes da nossa solução e do nosso processo para chegar até ela, no nosso [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
 
