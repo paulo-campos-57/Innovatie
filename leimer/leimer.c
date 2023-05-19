@@ -55,9 +55,9 @@ int main() {
                 printf("Olá novo residente!\n");
                 printf("Preencha suas informações para realizar o cadastro!\n\n");
                 printf("Informe o seu nome: ");
-                scanf("%s", novo_residente.nome);
+                fgets(novo_residente.nome, 200, stdin);
                 printf("\nDefina sua senha: ");
-                scanf("%s", novo_residente.senha);
+                fgets(novo_residente.senha, 200, stdin);
                 printf("\nInforme o mês de sua entrada (em número): ");
                 scanf("%d", &novo_residente.mes);
                 printf("\nInforme o ano de sua entrada: ");
