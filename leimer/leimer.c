@@ -5,9 +5,9 @@
 
 struct residente{
     int id; //Numero unico de usuario
-    char *cadastro; //Cadastro de residente no hospital
-    char *nome;
-    char *senha;
+    char cadastro[20]; //Cadastro de residente no hospital
+    char nome[200];
+    char senha[200];
     int mes;
     int ano;
     int residencia[2];
@@ -49,16 +49,16 @@ int main() {
         struct residente novo_residente;
         struct preceptor novo_preceptor;
         struct gestor novo_gestor;
-        
+
         switch (opcoes) {
             case 1:
                 // Criação de novo usuário residente
                 printf("Olá novo residente!\n");
                 printf("Preencha suas informações para realizar o cadastro!\n\n");
                 printf("Informe o seu nome: ");
-                fgets(novo_residente.nome, 200, stdin);
+                scanf(" %[^\n]", novo_residente.nome);
                 printf("\nDefina sua senha: ");
-                fgets(novo_residente.senha, 200, stdin);
+                scanf(" %[^\n]", novo_residente.senha);
                 printf("\nInforme o mês de sua entrada (em número): ");
                 scanf("%d", &novo_residente.mes);
                 printf("\nInforme o ano de sua entrada: ");
@@ -67,7 +67,7 @@ int main() {
                 limpa_tela();
                 printf("Nome: %s\n", novo_residente.nome);
                 printf("Senha: %s\n", novo_residente.senha);
-                printf("Entrou em %s de %d\n\n", define_mes(novo_residente.mes), novo_residente.ano);
+                printf("Entrou em %d/%d\n\n", novo_residente.mes, novo_residente.ano);
                 pausa();
                 limpa_tela();
                 break;
