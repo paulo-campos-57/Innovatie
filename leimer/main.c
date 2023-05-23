@@ -8,6 +8,7 @@
 struct residente{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
+    char email[250];
     char nome[200];
     char senha[200];
     int mes;
@@ -19,6 +20,7 @@ struct residente{
 struct preceptor{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
+    char email[250];
     char nome[200];
     char senha[200];
     int mes;
@@ -29,6 +31,7 @@ struct preceptor{
 
 struct gestor{
     int id; //Numero unico de usuario
+    char email[250];
     char nome[200];
     char senha[200];
     int residencia;
@@ -66,6 +69,8 @@ int main() {
                 printf("Preencha suas informações para realizar o cadastro!\n\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_residente.nome);
+                printf("\nInforme o seu e-mail institucional: ");
+                scanf(" %[^\n]", novo_residente.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_residente.senha);
                 printf("\nInforme o mês de sua entrada (em número): ");
@@ -83,6 +88,7 @@ int main() {
                 pausa();
                 limpa_tela();
                 printf("Nome: %s\n", novo_residente.nome);
+                printf("E-mail: %s\n", novo_residente.email);
                 printf("Senha: %s\n", novo_residente.senha);
                 printf("Entrou em %d/%d\n", novo_residente.mes, novo_residente.ano);
                 if (novo_residente.residencia[0] == 1) {
@@ -97,6 +103,8 @@ int main() {
                 printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_preceptor.nome);
+                printf("\nInforme o seu e-mail institucional: ");
+                scanf(" %[^\n]", novo_preceptor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_preceptor.senha);
                 printf("\nInforme o mês de sua entrada (em número): ");
@@ -114,6 +122,7 @@ int main() {
                 pausa();
                 limpa_tela();
                 printf("Nome: %s\n", novo_preceptor.nome);
+                printf("E-mail: %s\n", novo_preceptor.email);
                 printf("Senha: %s\n", novo_preceptor.senha);
                 printf("Entrou em %d/%d\n", novo_preceptor.mes, novo_preceptor.ano);
                 if (novo_preceptor.residencia[0] == 1) {
@@ -128,6 +137,8 @@ int main() {
                 printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_gestor.nome);
+                printf("Informe o seu e-mail: ");
+                scanf(" %[^\n]", novo_gestor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_gestor.senha);
                 printf("\nInforme a residência a qual é responsável\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
@@ -135,8 +146,9 @@ int main() {
                 printf("\nCadastro Finalizado!");
                 pausa();
                 limpa_tela();
-                printf("Nome: %s", novo_gestor.nome);
-                printf("Senha: %s", novo_gestor.senha);
+                printf("Nome: %s\n", novo_gestor.nome);
+                printf("E-mail: %s\n", novo_gestor.email);
+                printf("Senha: %s\n", novo_gestor.senha);
                 if (aux == 1) {
                     printf("Responsável pelas residências de Medicina");
                     novo_gestor.residencia = 1;
