@@ -1,5 +1,37 @@
 #ifndef __FUNC_LIB__
 #define __FUNC_LIB__
+struct residente{
+    int id; //Numero unico de usuario
+    char cadastro[20]; //Cadastro de residente no hospital
+    char email[250];
+    char nome[200];
+    char senha[200];
+    int mes;
+    int ano;
+    int residencia[2];
+    struct residente *next;
+};
+
+struct preceptor{
+    int id; //Numero unico de usuario
+    char cadastro[20]; //Cadastro de residente no hospital
+    char email[250];
+    char nome[200];
+    char senha[200];
+    int mes;
+    int ano;
+    int residencia[2];
+    struct preceptor *next;
+};
+
+struct gestor{
+    int id; //Numero unico de usuario
+    char email[250];
+    char nome[200];
+    char senha[200];
+    int residencia;
+    struct gestor *next;
+};
 
 void limpa_tela();
 void pausa();
@@ -7,5 +39,6 @@ void menu_residente();
 void menu_preceptor();
 void menu_gestor();
 // char define_mes(int num);
+
 
 #endif /* __FUNC_LIB__ */
