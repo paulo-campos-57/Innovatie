@@ -5,7 +5,6 @@
 #include <locale.h>
 #include "func_lib.h"
 
-
 int main() {
 
     setlocale(LC_ALL, " ");
@@ -136,6 +135,7 @@ int main() {
             default:
                 printf("Opção inválida\n");
         }
+        ler(novo_preceptor);
         pausa();
         limpa_tela();
     }

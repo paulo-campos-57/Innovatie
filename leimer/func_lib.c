@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "func_lib.h"
 //#include <conio.h>
 
 //funcao para limpar tela
@@ -39,6 +40,32 @@ void menu_gestor() {
     printf("[3] Consultar Feedbacks\n");
     printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
     printf("[0] Sair\n");
+}
+
+void ler(struct preceptor novo_precptor){
+    FILE* f;
+
+    f = fopen("preceptor.txt", "r+");
+
+    if(f == 0){
+        printf("Erro ao abrir o banco de dados de palavras!!!\n");
+        exit(1);
+    }    
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s", novo_precptor.nome);
+    fprintf(f, "\n%s", novo_precptor.email);
+    fprintf(f, "\n%s", novo_precptor.senha);
+    fprintf(f, "\n%d", novo_precptor.mes);
+    fprintf(f, "\n%d", novo_precptor.ano);
+    fprintf(f, "\n%d", novo_precptor.residencia[0]);
+    fclose(f);
 }
 
 // char define_mes(int num) {

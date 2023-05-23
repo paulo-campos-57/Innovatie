@@ -38,6 +38,7 @@ void pausa();
 void menu_residente();
 void menu_preceptor();
 void menu_gestor();
+void ler(struct preceptor novo_precptor);
 // char define_mes(int num);
 
 
