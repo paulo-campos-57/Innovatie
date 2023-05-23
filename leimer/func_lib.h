@@ -1,5 +1,6 @@
 #ifndef __FUNC_LIB__
 #define __FUNC_LIB__
+
 struct residente{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
@@ -39,7 +40,6 @@ void menu_residente();
 void menu_preceptor();
 void menu_gestor();
 void ler(struct preceptor novo_precptor);
-// char define_mes(int num);
-
+char *define_mes(int num);
 
 #endif /* __FUNC_LIB__ */

@@ -7,7 +7,7 @@
 
 int main() {
 
-    setlocale(LC_ALL, " ");
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     limpa_tela();
     int exec = true;
@@ -15,7 +15,7 @@ int main() {
 
     while (exec) {
         printf("Seja bem vindo ao Leimer!\n");
-        printf("Selecione uma das opÃ§Ãµes para realizar o seu cadastro!\n");
+        printf("Selecione uma das opções para realizar o seu cadastro!\n");
         printf("1 - RESIDENTE\n");
         printf("2 - PRECEPTOR\n");
         printf("3 - GESTOR\n\n");
@@ -31,20 +31,20 @@ int main() {
         int aux;
         switch (opcoes) {
             case 1:
-                // CriaÃ§Ã£o de novo usuÃ¡rio residente
-                printf("OlÃ¡ novo residente!\n");
-                printf("Preencha suas informaÃ§Ãµes para realizar o cadastro!\n\n");
+                // Criação de novo usuário residente
+                printf("Olá novo residente!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_residente.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_residente.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_residente.senha);
-                printf("\nInforme o mÃªs de sua entrada (em nÃºmero): ");
+                printf("\nInforme o mês de sua entrada (em número): ");
                 scanf("%d", &novo_residente.mes);
                 printf("\nInforme o ano de sua entrada: ");
                 scanf("%d", &novo_residente.ano);
-                printf("\nInforme sua residÃªncia\n[1 - Medicina]\n[2 - Multi]\n");
+                printf("\nInforme sua residência\n[1 - Medicina]\n[2 - Multi]\n");
                 scanf("%d", &aux);
                 if (aux == 1) {
                     novo_residente.residencia[0] = 1;
@@ -57,7 +57,7 @@ int main() {
                 printf("Nome: %s\n", novo_residente.nome);
                 printf("E-mail: %s\n", novo_residente.email);
                 printf("Senha: %s\n", novo_residente.senha);
-                printf("Entrou em %d/%d\n", novo_residente.mes, novo_residente.ano);
+                printf("Entrou em %s de %d\n", define_mes(novo_residente.mes), novo_residente.ano);
                 if (novo_residente.residencia[0] == 1) {
                     printf("Residente de Medicina");
                 } else if (novo_residente.residencia[1] == 1) {
@@ -66,19 +66,19 @@ int main() {
                 exec = false;
                 break;
             case 2:
-                printf("OlÃ¡ novo preceptor!\n");
-                printf("Preencha suas informaÃ§Ãµes para realizar o cadastro!\n");
+                printf("Olá novo preceptor!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_preceptor.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_preceptor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_preceptor.senha);
-                printf("\nInforme o mÃªs de sua entrada (em nÃºmero): ");
+                printf("\nInforme o mês de sua entrada (em número): ");
                 scanf("%d", &novo_preceptor.mes);
                 printf("\nInforme o ano de sua entrada: ");
                 scanf("%d", &novo_preceptor.ano);
-                printf("\nInforme a residÃªncia a qual Ã© responsÃ¡vel\n[1 - Medicina]\n[2 - Multi]\n");
+                printf("\nInforme a residência a qual é responsável\n[1 - Medicina]\n[2 - Multi]\n");
                 scanf("%d", &aux);
                 if (aux == 1) {
                     novo_preceptor.residencia[0] = 1;
@@ -91,7 +91,7 @@ int main() {
                 printf("Nome: %s\n", novo_preceptor.nome);
                 printf("E-mail: %s\n", novo_preceptor.email);
                 printf("Senha: %s\n", novo_preceptor.senha);
-                printf("Entrou em %d/%d\n", novo_preceptor.mes, novo_preceptor.ano);
+                printf("Entrou em %s de %d\n", define_mes(novo_preceptor.mes), novo_preceptor.ano);
                 if (novo_preceptor.residencia[0] == 1) {
                     printf("Preceptor de Medicina");
                 } else if (novo_preceptor.residencia[1] == 1) {
@@ -100,15 +100,15 @@ int main() {
                 exec = false;
                 break;
             case 3:
-                printf("OlÃ¡ novo gestor!\n");
-                printf("Preencha suas informaÃ§Ãµes para realizar o cadastro!\n");
+                printf("Olá novo gestor!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_gestor.nome);
                 printf("Informe o seu e-mail: ");
                 scanf(" %[^\n]", novo_gestor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_gestor.senha);
-                printf("\nInforme a residÃªncia a qual Ã© responsÃ¡vel\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
+                printf("\nInforme a residência a qual é responsável\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
                 scanf("%d", &aux);
                 printf("\nCadastro Finalizado!");
                 pausa();
@@ -117,23 +117,23 @@ int main() {
                 printf("E-mail: %s\n", novo_gestor.email);
                 printf("Senha: %s\n", novo_gestor.senha);
                 if (aux == 1) {
-                    printf("ResponsÃ¡vel pelas residÃªncias de Medicina");
+                    printf("Responsável pelas residÃªncias de Medicina");
                     novo_gestor.residencia = 1;
                 } else if (aux == 2) {
-                    printf("ResponsÃ¡vel pelas residÃªncias de Multi");
+                    printf("Responsável pelas residÃªncias de Multi");
                     novo_gestor.residencia = 2;
                 } else if (aux == 3) {
-                    printf("ResponsÃ¡vel pelas residÃªncias de Medicina e Multi");
+                    printf("Responsável pelas residÃªncias de Medicina e Multi");
                     novo_gestor.residencia = 3;
                 }
                 exec = false;
                 break;
             case 0:
-                printf("ExecuÃ§Ã£o encerrada.");
+                printf("Execução encerrada.");
                 exec = false;
                 break;
             default:
-                printf("OpÃ§Ã£o invÃ¡lida\n");
+                printf("Opção inválida\n");
         }
         ler(novo_preceptor);
         pausa();
