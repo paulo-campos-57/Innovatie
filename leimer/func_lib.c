@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "func_lib.h"
-#include <conio.h>
+//#include <conio.h>
 
 //funcao para limpar tela
 void limpa_tela() {
@@ -11,7 +11,7 @@ void limpa_tela() {
 //funcao para pausar o programa.
 void pausa() {
     printf("\n\nPressione qualquer tecla para continuar...\n\n");
-    getch();
+    //getch();
 }
 
 void menu_residente() {
@@ -85,12 +85,13 @@ char *define_mes(int num) {
 }
 
 void ler(struct preceptor novo_precptor){
+    int id_ = id();
     FILE* f;
 
     f = fopen("preceptor.txt", "r+");
 
     if(f == 0){
-        printf("Erro ao abrir o banco de dados de palavras!!!\n");
+        printf("Erro ao abrir banco!!!\n");
         exit(1);
     }    
 
@@ -101,11 +102,78 @@ void ler(struct preceptor novo_precptor){
     fprintf(f, "%d", count);
 
     fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%s", novo_precptor.nome);
-    fprintf(f, "\n%s", novo_precptor.email);
-    fprintf(f, "\n%s", novo_precptor.senha);
-    fprintf(f, "\n%d", novo_precptor.mes);
-    fprintf(f, "\n%d", novo_precptor.ano);
-    fprintf(f, "\n%d", novo_precptor.residencia[0]);
+    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d, %d", id_, 000000, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.mes, novo_precptor.ano, novo_precptor.residencia[0], 000000);
     fclose(f);
+}
+
+void ler2(struct residente novo_precptor){
+    int id_ = id();
+    FILE* f;
+
+    f = fopen("residente.txt", "r+");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }    
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d, %d", id_, 000000, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.mes, novo_precptor.ano, novo_precptor.residencia[0], 000000);
+    fclose(f);
+}
+
+void ler3(struct gestor novo_precptor){
+    int id_ = id();
+    FILE* f;
+
+    f = fopen("gestor.txt", "r+");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }    
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%d, %s, %s, %s, %d", id_, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.residencia);
+    int id; //Numero unico de usuario
+    char email[250];
+    char nome[200];
+    char senha[200];
+    int residencia;
+    fclose(f);
+}
+
+
+int id(){
+    FILE* f_res;
+    f_res = fopen("residente.txt", "r");
+    int res;
+    fscanf(f_res, "%d", &res);
+    fclose(f_res);
+
+    FILE* f_pre;
+    f_pre = fopen("preceptor.txt", "r");
+    int pre;
+    fscanf(f_pre, "%d", &pre);
+    fclose(f_pre);
+
+    FILE* f_ges;
+    f_ges = fopen("gestor.txt", "r");
+    int ges;
+    fscanf(f_ges, "%d", &ges);
+    fclose(f_ges);
+
+    return res + pre + ges;
 }

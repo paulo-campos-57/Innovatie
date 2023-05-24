@@ -40,6 +40,9 @@ void menu_residente();
 void menu_preceptor();
 void menu_gestor();
 void ler(struct preceptor novo_precptor);
+void ler2(struct residente novo_precptor);
+void ler3(struct gestor novo_precptor);
 char *define_mes(int num);
+int id();
 
 #endif /* __FUNC_LIB__ */
