@@ -18,7 +18,7 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 - <b>IDEs:</b> Visual Studio Code 1.78.2.
 - <b>Extensions:</b> C/C++, C/C++ Compile Run, C/C++ Extension Pack, C/C++ Themes.
 
-# 💾 Usando o LEIMER
+# 👣 Usando o LEIMER
 
  1. O usuário deverá criar uma pasta em seu computador com um nome informativo da aplicação, como "Aplicação LEIMER".
  2. O usuário então deverá apertar com o botão direito do mouse dentro da pasta e abrir o terminal da pasta.
@@ -31,6 +31,7 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  9. Após isso, ele deverá apertar em "Reopen With Encoding" e escolher a opção "Western (ISO 8859-1)".
  10. O usuário deverá então no terminal digitar "gcc main.c func_lib.c -o saida.exe".
  11. Após isso ele deverá digitar "./saida.exe".
+ 12. Então ele poderá interagir com o sistema.
 
 ## 📂 Repositórios:
 - [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
