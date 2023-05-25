@@ -1,6 +1,3 @@
-
-<img src="https://cdn.discordapp.com/attachments/1080907218507026443/1090001501113565246/tipografia3_1.png" alt="Logo">
-  
 # ⚕️ LEIMER
 
 O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a aplicação da equipe Innovatie, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
@@ -18,7 +15,22 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 
 - <b>Linguagem de Programação:</b> C.
 - <b>Bibliotecas:</b> stdio.h, stdlib, string.h, func_lib.h.
-- <b>IDEs:</b> Replit, Dev-C++, Visual Studio Code.
+- <b>IDEs:</b> Visual Studio Code 1.78.2.
+- <b>Extensions:</b> C/C++, C/C++ Compile Run, C/C++ Extension Pack, C/C++ Themes.
+
+# 💾 Usando o LEIMER
+
+ 1. O usuário deverá criar uma pasta em seu computador com um nome informativo da aplicação, como "Aplicação LEIMER".
+ 2. O usuário então deverá apertar com o botão direito do mouse dentro da pasta e abrir o terminal da pasta.
+ 3. Após isso, ele deverá inserir no terminal o comando "git clone https://github.com/paulo-campos-57/Innovatie.git".
+ 4. O usuário deverá abrir o seu Visual Studio Code na versão certa e com as extensões baixadas, e apertará no botão "File".
+ 5. Após isso, ele deverá navegar até "Open Folder", escolhendo a pasta que ele nomeou e aplicou o git clone.
+ 6. O usuário deverá clicar com o botão direito do mouse em "Innovatie" e escolher a opção "Open in Integrated Terminal".
+ 7. Após isso, ele deverá abrir o main.c e verificar se no seu código está escrito "setlocale(LC_ALL, "Portuguese_Brazil");".
+ 8. Caso não esteja, insira-o dentro do "int main() {" e deverá navegar até o UTF-8 e apertá-lo.
+ 9. Após isso, ele deverá apertar em "Reopen With Encoding" e escolher a opção "Western (ISO 8859-1)".
+ 10. O usuário deverá então no terminal digitar "gcc main.c func_lib.c -o saida.exe".
+ 11. Após isso ele deverá digitar "./saida.exe".
 
 ## 📂 Repositórios:
 - [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
@@ -120,4 +132,3 @@ Somos estudantes de ciência da computação e design do 2º período da institu
       </a>
     </td>
 </table>
-<!-- Falta botar fotas do people de designas -->
