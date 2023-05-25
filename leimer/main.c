@@ -15,7 +15,7 @@ int main() {
 
     while (exec) {
         printf("Seja bem vindo ao Leimer!\n");
-        printf("Selecione uma das opï¿½ï¿½es para realizar o seu cadastro!\n");
+        printf("Selecione uma das opções para realizar o seu cadastro!\n");
         printf("1 - RESIDENTE\n");
         printf("2 - PRECEPTOR\n");
         printf("3 - GESTOR\n");
@@ -31,35 +31,35 @@ int main() {
         int aux;
         switch (opcoes) {
             case 1:
-                // Criaï¿½ï¿½o de novo usuï¿½rio residente
-                printf("Olï¿½ novo residente!\n");
-                printf("Preencha suas informaï¿½ï¿½es para realizar o cadastro!\n\n");
+                // Criação de novo usuário residente
+                printf("Olá novo residente!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_residente.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_residente.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_residente.senha);
-                // PREVENï¿½ï¿½O DE ERROS (inserï¿½ï¿½o de dados invï¿½lidos no campo mï¿½s)
+                // PREVENÇÃO DE ERROS (inserção de dados inválidos no campo mês)
                 do {
-                    printf("\nInforme o mï¿½s de sua entrada (em nï¿½mero): ");
+                    printf("\nInforme o mês de sua entrada (em número): ");
                     scanf("%d", &novo_residente.mes);
                     if (novo_residente.mes > 12 || novo_residente.mes < 1) {
-                        printf("Opï¿½ï¿½o invï¿½lida.");
+                        printf("Opção inválida.");
                         pausa();
                     }
                 } while (novo_residente.mes > 12 || novo_residente.mes < 1);
                 printf("\nInforme o ano de sua entrada: ");
                 scanf("%d", &novo_residente.ano);
                 do {
-                    printf("\nInforme sua residï¿½ncia\n[1 - Medicina]\n[2 - Multi]\n");
+                    printf("\nInforme sua residência\n[1 - Medicina]\n[2 - Multi]\n");
                     scanf("%d", &aux);
                     if (aux == 1) {
                         novo_residente.residencia[0] = 1;
                     } else if (aux == 2) {
                         novo_residente.residencia[1] = 1;
                     } else {
-                        printf("Opï¿½ï¿½o invï¿½lida");
+                        printf("Opção inválida");
                         pausa();
                     }
                 } while(aux > 2 || aux < 1);
@@ -76,37 +76,36 @@ int main() {
                     printf("Residente de Multi");
                 }
                 exec = false;
-                ler2(novo_residente);
                 break;
             case 2:
-                printf("Olï¿½ novo preceptor!\n");
-                printf("Preencha suas informaï¿½ï¿½es para realizar o cadastro!\n");
+                printf("Olá novo preceptor!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_preceptor.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_preceptor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_preceptor.senha);
-                // PREVENï¿½ï¿½O DE ERROS (inserï¿½ï¿½o de dados invï¿½lidos no campo mï¿½s)
+                // PREVENÇÃO DE ERROS (inserção de dados inválidos no campo mês)
                 do {
-                    printf("\nInforme o mï¿½s de sua entrada (em nï¿½mero): ");
+                    printf("\nInforme o mês de sua entrada (em número): ");
                     scanf("%d", &novo_preceptor.mes);
                     if (novo_preceptor.mes > 12 || novo_preceptor.mes < 1) {
-                        printf("Opï¿½ï¿½o invï¿½lida.");
+                        printf("Opção inválida.");
                         pausa();
                     }
                 } while (novo_preceptor.mes > 12 || novo_preceptor.mes < 1);
                 printf("\nInforme o ano de sua entrada: ");
                 scanf("%d", &novo_preceptor.ano);
                 do {
-                    printf("\nInforme a residï¿½ncia a qual ï¿½ responsï¿½vel\n[1 - Medicina]\n[2 - Multi]\n");
+                    printf("\nInforme a residência a qual é responsável\n[1 - Medicina]\n[2 - Multi]\n");
                     scanf("%d", &aux);
                     if (aux == 1) {
                         novo_preceptor.residencia[0] = 1;
                     } else if (aux == 2) {
                         novo_preceptor.residencia[1] = 1;
                     } else {
-                        printf("Opï¿½ï¿½o invï¿½lida");
+                        printf("Opção inválida");
                         pausa();
                     }
                 } while(aux > 2 || aux < 1);
@@ -122,24 +121,23 @@ int main() {
                 } else if (novo_preceptor.residencia[1] == 1) {
                     printf("Preceptor de Multi");
                 }
-                ler(novo_preceptor);
                 exec = false;
                 break;
             case 3:
-                printf("Olï¿½ novo gestor!\n");
-                printf("Preencha suas informaï¿½ï¿½es para realizar o cadastro!\n");
+                printf("Olá novo gestor!\n");
+                printf("Preencha suas informações para realizar o cadastro!\n");
                 printf("Informe o seu nome: ");
                 scanf(" %[^\n]", novo_gestor.nome);
                 printf("\nInforme o seu e-mail: ");
                 scanf(" %[^\n]", novo_gestor.email);
                 printf("\nDefina sua senha: ");
                 scanf(" %[^\n]", novo_gestor.senha);
-                // PREVENï¿½ï¿½O DE ERROS (inserï¿½ï¿½o de dados invï¿½lidos no campo mï¿½s)
+                // PREVENÇÃO DE ERROS (inserção de dados inválidos no campo mês)
                 do {
-                    printf("\nInforme a residï¿½ncia a qual ï¿½ responsï¿½vel\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
+                    printf("\nInforme a residência a qual é responsável\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
                     scanf("%d", &aux);
                     if (aux > 3 || aux < 1) {
-                        printf("Opï¿½ï¿½o invï¿½lida");
+                        printf("Opção inválida");
                         pausa();
                     }
                 } while(aux > 3 || aux < 1);
@@ -150,25 +148,25 @@ int main() {
                 printf("E-mail: %s\n", novo_gestor.email);
                 printf("Senha: %s\n", novo_gestor.senha);
                 if (aux == 1) {
-                    printf("Responsï¿½vel pelas residï¿½ncias de Medicina");
+                    printf("Responsável pelas residências de Medicina");
                     novo_gestor.residencia = 1;
                 } else if (aux == 2) {
-                    printf("Responsï¿½vel pelas residï¿½ncias de Multi");
+                    printf("Responsável pelas residências de Multi");
                     novo_gestor.residencia = 2;
                 } else if (aux == 3) {
-                    printf("Responsï¿½vel pelas residï¿½ncias de Medicina e Multi");
+                    printf("Responsável pelas residências de Medicina e Multi");
                     novo_gestor.residencia = 3;
                 }
-                ler3(novo_gestor);
                 exec = false;
                 break;
             case 0:
-                printf("Execuï¿½ï¿½o encerrada.");
+                printf("Execução encerrada.");
                 exec = false;
                 break;
             default:
-                printf("Opï¿½ï¿½o invï¿½lida\n");
+                printf("Opção inválida\n");
         }
+        ler(novo_preceptor);
         pausa();
         limpa_tela();
     }

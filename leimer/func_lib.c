@@ -1,17 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "func_lib.h"
-//#include <conio.h>
 
 //funcao para limpar tela
 void limpa_tela() {
+#ifdef __linux__
+    // system("CLS");
+#elif _WIN32
     system("CLS");
+#else
+    system("clear");
+#endif
 }
 
 //funcao para pausar o programa.
 void pausa() {
-    printf("\n\nPressione qualquer tecla para continuar...\n\n");
-    //getch();
+#ifdef __linux__
+    // printf("------------------")
+#elif _WIN32
+    system("PAUSE");
+#else
+    printf("-----------");
+#endif
 }
 
 void menu_residente() {
