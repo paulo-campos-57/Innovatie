@@ -1,3 +1,4 @@
-2
+3
 1, 0, nome, email, senha, 1, 2, 1, 0
 3, 0, Matheus Gomes, mga@cesar.school, aaaa, 1, 2022, 1, 0
+6, 0, Sofia , email@email, senha12345, 2, 3, 1, 0
