@@ -19,6 +19,8 @@ void pausa() {
 #elif _WIN32
     system("PAUSE");
 #else
+    //printf("\033[1A");
+    //printf("\033[K");
     printf("\n");
 #endif
 }

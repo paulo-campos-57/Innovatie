@@ -3,6 +3,7 @@
 #include <string.h>
 #include "structs.h"
 #include "cadastro.h"
+#include "ui.h"
 
 //extern RESIDENTE residente;
 //extern PRECEPTOR preceptor;
@@ -61,8 +62,8 @@ void menu_gestor() {
 }*/
 
 char *senha(){
-    char *senha_;
-    char *confirmar_senha;
+    char *senha_ = (char*)malloc(sizeof(char) * 200);
+    char *confirmar_senha = (char*)malloc(sizeof(char) * 200);
 
     printf("\nDigite uma senha: ");
     scanf(" %[^\n]", senha_);
@@ -74,7 +75,12 @@ char *senha(){
         return senha_;
     }
     else{
-        printf("As senhas não batem, tente novamente!!!\n");
+        //pausa();
+        //pausa();
+        //pausa();
+        printf("As senhas não batem, tente novamente!!!");
+        free(senha_);
+        free(confirmar_senha);
         return senha();
     }
 
@@ -122,7 +128,7 @@ char *define_mes(int num) {
 }
 
 void ler(struct preceptor novo_precptor){
-    int id_ = id();
+    int id_ = new_id();
     FILE* f;
 
     f = fopen("bin/preceptor.txt", "r+");
@@ -144,7 +150,7 @@ void ler(struct preceptor novo_precptor){
 }
 
 void ler2(struct residente novo_precptor){
-    int id_ = id();
+    int id_ = new_id();
     FILE* f;
 
     f = fopen("bin/residente.txt", "r+");
@@ -166,7 +172,7 @@ void ler2(struct residente novo_precptor){
 }
 
 void ler3(struct gestor novo_precptor){
-    int id_ = id();
+    int id_ = new_id();
     FILE* f;
 
     f = fopen("bin/gestor.txt", "r+");
@@ -193,7 +199,7 @@ void ler3(struct gestor novo_precptor){
 }
 
 
-int id(){
+int new_id(){
     FILE* f_res;
     f_res = fopen("bin/residente.txt", "r");
     int res;

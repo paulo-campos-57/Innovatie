@@ -93,8 +93,10 @@ int main() {
                 scanf(" %[^\n]", novo_preceptor.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_preceptor.email);
-                printf("\nDefina sua senha: ");
-                scanf(" %[^\n]", novo_preceptor.senha);
+                //printf("\nDefina sua senha: ");
+                //scanf(" %[^\n]", novo_preceptor.senha);
+
+                novo_preceptor.senha = senha();
                 // PREVEN��O DE ERROS (inser��o de dados inv�lidos no campo m�s)
                 do {
                     printf("\nInforme o m�s de sua entrada (em n�mero): ");
@@ -140,8 +142,10 @@ int main() {
                 scanf(" %[^\n]", novo_gestor.nome);
                 printf("\nInforme o seu e-mail: ");
                 scanf(" %[^\n]", novo_gestor.email);
-                printf("\nDefina sua senha: ");
-                scanf(" %[^\n]", novo_gestor.senha);
+                //printf("\nDefina sua senha: ");
+                //scanf(" %[^\n]", novo_gestor.senha);
+
+                novo_gestor.senha = senha();
                 // PREVEN��O DE ERROS (inser��o de dados inv�lidos no campo m�s)
                 do {
                     printf("\nInforme a resid�ncia a qual � respons�vel\n[1 - Medicina]\n[2 - Multi]\n[3 - Ambas]\n");
