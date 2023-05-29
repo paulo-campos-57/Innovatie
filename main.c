@@ -44,8 +44,9 @@ int main() {
                 scanf(" %[^\n]", novo_residente.nome);
                 printf("\nInforme o seu e-mail institucional: ");
                 scanf(" %[^\n]", novo_residente.email);
-                printf("\nDefina sua senha: ");
-                scanf(" %[^\n]", novo_residente.senha);
+                //printf("\nDefina sua senha: ");
+                //scanf(" %[^\n]", novo_residente.senha);
+                novo_residente.senha = senha();
 
                 // PREVEN��O DE ERROS (inser��o de dados inv�lidos no campo m�s)
                 do {

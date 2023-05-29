@@ -60,6 +60,26 @@ void menu_gestor() {
     printf("[0] Sair\n");
 }*/
 
+char *senha(){
+    char *senha_;
+    char *confirmar_senha;
+
+    printf("\nDigite uma senha: ");
+    scanf(" %[^\n]", senha_);
+
+    printf("Confirme sua senha: ");
+    scanf(" %[^\n]", confirmar_senha);
+
+    if(strcmp(senha_, confirmar_senha)==0){
+        return senha_;
+    }
+    else{
+        printf("As senhas não batem, tente novamente!!!\n");
+        return senha();
+    }
+
+}
+
 char *define_mes(int num) {
     switch (num) {
     case 1:
