@@ -8,6 +8,5 @@ void ler2(struct residente novo_precptor);
 void ler3(struct gestor novo_precptor);
 char *define_mes(int num);
 int id();
-void test();
 
 #endif

@@ -23,6 +23,20 @@ void pausa() {
 #endif
 }
 
+void menu_inicial() {
+    printf("=================BOAS-VINDAS AO=================\n");
+    printf(" _       ______  _____  __  __  ______  _____    \n");
+    printf("| |     |  ____||_   _||  \\/  ||  ____||  __ \\   \n");
+    printf("| |     | |__     | |  | \\  / || |__   | |__) |  \n");
+    printf("| |     |  __|    | |  | |\\/| ||  __|  |  _  /   \n");
+    printf("| |____ | |____  _| |_ | |  | || |____ | | \\ \\   \n");
+    printf("|______||______||_____||_|  |_||______||_|  \\_\\  \n");
+
+    printf("\n[1]-Fazer login\n");
+    printf("[2]-Novo usuario\n");
+    printf("OPCÃO: ");
+}
+
 void menu_residente() {
     printf("Bem-Vindo, Residente!\n\n");
     printf("[1] Marcar PresenÃ§a\n");    

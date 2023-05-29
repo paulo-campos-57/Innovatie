@@ -7,9 +7,6 @@
 #include "cadastro.h"
 #include "ui.h"
 
-//RESIDENTE residente;
-//PRECEPTOR preceptor;
-//GESTOR gestor;
 
 int main() {
 
@@ -18,6 +15,8 @@ int main() {
     limpa_tela();
     int exec = true;
     int opcoes;
+
+    //menu_inicial();
 
     while (exec) {
         menu_cadastro();
