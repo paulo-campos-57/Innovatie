@@ -1,5 +1,6 @@
 leimer/test
 leimer/teste.exe
 leimer/saida.exe
-obj/*
-bin/*
+obj/*.o
+bin/*.txt
+bin/saida
