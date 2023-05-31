@@ -3,63 +3,8 @@
 #include <string.h>
 #include "structs.h"
 #include "cadastro.h"
+#include "arquivos.h"
 #include "ui.h"
-
-//extern RESIDENTE residente;
-//extern PRECEPTOR preceptor;
-//extern GESTOR gestor;
-
-
-//funcao para limpar tela
-/*void limpa_tela() {
-#ifdef __linux__
-    // system("CLS");
-#elif _WIN32
-    system("CLS");
-#else
-    system("clear");
-#endif
-}
-
-//funcao para pausar o programa.
-void pausa() {
-#ifdef __linux__
-    // printf("------------------")
-#elif _WIN32
-    system("PAUSE");
-#else
-    printf("-----------");
-#endif
-}
-
-void menu_residente() {
-    printf("Bem-Vindo, Residente!\n\n");
-    printf("[1] Marcar PresenÃ§a\n");    
-    printf("[2] Consultar Feedbacks\n");
-    printf("[3] Dar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //apenas visualizar
-    printf("[5] Minhas Faltas\n");
-    printf("[0] Sair\n");
-    
-}
-
-void menu_preceptor() {
-    printf("Bem-Vindo, Preceptor!\n\n");
-    printf("[1] Validar PresenÃ§as\n");    
-    printf("[2] Consultar Feedbacks\n");
-    printf("[3] Dar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
-    printf("[0] Sair\n");
-}
-
-void menu_gestor() {
-    printf("Bem-Vindo, Gestor!\n\n");
-    printf("[1] Gerar CÃ³digo de Cadastro\n");    
-    printf("[2] Remover UsuÃ¡rio\n");
-    printf("[3] Consultar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
-    printf("[0] Sair\n");
-}*/
 
 char *senha(){
     char *senha_ = (char*)malloc(sizeof(char) * 200);
@@ -86,137 +31,90 @@ char *senha(){
 
 }
 
-char *define_mes(int num) {
-    switch (num) {
-    case 1:
-        return "Janeiro";
-        break;
-    case 2:
-        return "Fevereiro";
-        break;
-    case 3:
-        return "MarÃ§o";
-        break;
-    case 4:
-        return "Abril";
-        break;
-    case 5:
-        return "Maio";
-        break;
-    case 6:
-        return "Junho";
-        break;
-    case 7:
-        return "Julho";
-        break;
-    case 8:
-        return "Agosto";
-        break;
-    case 9:
-        return "Setembro";
-        break;
-    case 10:
-        return "Outubro";
-        break;
-    case 11:
-        return "Novembro";
-        break;
-    case 12:
-        return "Dezembro";
-        break;
-    }
+int mes_de_entrada(){
+    int mes_;
+
+    do {
+        printf("\nInforme o mï¿½s de sua entrada (em nï¿½mero): ");
+        scanf("%d", &mes_);
+        if (mes_ > 12 || mes_ < 1) {
+            printf("Opï¿½ï¿½o invï¿½lida.");
+            pausa();
+        }
+    } while(mes_ > 12 || mes_ < 1);
+
+    return mes_;
 }
 
-void ler(struct preceptor novo_precptor){
-    int id_ = new_id();
-    FILE* f;
-
-    f = fopen("bin/preceptor.txt", "r+");
-
-    if(f == 0){
-        printf("Erro ao abrir banco!!!\n");
-        exit(1);
-    }    
-
-    int count;
-    fscanf(f, "%d", &count);
-    count++;
-    fseek(f, 0, SEEK_SET);
-    fprintf(f, "%d", count);
-
-    fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d, %d", id_, 000000, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.mes, novo_precptor.ano, novo_precptor.residencia[0], 000000);
-    fclose(f);
-}
-
-void ler2(struct residente novo_precptor){
-    int id_ = new_id();
-    FILE* f;
-
-    f = fopen("bin/residente.txt", "r+");
-
-    if(f == 0){
-        printf("Erro ao abrir banco!!!\n");
-        exit(1);
-    }    
-
-    int count;
-    fscanf(f, "%d", &count);
-    count++;
-    fseek(f, 0, SEEK_SET);
-    fprintf(f, "%d", count);
-
-    fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d, %d", id_, 000000, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.mes, novo_precptor.ano, novo_precptor.residencia[0], 000000);
-    fclose(f);
-}
-
-void ler3(struct gestor novo_precptor){
-    int id_ = new_id();
-    FILE* f;
-
-    f = fopen("bin/gestor.txt", "r+");
-
-    if(f == 0){
-        printf("Erro ao abrir banco!!!\n");
-        exit(1);
-    }    
-
-    int count;
-    fscanf(f, "%d", &count);
-    count++;
-    fseek(f, 0, SEEK_SET);
-    fprintf(f, "%d", count);
-
-    fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%d, %s, %s, %s, %d", id_, novo_precptor.nome, novo_precptor.email, novo_precptor.senha, novo_precptor.residencia);
-    int id; //Numero unico de usuario
-    char email[250];
-    char nome[200];
-    char senha[200];
+int residencia(int quant){
     int residencia;
-    fclose(f);
-}
+    
+    for(int i = 1; i <=quant; i++){
+        printf("[%d] - %s\n", i, define_residencia(i));
+    }
 
+    do {
+        scanf("%d", &residencia);
+        if(residencia>quant || residencia < 1){
+            printf("Opï¿½ï¿½o invï¿½lida.");
+            pausa();
+        }
+    }while(residencia>quant || residencia < 1);
+
+    return residencia;
+}
 
 int new_id(){
-    FILE* f_res;
-    f_res = fopen("bin/residente.txt", "r");
-    int res;
-    fscanf(f_res, "%d", &res);
-    fclose(f_res);
+    int novo_id = 1;
 
-    FILE* f_pre;
-    f_pre = fopen("bin/preceptor.txt", "r");
-    int pre;
-    fscanf(f_pre, "%d", &pre);
-    fclose(f_pre);
+    novo_id += quant_usuarios("bin/residente.txt");
+    novo_id += quant_usuarios("bin/preceptor.txt");
+    novo_id += quant_usuarios("bin/gestor.txt");
 
-    FILE* f_ges;
-    f_ges = fopen("bin/gestor.txt", "r");
-    int ges;
-    fscanf(f_ges, "%d", &ges);
-    fclose(f_ges);
+    return novo_id;
+}
 
-    return res + pre + ges;
+void cadastro_residente(struct residente* novo_residente){
+
+    printf("Ol� novo residente!\n");
+    printf("Preencha suas informa��es para realizar o cadastro!\n\n");
+    printf("Informe o seu nome: ");
+    scanf(" %[^\n]", novo_residente->nome);
+    printf("\nInforme o seu e-mail institucional: ");
+    scanf(" %[^\n]", novo_residente->email);
+    novo_residente->senha = senha();
+    novo_residente->mes = mes_de_entrada();
+    printf("\nInforme o ano de sua entrada: ");
+    scanf("%d", &novo_residente->ano);
+    printf("\nInforme sua resid�ncia\n");
+    novo_residente->residencia = residencia(2);
+}
+
+void cadastro_preceptor(struct preceptor* novo_preceptor){
+    printf("Ol� novo preceptor!\n");
+    printf("Preencha suas informa��es para realizar o cadastro!\n");
+    printf("Informe o seu nome: ");
+    scanf(" %[^\n]", novo_preceptor->nome);
+    printf("\nInforme o seu e-mail institucional: ");
+    scanf(" %[^\n]", novo_preceptor->email);
+
+    novo_preceptor->senha = senha();
+    novo_preceptor->mes = mes_de_entrada();
+    printf("\nInforme o ano de sua entrada: ");
+    scanf("%d", &novo_preceptor->ano);
+    printf("\nInforme a resid�ncia a qual � respons�vel\n");
+    novo_preceptor->residencia = residencia(2);
+}
+
+void cadastro_gestor(struct gestor* novo_gestor){
+    printf("Ol� novo gestor!\n");
+    printf("Preencha suas informa��es para realizar o cadastro!\n");
+    printf("Informe o seu nome: ");
+    scanf(" %[^\n]", novo_gestor->nome);
+    printf("\nInforme o seu e-mail: ");
+    scanf(" %[^\n]", novo_gestor->email);
+
+    novo_gestor->senha = senha();
+    printf("\nInforme a resid�ncia a qual � respons�vel\n");
+    novo_gestor->residencia = residencia(3);
 }

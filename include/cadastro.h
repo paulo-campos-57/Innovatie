@@ -3,11 +3,14 @@
 
 #include "structs.h"
 
-void ler(struct preceptor novo_precptor);
-void ler2(struct residente novo_precptor);
-void ler3(struct gestor novo_precptor);
-char *define_mes(int num);
+//char *define_mes(int num);
 int new_id();
+//char *email();
 char *senha();
+int mes_de_entrada();
+int residencia(int quant);
+void cadastro_residente(struct residente* novo_residente);
+void cadastro_preceptor(struct preceptor* novo_preceptor);
+void cadastro_gestor(struct gestor* novo_gestor);
 
 #endif

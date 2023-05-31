@@ -3,4 +3,4 @@ leimer/teste.exe
 leimer/saida.exe
 obj/*.o
 bin/*.txt
-bin/saida
+bin/*.exe

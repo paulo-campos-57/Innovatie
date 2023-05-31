@@ -76,3 +76,61 @@ void menu_cadastro() {
     printf("3 - GESTOR\n");
     printf("0 - SAIR\n");
 }
+
+char *define_mes(int num) {
+    switch (num) {
+    case 1:
+        return "Janeiro";
+        break;
+    case 2:
+        return "Fevereiro";
+        break;
+    case 3:
+        return "MarÃ§o";
+        break;
+    case 4:
+        return "Abril";
+        break;
+    case 5:
+        return "Maio";
+        break;
+    case 6:
+        return "Junho";
+        break;
+    case 7:
+        return "Julho";
+        break;
+    case 8:
+        return "Agosto";
+        break;
+    case 9:
+        return "Setembro";
+        break;
+    case 10:
+        return "Outubro";
+        break;
+    case 11:
+        return "Novembro";
+        break;
+    case 12:
+        return "Dezembro";
+        break;
+    }
+}
+
+char *define_residencia(int num){
+    switch(num){
+        case 1:
+            return "Medicina";
+            break;
+        case 2:
+            return "Multi";
+            break;
+        case 3:
+            return "Medicina e Multi";
+            break;
+        default:
+            return "!!Erro ao buscar residencia!!";
+            break;
+    }
+}

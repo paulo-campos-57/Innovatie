@@ -1,3 +1,0 @@
-2
-2, nome, email, senha, 1
-8, nome, email@email, senha12345, 3

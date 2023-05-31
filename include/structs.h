@@ -4,39 +4,35 @@
 struct residente{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
-    char email[250];
     char nome[200];
+    char email[250];
     char *senha;
     int mes;
     int ano;
-    int residencia[2];
+    int residencia;
     struct residente *next;
 };
 
 struct preceptor{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
-    char email[250];
     char nome[200];
+    char email[250];
     char *senha;
     int mes;
     int ano;
-    int residencia[2];
+    int residencia;
     struct preceptor *next;
 };
 
 struct gestor{
     int id; //Numero unico de usuario
-    char email[250];
     char nome[200];
+    char email[250];
     char *senha;
     int residencia;
     struct gestor *next;
 };
 
-
-//typedef struct residente RESIDENTE;
-//typedef struct preceptor PRECEPTOR;
-//typedef struct gestor GESTOR;
 
 #endif
