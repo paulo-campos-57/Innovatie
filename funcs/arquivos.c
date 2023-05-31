@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "arquivos.h"
 #include "cadastro.h"
 #include "structs.h"
@@ -82,4 +83,31 @@ void registrar_gestor(struct gestor novo_gestor){
     fseek(f, 0, SEEK_END);
     fprintf(f, "\n%d, %s, %s, %s, %d", id_, novo_gestor.nome, novo_gestor.email, novo_gestor.senha, novo_gestor.residencia);
     fclose(f);
+}
+
+// login
+
+void buscar_residente(char nome[200], char* senha, struct residente* user_residente){
+    FILE *f;
+
+    f = fopen("bin/residente.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i = 0; i<quant; i++){
+        fscanf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", &user_residente->id, user_residente->cadastro, user_residente->nome, user_residente->email, user_residente->senha, &user_residente->mes, &user_residente->ano, &user_residente->residencia);
+
+        printf("\n%s - %s \n", user_residente->nome, user_residente->senha);
+        if(strcmp(user_residente->nome, nome)==0 && strcmp(user_residente->senha, senha)==0){
+            break;
+        }
+    }  
+
+    user_residente->id = -1;  
 }

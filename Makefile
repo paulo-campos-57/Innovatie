@@ -5,6 +5,7 @@ FUNCS   = ./funcs
 
 all:
 	gcc -c $(FUNCS)/cadastro.c -I $(INCLUDE) -o $(OBJ)/cadastro.o
+	gcc -c $(FUNCS)/login.c -I $(INCLUDE) -o $(OBJ)/login.o
 	gcc -c $(FUNCS)/ui.c -I $(INCLUDE) -o $(OBJ)/ui.o
 	gcc -c $(FUNCS)/arquivos.c -I $(INCLUDE) -o $(OBJ)/arquivos.o
 	gcc main.c $(OBJ)/*.o -I $(INCLUDE) -o $(BIN)/saida.exe
