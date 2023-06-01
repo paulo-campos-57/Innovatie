@@ -10,7 +10,6 @@
 #include "arquivos.h"
 #include "ui.h"
 
-
 int main() {
 
     setlocale(LC_ALL, "Portuguese_Brazil");
@@ -68,16 +67,16 @@ int main() {
                 printf("Nome: %s\n", novo_gestor.nome);
                 printf("E-mail: %s\n", novo_gestor.email);
                 printf("Senha: %s\n", novo_gestor.senha);
-                printf("Responsï¿½vel pelas residï¿½ncias de de %s", define_residencia(novo_gestor.residencia));
+                printf("Responsável pelas residências de de %s", define_residencia(novo_gestor.residencia));
                 registrar_gestor(novo_gestor);
                 exec = false;
                 break;
             case 0:
-                printf("Execuï¿½ï¿½o encerrada.");
+                printf("Execução encerrada.");
                 exec = false;
                 break;
             default:
-                printf("Opï¿½ï¿½o invï¿½lida\n");
+                printf("Opção inválida\n");
         }
         pausa();
         limpa_tela();
