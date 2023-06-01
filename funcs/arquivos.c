@@ -105,7 +105,7 @@ void buscar_residente(char nome[200], char* senha, struct residente* user_reside
 
         printf("\n%s - %s \n", user_residente->nome, user_residente->senha);
         if(strcmp(user_residente->nome, nome)==0 && strcmp(user_residente->senha, senha)==0){
-            break;
+            return;
         }
     }  
 

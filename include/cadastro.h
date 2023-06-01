@@ -3,9 +3,8 @@
 
 #include "structs.h"
 
-//char *define_mes(int num);
+
 int new_id();
-//char *email();
 char *senha();
 int mes_de_entrada();
 int residencia(int quant);
