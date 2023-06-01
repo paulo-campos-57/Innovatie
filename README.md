@@ -6,8 +6,8 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 
 # ⚙️ Funcionalidades
 
+- <b>Login e Cadastro:</b> um sistema de cadastro para os usuários residentes, preceptores e gestores.
 - <b>Sistema de Frequência:</b> um checkmark para marcar a presença de ambos preceptores e e residentes, onde os residentes preenchem e os preceptores validam a presença.
-- <b>Agenda:</b> uma agenda eletrônica para o gerenciamento de atividades dos preceptores e residentes.
 - <b>Quadro de avisos:</b> um quadro de avisos para informar os residentes de atividades, localizações e horários.
 - <b>Sistema de Feedback:</b> um sistema de feedback, onde os preceptores e residentes podem avaliar o desempenho um do outro para ajudarem a criar um ambiente de aprendizado por ambas as partes.
 
@@ -16,7 +16,7 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 - <b>Linguagem de Programação:</b> C.
 - <b>Bibliotecas:</b> stdio.h, stdlib, string.h, func_lib.h.
 - <b>IDEs:</b> Visual Studio Code 1.78.2.
-- <b>Extensions:</b> C/C++, C/C++ Compile Run, C/C++ Extension Pack, C/C++ Themes.
+- <b>Extensions:</b> C/C++, C/C++ Compile Run, C/C++ Extension Pack, Makefile Tools.
 
 # 👣 Usando o LEIMER
 
@@ -29,9 +29,8 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  7. Após isso, ele deverá abrir o main.c e verificar se no seu código está escrito "setlocale(LC_ALL, "Portuguese_Brazil");".
  8. Caso não esteja, insira-o dentro do "int main() {" e deverá navegar até o UTF-8 e apertá-lo.
  9. Após isso, ele deverá apertar em "Reopen With Encoding" e escolher a opção "Western (ISO 8859-1)".
- 10. O usuário deverá então no terminal digitar "gcc main.c func_lib.c -o saida.exe".
- 11. Após isso ele deverá digitar "./saida.exe".
- 12. Então ele poderá interagir com o sistema.
+ 10. O usuário deverá então no terminal digitar "make" e após isso "make run".
+ 11. Então ele poderá interagir com o sistema.
 
 ## 📂 Repositórios:
 - [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
