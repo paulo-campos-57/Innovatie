@@ -1,3 +1,18 @@
+/*
+Compilar sistema:
+gcc main.c ./funcs/*.c -I include -o bin/saida.exe
+
+Rodar sistema:
+./bin/saida.exe
+
+Criar banco de dados:
+gcc criando_bd.c -o ./bin/criando_bd.exe
+./bin/criando_bd.exe
+
+Apagar banco de dados:
+rm ./bin/*.txt
+*/
+
 #include <stdio.h>
 
 void criar_arquivo(char *name){
