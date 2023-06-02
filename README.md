@@ -29,7 +29,7 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  7. Após isso, ele deverá abrir o main.c e verificar se no seu código está escrito "setlocale(LC_ALL, "Portuguese_Brazil");".
  8. Caso não esteja, insira-o dentro do "int main() {" e deverá navegar até o UTF-8 e apertá-lo.
  9. Após isso, ele deverá apertar em "Reopen With Encoding" e escolher a opção "Western (ISO 8859-1)".
- 10. O usuário deverá então no terminal digitar "make" e após isso "make run".
+ 10. O usuário deverá então no terminal digitar "gcc main.c ./funcs/*.c -I include -o bin/saida.exe" para compilar o sistema e após isso "./bin/saida.exe" para rodar o sistema.
  11. Então ele poderá interagir com o sistema.
 
 ## 📂 Repositórios:
