@@ -4,7 +4,7 @@
 //funcao para limpar tela
 void limpa_tela() {
 #ifdef __linux__
-    // system("CLS");
+    // system("clear");
 #elif _WIN32
     system("CLS");
 #else
@@ -14,15 +14,8 @@ void limpa_tela() {
 
 //funcao para pausar o programa.
 void pausa() {
-#ifdef __linux__
-    // printf("------------------")
-#elif _WIN32
-    system("PAUSE");
-#else
-    //printf("\033[1A");
-    //printf("\033[K");
-    printf("\n");
-#endif
+    printf("\n\nPressione ENTER para continuar...\n\n");
+    getchar();
 }
 
 void menu_inicial() {
