@@ -4,7 +4,7 @@
 //funcao para limpar tela
 void limpa_tela() {
 #ifdef __linux__
-    // system("clear");
+    system("clear");
 #elif _WIN32
     system("CLS");
 #else
@@ -29,12 +29,12 @@ void menu_inicial() {
 
     printf("\n[1]-Fazer login\n");
     printf("[2]-Novo usuario\n");
-    printf("OPCÃO: ");
+    printf("OPC�O: ");
 }
 
 void menu_residente() {
     printf("Bem-Vindo, Residente!\n\n");
-    printf("[1] Marcar PresenÃ§a\n");    
+    printf("[1] Marcar Presença\n");    
     printf("[2] Consultar Feedbacks\n");
     printf("[3] Dar Feedbacks\n");
     printf("[4] Quadro de Avisos\n"); //apenas visualizar
@@ -45,7 +45,7 @@ void menu_residente() {
 
 void menu_preceptor() {
     printf("Bem-Vindo, Preceptor!\n\n");
-    printf("[1] Validar PresenÃ§as\n");    
+    printf("[1] Validar Presenças\n");    
     printf("[2] Consultar Feedbacks\n");
     printf("[3] Dar Feedbacks\n");
     printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
@@ -54,8 +54,8 @@ void menu_preceptor() {
 
 void menu_gestor() {
     printf("Bem-Vindo, Gestor!\n\n");
-    printf("[1] Gerar CÃ³digo de Cadastro\n");    
-    printf("[2] Remover UsuÃ¡rio\n");
+    printf("[1] Gerar Código de Cadastro\n");    
+    printf("[2] Remover Usuário\n");
     printf("[3] Consultar Feedbacks\n");
     printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
     printf("[0] Sair\n");
@@ -63,7 +63,7 @@ void menu_gestor() {
 
 void menu_cadastro() {
     printf("Seja bem vindo ao Leimer!\n");
-    printf("Selecione uma das op��es para realizar o seu cadastro!\n");
+    printf("Selecione uma das op??es para realizar o seu cadastro!\n");
     printf("1 - RESIDENTE\n");
     printf("2 - PRECEPTOR\n");
     printf("3 - GESTOR\n");
@@ -79,7 +79,7 @@ char *define_mes(int num) {
         return "Fevereiro";
         break;
     case 3:
-        return "MarÃ§o";
+        return "Março";
         break;
     case 4:
         return "Abril";
