@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //funcao para limpar tela
 void limpa_tela() {
@@ -29,7 +30,7 @@ void menu_inicial() {
 
     printf("\n[1]-Fazer login\n");
     printf("[2]-Novo usuario\n");
-    printf("OPCÃO: ");
+    printf("OPCï¿½O: ");
 }
 
 void menu_residente() {
