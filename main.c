@@ -67,16 +67,16 @@ int main() {
                 printf("Nome: %s\n", novo_gestor.nome);
                 printf("E-mail: %s\n", novo_gestor.email);
                 printf("Senha: %s\n", novo_gestor.senha);
-                printf("Responsável pelas residências de de %s", define_residencia(novo_gestor.residencia));
+                printf("Responsï¿½vel pelas residï¿½ncias de de %s", define_residencia(novo_gestor.residencia));
                 registrar_gestor(novo_gestor);
                 exec = false;
                 break;
             case 0:
-                printf("Execução encerrada.");
+                printf("Execuï¿½ï¿½o encerrada.");
                 exec = false;
                 break;
             default:
-                printf("Opção inválida\n");
+                printf("Opï¿½ï¿½o invï¿½lida\n");
         }
         pausa();
         limpa_tela();

@@ -37,7 +37,7 @@ void registrar_preceptor(struct preceptor novo_preceptor){
     fprintf(f, "%d", count);
 
     fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d", id_, 0, novo_preceptor.nome, novo_preceptor.email, novo_preceptor.senha, novo_preceptor.mes, novo_preceptor.ano, novo_preceptor.residencia);
+    fprintf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", id_, "0", novo_preceptor.nome, novo_preceptor.email, novo_preceptor.senha, novo_preceptor.mes, novo_preceptor.ano, novo_preceptor.residencia);
     fclose(f);
 }
 
@@ -59,7 +59,7 @@ void registrar_residente(struct residente novo_residente){
     fprintf(f, "%d", count);
 
     fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%d, %d, %s, %s, %s, %d, %d, %d", id_, 000000, novo_residente.nome, novo_residente.email, novo_residente.senha, novo_residente.mes, novo_residente.ano, novo_residente.residencia);
+    fprintf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", id_, "0", novo_residente.nome, novo_residente.email, novo_residente.senha, novo_residente.mes, novo_residente.ano, novo_residente.residencia);
     fclose(f);
 }
 
@@ -87,7 +87,7 @@ void registrar_gestor(struct gestor novo_gestor){
 
 // login
 
-void buscar_residente(char nome[200], char* senha, struct residente* user_residente){
+struct residente buscar_residente(char nome[200], char* senha){
     FILE *f;
 
     f = fopen("bin/residente.txt", "r");
@@ -98,16 +98,24 @@ void buscar_residente(char nome[200], char* senha, struct residente* user_reside
     }
 
     int quant;
-    fscanf(f, "%d", &quant);
+    fscanf(f, "%d\n", &quant);
+    printf("%d\n", quant);
 
     for(int i = 0; i<quant; i++){
-        fscanf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", &user_residente->id, user_residente->cadastro, user_residente->nome, user_residente->email, user_residente->senha, &user_residente->mes, &user_residente->ano, &user_residente->residencia);
+        struct residente user_residente;
+        printf("Oi\n");
+        fscanf(f, "%d, %[^,] %[^,] %[^,] %[^,] %d, %d, %d\n", &user_residente.id, user_residente.cadastro, user_residente.nome, user_residente.email, user_residente.senha, &user_residente.mes, &user_residente.ano, &user_residente.residencia);
 
-        printf("\n%s - %s \n", user_residente->nome, user_residente->senha);
-        if(strcmp(user_residente->nome, nome)==0 && strcmp(user_residente->senha, senha)==0){
-            return;
+        printf("\n%s - %s \n", user_residente.nome, user_residente.senha);
+        if(strcmp(user_residente.nome, nome)==0 && strcmp(user_residente.senha, senha)==0){
+            fclose(f);
+            return user_residente;
         }
     }  
 
-    user_residente->id = -1;  
+    struct residente user_residente;
+
+    user_residente.id = -1;
+    return user_residente;
+    fclose(f);
 }

@@ -8,6 +8,6 @@ void registrar_preceptor(struct preceptor novo_precptor);
 void registrar_residente(struct residente novo_residente);
 void registrar_gestor(struct gestor novo_gestor);
 
-void buscar_residente(char nome[200], char* senha, struct residente* user_residente);
+struct residente buscar_residente(char nome[200], char* senha);
 
 #endif
