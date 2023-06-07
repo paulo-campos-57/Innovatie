@@ -82,12 +82,68 @@ int main() {
         limpa_tela();
     }
 
-    if (opcoes == 1) {
-        menu_residente();
-    } else if (opcoes == 2) {
-        menu_preceptor();
-    } else if (opcoes == 3) {
-        menu_gestor();
+    exec = true;
+
+    while (exec) {
+        int op;
+        if (opcoes == 1) {
+            menu_residente();
+            printf("Selecione uma das opções e tecle ENTER: ");
+            scanf("%d", &op);
+            switch (op) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opção inválida.");
+                    break;
+            }
+        } else if (opcoes == 2) {
+            menu_preceptor();
+            printf("Selecione uma das opções e tecle ENTER: ");
+            scanf("%d", &op);
+            switch (op) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opção inválida.");
+                    break;
+            }
+        } else if (opcoes == 3) {
+            menu_gestor();
+            printf("Selecione uma das opções e tecle ENTER: ");
+            scanf("%d", &op);
+            switch (op) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opção inválida.");
+                    break;
+            }
+        }
     }
     
     return 0;
