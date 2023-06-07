@@ -19,6 +19,7 @@ int main() {
     int opcoes;
 
     //menu_inicial();
+    testes_sofia();
     login_residente();
 
     while (exec) {

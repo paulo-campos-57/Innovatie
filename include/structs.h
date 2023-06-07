@@ -34,5 +34,12 @@ struct gestor{
     struct gestor *next;
 };
 
+typedef struct presenca{
+    int id_residente;
+    int data;
+    int frequencia;
+    int confirmação;
+    struct presenca *next;
+}Presenca;
 
 #endif
