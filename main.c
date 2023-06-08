@@ -5,10 +5,12 @@
 #include <locale.h>
 #include <time.h>
 #include "structs.h"
+#include "geral.h"
 #include "cadastro.h"
 #include "login.h"
 #include "arquivos.h"
 #include "ui.h"
+#include "frequencia.h"
 
 int main() {
 
@@ -75,16 +77,16 @@ int main() {
                             printf("Nome: %s\n", novo_gestor.nome);
                             printf("E-mail: %s\n", novo_gestor.email);
                             printf("Senha: %s\n", novo_gestor.senha);
-                            printf("Responsável pelas residências de de %s", define_residencia(novo_gestor.residencia));
+                            printf("Responsï¿½vel pelas residï¿½ncias de de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
                             exec = false;
                             break;
                         case 0:
-                            printf("Execução encerrada.");
+                            printf("Execuï¿½ï¿½o encerrada.");
                             exec = false;
                             break;
                         default:
-                            printf("Opção inválida\n");
+                            printf("Opï¿½ï¿½o invï¿½lida\n");
                     }
                     pausa();
                     limpa_tela();
@@ -96,7 +98,7 @@ int main() {
                     int op;
                     if (opcoes == 1) {
                         menu_residente();
-                        printf("Selecione uma das opções e tecle ENTER: ");
+                        printf("Selecione uma das opï¿½ï¿½es e tecle ENTER: ");
                         scanf("%d", &op);
                         limpa_tela();
                         switch (op) {
@@ -123,11 +125,11 @@ int main() {
                                     scanf(" %[^\n]", texto);
                                     printf("\n\nObrigado pelo seu feedback!");
                                 } else if (feed == 2) {
-                                    printf("Informe seu feedback para a gestão do HC: ");
+                                    printf("Informe seu feedback para a gestï¿½o do HC: ");
                                     scanf(" %[^\n]", texto);
                                     printf("\n\nObrigado pelo seu feedback!");
                                 } else {
-                                    printf("Operação encerrada.\n");
+                                    printf("Operaï¿½ï¿½o encerrada.\n");
                                 }
                                 break; 
                             case 4:
@@ -137,12 +139,12 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Opção inválida.");
+                                printf("Opï¿½ï¿½o invï¿½lida.");
                                 break;
                         }
                     } else if (opcoes == 2) {
                         menu_preceptor();
-                        printf("Selecione uma das opções e tecle ENTER: ");
+                        printf("Selecione uma das opï¿½ï¿½es e tecle ENTER: ");
                         scanf("%d", &op);
                         switch (op) {
                             case 1:
@@ -163,12 +165,12 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Opção inválida.");
+                                printf("Opï¿½ï¿½o invï¿½lida.");
                                 break;
                         }
                     } else if (opcoes == 3) {
                         menu_gestor();
-                        printf("Selecione uma das opções e tecle ENTER: ");
+                        printf("Selecione uma das opï¿½ï¿½es e tecle ENTER: ");
                         scanf("%d", &op);
                         switch (op) {
                             case 1:
@@ -182,18 +184,18 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Opção inválida.");
+                                printf("Opï¿½ï¿½o invï¿½lida.");
                                 break;
                         }
                     }
                 }
                 break;
             case 0:
-                printf("Execução encerrada.");
+                printf("Execuï¿½ï¿½o encerrada.");
                 execing = false;
                 break;
             default:
-                printf("Opção inválida");
+                printf("Opï¿½ï¿½o invï¿½lida");
                 break;
         }
         pausa();

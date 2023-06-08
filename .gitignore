@@ -4,3 +4,4 @@ leimer/saida.exe
 obj/*.o
 bin/*.txt
 bin/*.exe
+.vscode

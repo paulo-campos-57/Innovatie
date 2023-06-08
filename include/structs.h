@@ -1,13 +1,19 @@
 #ifndef __STRUCTS_LIB__
 #define __STRUCTS_LIB__
 
+typedef struct data{
+    int dia;
+    int mes;
+    int ano;
+}Data;
+
 struct residente{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
     char nome[200];
     char email[250];
     char *senha;
-    int mes;
+    int mes; // não usa struct de data porque é o de entrada e não precisa de dia
     int ano;
     int residencia;
     struct residente *next;
@@ -19,7 +25,7 @@ struct preceptor{
     char nome[200];
     char email[250];
     char *senha;
-    int mes;
+    int mes; // não usa struct de data porque é o de entrada e não precisa de dia
     int ano;
     int residencia;
     struct preceptor *next;
@@ -36,7 +42,7 @@ struct gestor{
 
 typedef struct presenca{
     int id_residente;
-    int data;
+    Data nova_data;
     int frequencia;
     int confirmacao;
     struct presenca *next;

@@ -3,6 +3,7 @@
 
 #include "structs.h"
 
+void testes_sofia();
 void login_residente();
 
 #endif
