@@ -31,41 +31,41 @@ void menu_inicial() {
     printf("\n[1] - Fazer login\n");
     printf("[2] - Novo usuario\n");
     printf("[0] - Sair\n");
-    printf("Selecione uma das opções e tecle ENTER: ");
+    printf("Selecione uma das opcoes e tecle ENTER: ");
 }
 
 void menu_residente() {
     printf("Bem-Vindo, Residente!\n\n");
-    printf("[1] Marcar Presença\n");    
-    printf("[2] Consultar Feedbacks\n");
-    printf("[3] Dar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //apenas visualizar
-    printf("[5] Minhas Faltas\n");
-    printf("[0] Sair\n");
+    printf("[1] - Marcar Presenca\n");    
+    printf("[2] - Consultar Feedbacks\n");
+    printf("[3] - Dar Feedbacks\n");
+    printf("[4] - Quadro de Avisos\n"); //apenas visualizar
+    printf("[5] - Minhas Faltas\n");
+    printf("[0] - Sair\n");
     
 }
 
 void menu_preceptor() {
     printf("Bem-Vindo, Preceptor!\n\n");
-    printf("[1] Validar Presenças\n");    
-    printf("[2] Consultar Feedbacks\n");
-    printf("[3] Dar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
-    printf("[0] Sair\n");
+    printf("[1] - Validar Presencas\n");    
+    printf("[2] - Consultar Feedbacks\n");
+    printf("[3] - Dar Feedbacks\n");
+    printf("[4] - Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
+    printf("[0] - Sair\n");
 }
 
 void menu_gestor() {
     printf("Bem-Vindo, Gestor!\n\n");
-    printf("[1] Gerar Código de Cadastro\n");    
-    printf("[2] Remover Usuário\n");
-    printf("[3] Consultar Feedbacks\n");
-    printf("[4] Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
-    printf("[0] Sair\n");
+    printf("[1] - Gerar Codigo de Cadastro\n");    
+    printf("[2] - Remover Usuario\n");
+    printf("[3] - Consultar Feedbacks\n");
+    printf("[4] - Quadro de Avisos\n"); //opcao de visualizar e inserir avisos
+    printf("[0] - Sair\n");
 }
 
 void menu_cadastro() {
     printf("Seja bem vindo ao Leimer!\n");
-    printf("Selecione uma das op??es para realizar o seu cadastro!\n");
+    printf("Selecione uma das opcoes para realizar o seu cadastro!\n");
     printf("1 - RESIDENTE\n");
     printf("2 - PRECEPTOR\n");
     printf("3 - GESTOR\n");
@@ -81,7 +81,7 @@ char *define_mes(int num) {
         return "Fevereiro";
         break;
     case 3:
-        return "Março";
+        return "Marco";
         break;
     case 4:
         return "Abril";

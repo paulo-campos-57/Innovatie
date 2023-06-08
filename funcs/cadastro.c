@@ -21,7 +21,7 @@ char *senha(){
     }
     else{
         pausa();
-        printf("As senhas não são iguais, tente novamente!!!");
+        printf("As senhas nao sao iguais, tente novamente!!!");
         free(senha_);
         free(confirmar_senha);
         return senha();
@@ -33,10 +33,10 @@ int mes_de_entrada(){
     int mes_;
 
     do {
-        printf("\nInforme o mês de sua entrada (em número): ");
+        printf("\nInforme o mes de sua entrada (em numero): ");
         scanf("%d", &mes_);
         if (mes_ > 12 || mes_ < 1) {
-            printf("Opção inválida.");
+            printf("Opcao invalida.");
             pausa();
         }
     } while(mes_ > 12 || mes_ < 1);
@@ -54,7 +54,7 @@ int residencia(int quant){
     do {
         scanf("%d", &residencia);
         if(residencia>quant || residencia < 1){
-            printf("Opção inválida.");
+            printf("Opcao invalida.");
             pausa();
         }
     }while(residencia>quant || residencia < 1);
@@ -74,8 +74,8 @@ int new_id(){
 
 void cadastro_residente(struct residente* novo_residente){
 
-    printf("Olá novo residente!\n");
-    printf("Preencha suas informações para realizar o cadastro!\n\n");
+    printf("Ola novo residente!\n");
+    printf("Preencha suas informacoes para realizar o cadastro!\n\n");
     printf("Informe o seu nome: ");
     scanf(" %[^\n]", novo_residente->nome);
     printf("\nInforme o seu e-mail institucional: ");
@@ -84,13 +84,13 @@ void cadastro_residente(struct residente* novo_residente){
     novo_residente->mes = mes_de_entrada();
     printf("\nInforme o ano de sua entrada: ");
     scanf("%d", &novo_residente->ano);
-    printf("\nInforme sua residência\n");
+    printf("\nInforme sua residencia\n");
     novo_residente->residencia = residencia(2);
 }
 
 void cadastro_preceptor(struct preceptor* novo_preceptor){
-    printf("Olá novo preceptor!\n");
-    printf("Preencha suas informações para realizar o cadastro!\n");
+    printf("Ola novo preceptor!\n");
+    printf("Preencha suas informacoes para realizar o cadastro!\n");
     printf("Informe o seu nome: ");
     scanf(" %[^\n]", novo_preceptor->nome);
     printf("\nInforme o seu e-mail institucional: ");
@@ -100,19 +100,19 @@ void cadastro_preceptor(struct preceptor* novo_preceptor){
     novo_preceptor->mes = mes_de_entrada();
     printf("\nInforme o ano de sua entrada: ");
     scanf("%d", &novo_preceptor->ano);
-    printf("\nInforme a residência a qual é responsável\n");
+    printf("\nInforme a residencia a qual eh responsavel\n");
     novo_preceptor->residencia = residencia(2);
 }
 
 void cadastro_gestor(struct gestor* novo_gestor){
-    printf("Olá novo gestor!\n");
-    printf("Preencha suas informações para realizar o cadastro!\n");
+    printf("Ola novo gestor!\n");
+    printf("Preencha suas informacoes para realizar o cadastro!\n");
     printf("Informe o seu nome: ");
     scanf(" %[^\n]", novo_gestor->nome);
     printf("\nInforme o seu e-mail: ");
     scanf(" %[^\n]", novo_gestor->email);
 
     novo_gestor->senha = senha();
-    printf("\nInforme a residência a qual é responsável\n");
+    printf("\nInforme a residencia a qual eh responsavel\n");
     novo_gestor->residencia = residencia(3);
 }

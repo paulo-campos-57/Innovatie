@@ -98,14 +98,41 @@ int main() {
                         menu_residente();
                         printf("Selecione uma das opções e tecle ENTER: ");
                         scanf("%d", &op);
+                        limpa_tela();
                         switch (op) {
                             case 1:
                                 break;
                             case 2:
                                 break;
                             case 3:
-                                break;
+                                int feed;
+                                char texto[10000];
+                                printf("Residente, todos os seus feedbacks sao anonimos, nao tenha medo de dar sua opiniao!\n");
+                                do {
+                                    printf("Selecione uma das opcoes de feedback.\n");
+                                    printf("[1] - Feedback para preceptor\n");
+                                    printf("[2] - Feedback para gestao\n");
+                                    printf("[0] - Sair.\n");
+                                    scanf("%d", &feed);
+                                } while (feed != 1 || feed != 2 || feed != 0);
+                                if (feed == 1) {
+                                    char nome_prec[200];
+                                    printf("Informe o nome do residente que deseja deixar feedback: ");
+                                    scanf(" %[^\n]", nome_prec);
+                                    printf("Informe seu feedback para o preceptor %s: ", nome_prec);
+                                    scanf(" %[^\n]", texto);
+                                    printf("\n\nObrigado pelo seu feedback!");
+                                } else if (feed == 2) {
+                                    printf("Informe seu feedback para a gestão do HC: ");
+                                    scanf(" %[^\n]", texto);
+                                    printf("\n\nObrigado pelo seu feedback!");
+                                } else {
+                                    printf("Operação encerrada.\n");
+                                }
+                                break; 
                             case 4:
+                                break;
+                            case 5:
                                 break;
                             case 0:
                                 break;
@@ -123,6 +150,13 @@ int main() {
                             case 2:
                                 break;
                             case 3:
+                                char nome_res[200];
+                                char texto[10000];
+                                printf("Preceptor, informe o nome do residente o qual deseja dar feedback: ");
+                                scanf(" %[^\n]", nome_res);
+                                printf("Informe seu feedback sobre o residente %s: ", nome_res);
+                                scanf(" %[^\n]", texto);
+                                printf("\n\nObrigado pelo seu feedback!");
                                 break;
                             case 4:
                                 break;
