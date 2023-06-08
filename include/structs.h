@@ -38,7 +38,7 @@ typedef struct presenca{
     int id_residente;
     int data;
     int frequencia;
-    int confirmação;
+    int confirmacao;
     struct presenca *next;
 }Presenca;
 

@@ -28,9 +28,10 @@ void menu_inicial() {
     printf("| |____ | |____  _| |_ | |  | || |____ | | \\ \\   \n");
     printf("|______||______||_____||_|  |_||______||_|  \\_\\  \n");
 
-    printf("\n[1]-Fazer login\n");
-    printf("[2]-Novo usuario\n");
-    printf("OPC�O: ");
+    printf("\n[1] - Fazer login\n");
+    printf("[2] - Novo usuario\n");
+    printf("[0] - Sair\n");
+    printf("Selecione uma das opções e tecle ENTER: ");
 }
 
 void menu_residente() {
