@@ -7,20 +7,22 @@
 #include "geral.h"
 
 void testes_sofia(){
-    struct tm *data_atual;
+    Presenca presenca_test;
 
-    time_t segundos;
+    presenca_test = registrar_presenca(1);
 
-    time(&segundos);
-
-    data_atual = localtime(&segundos);
-
-    printf("%d / %d / %d \n", data_atual->tm_mday, data_atual->tm_mon+1, data_atual->tm_year+1900);
+    printf("ID RESIDENTE: %d\n", presenca_test.id_residente);
+    printf("DATA: %d/%d/%d\n", presenca_test.nova_data.dia, presenca_test.nova_data.mes, presenca_test.nova_data.ano);
+    printf("FREQUENCIA: %d  CONFIRMAÇÃO %d\n", presenca_test.frequencia, presenca_test.confirmacao);
 }
 
-void registrar_presenca(){
+Presenca registrar_presenca(int id_residente){
     Presenca regs_presenca;
 
+    regs_presenca.id_residente = id_residente;
+    regs_presenca.nova_data = data_atual();
+    regs_presenca.frequencia = 1;
+    regs_presenca.confirmacao = 0;
 
-
+    return regs_presenca;
 }

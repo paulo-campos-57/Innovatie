@@ -19,17 +19,17 @@ int main() {
     limpa_tela();
     int execing = true;
     int selec;
-
     do {
         int opcoes;
         int exec = true;
         menu_inicial();
+        //testes_sofia();
+        //login_residente();
         scanf("%d", &selec);
         switch (selec) {
             case 1:
                 break;
             case 2:
-                login_residente();
 
                 while (exec) {
                     menu_cadastro();
@@ -101,14 +101,17 @@ int main() {
                         printf("Selecione uma das op��es e tecle ENTER: ");
                         scanf("%d", &op);
                         limpa_tela();
+                        int feed;
+                        char texto[10000];
+                        char nome_prec[200];
                         switch (op) {
                             case 1:
                                 break;
                             case 2:
                                 break;
                             case 3:
-                                int feed;
-                                char texto[10000];
+                                //int feed;
+                                //char texto[10000];
                                 printf("Residente, todos os seus feedbacks sao anonimos, nao tenha medo de dar sua opiniao!\n");
                                 do {
                                     printf("Selecione uma das opcoes de feedback.\n");
@@ -118,7 +121,7 @@ int main() {
                                     scanf("%d", &feed);
                                 } while (feed != 1 || feed != 2 || feed != 0);
                                 if (feed == 1) {
-                                    char nome_prec[200];
+                                    //char nome_prec[200];
                                     printf("Informe o nome do residente que deseja deixar feedback: ");
                                     scanf(" %[^\n]", nome_prec);
                                     printf("Informe seu feedback para o preceptor %s: ", nome_prec);
@@ -146,14 +149,16 @@ int main() {
                         menu_preceptor();
                         printf("Selecione uma das op��es e tecle ENTER: ");
                         scanf("%d", &op);
+                        char nome_res[200];
+                        char texto[10000];
                         switch (op) {
                             case 1:
                                 break;
                             case 2:
                                 break;
                             case 3:
-                                char nome_res[200];
-                                char texto[10000];
+                                //char nome_res[200];
+                                //char texto[10000];
                                 printf("Preceptor, informe o nome do residente o qual deseja dar feedback: ");
                                 scanf(" %[^\n]", nome_res);
                                 printf("Informe seu feedback sobre o residente %s: ", nome_res);

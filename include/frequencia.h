@@ -4,6 +4,6 @@
 #include "structs.h"
 
 void testes_sofia();
-void registrar_frequencia();
+Presenca registrar_presenca(int id_residente);
 
 #endif

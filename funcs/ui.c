@@ -110,6 +110,9 @@ char *define_mes(int num) {
     case 12:
         return "Dezembro";
         break;
+    default:
+        return "Erro ao encontar o mes!!!";
+        break;
     }
 }
 
