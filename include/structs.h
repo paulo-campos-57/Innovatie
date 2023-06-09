@@ -12,7 +12,7 @@ struct residente{
     char cadastro[20]; //Cadastro de residente no hospital
     char nome[200];
     char email[250];
-    char *senha;
+    char senha[200];
     int mes; // não usa struct de data porque é o de entrada e não precisa de dia
     int ano;
     int residencia;
@@ -24,7 +24,7 @@ struct preceptor{
     char cadastro[20]; //Cadastro de residente no hospital
     char nome[200];
     char email[250];
-    char *senha;
+    char senha[200];
     int mes; // não usa struct de data porque é o de entrada e não precisa de dia
     int ano;
     int residencia;
@@ -35,7 +35,7 @@ struct gestor{
     int id; //Numero unico de usuario
     char nome[200];
     char email[250];
-    char *senha;
+    char senha[200];
     int residencia;
     struct gestor *next;
 };

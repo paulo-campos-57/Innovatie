@@ -10,4 +10,7 @@ void registrar_gestor(struct gestor novo_gestor);
 
 struct residente buscar_residente(char nome[200], char* senha);
 
+void salvar_frequencia(Presenca marcar_presenca);
+
+int *ids_lista(char* nome_arquivo);
 #endif

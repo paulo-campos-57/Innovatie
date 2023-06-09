@@ -80,7 +80,7 @@ void cadastro_residente(struct residente* novo_residente){
     scanf(" %[^\n]", novo_residente->nome);
     printf("\nInforme o seu e-mail institucional: ");
     scanf(" %[^\n]", novo_residente->email);
-    novo_residente->senha = senha();
+    strcpy(novo_residente->senha, senha());
     novo_residente->mes = mes_de_entrada();
     printf("\nInforme o ano de sua entrada: ");
     scanf("%d", &novo_residente->ano);
@@ -95,8 +95,7 @@ void cadastro_preceptor(struct preceptor* novo_preceptor){
     scanf(" %[^\n]", novo_preceptor->nome);
     printf("\nInforme o seu e-mail institucional: ");
     scanf(" %[^\n]", novo_preceptor->email);
-
-    novo_preceptor->senha = senha();
+    strcpy(novo_preceptor->senha, senha());
     novo_preceptor->mes = mes_de_entrada();
     printf("\nInforme o ano de sua entrada: ");
     scanf("%d", &novo_preceptor->ano);
@@ -112,7 +111,7 @@ void cadastro_gestor(struct gestor* novo_gestor){
     printf("\nInforme o seu e-mail: ");
     scanf(" %[^\n]", novo_gestor->email);
 
-    novo_gestor->senha = senha();
+    strcpy(novo_gestor->senha, senha());
     printf("\nInforme a residencia a qual eh responsavel\n");
     novo_gestor->residencia = residencia(3);
 }

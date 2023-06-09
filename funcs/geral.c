@@ -17,8 +17,8 @@ Data data_atual(){
 
     Data dia_atual;
     dia_atual.dia = data_->tm_mday;
-    dia_atual.mes = data_->tm_mon;
-    dia_atual.ano = data_->tm_year;
+    dia_atual.mes = data_->tm_mon+1;
+    dia_atual.ano = data_->tm_year+1900;
 
     return dia_atual;
 };
