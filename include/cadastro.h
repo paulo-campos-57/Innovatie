@@ -8,8 +8,8 @@ int new_id();
 char *senha();
 int mes_de_entrada();
 int residencia(int quant);
-void cadastro_residente(struct residente* novo_residente);
-void cadastro_preceptor(struct preceptor* novo_preceptor);
-void cadastro_gestor(struct gestor* novo_gestor);
+void cadastro_residente(Residente* novo_residente);
+void cadastro_preceptor(Preceptor* novo_preceptor);
+void cadastro_gestor(Gestor* novo_gestor);
 
 #endif

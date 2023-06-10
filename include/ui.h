@@ -4,6 +4,7 @@
 void limpa_tela();
 void pausa();
 void menu_inicial();
+void menu_login();
 void menu_residente();
 void menu_preceptor();
 void menu_gestor();

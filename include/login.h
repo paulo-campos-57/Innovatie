@@ -4,6 +4,8 @@
 #include "structs.h"
 
 void testes_sofia();
-void login_residente();
+Residente login_residente(int nun);
+Preceptor login_preceptor(int nun);
+Gestor login_gestor(int nun);
 
 #endif

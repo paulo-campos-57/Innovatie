@@ -45,7 +45,7 @@ int *ids_lista(char* nome_arquivo){
 }
 
 // cadastro
-void registrar_preceptor(struct preceptor novo_preceptor){
+void registrar_preceptor(Preceptor novo_preceptor){
     int id_ = new_id();
     FILE* f;
 
@@ -67,7 +67,7 @@ void registrar_preceptor(struct preceptor novo_preceptor){
     fclose(f);
 }
 
-void registrar_residente(struct residente novo_residente){
+void registrar_residente(Residente novo_residente){
     int id_ = new_id();
     FILE* f;
 
@@ -89,7 +89,7 @@ void registrar_residente(struct residente novo_residente){
     fclose(f);
 }
 
-void registrar_gestor(struct gestor novo_gestor){
+void registrar_gestor(Gestor novo_gestor){
     int id_ = new_id();
     FILE* f;
 
@@ -113,7 +113,7 @@ void registrar_gestor(struct gestor novo_gestor){
 
 // login
 
-struct residente buscar_residente(char nome[200], char* senha){
+Residente buscar_residente(char nome[200], char senha[200]){
     FILE *f;
 
     f = fopen("bin/residente.txt", "r");
@@ -125,27 +125,83 @@ struct residente buscar_residente(char nome[200], char* senha){
 
     int quant;
     fscanf(f, "%d", &quant);
-    printf("%d\n", quant);
 
     for(int i = 0; i<quant; i++){
-        struct residente user_residente;
-        printf("Oi\n");
+        Residente user_residente;
         fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &user_residente.id, user_residente.cadastro, user_residente.nome, user_residente.email, user_residente.senha, &user_residente.mes, &user_residente.ano, &user_residente.residencia);
 
-        printf("\n%s - %s \n", user_residente.nome, user_residente.senha);
         if(strcmp(user_residente.nome, nome)==0 && strcmp(user_residente.senha, senha)==0){
             fclose(f);
             return user_residente;
         }
     }  
 
-    struct residente user_residente;
+    Residente user_residente;
 
     user_residente.id = -1;
     return user_residente;
     fclose(f);
 }
 
+Preceptor buscar_preceptor(char nome[200], char senha[200]){
+    FILE *f;
+
+    f = fopen("bin/preceptor.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i = 0; i<quant; i++){
+        Preceptor user_preceptor;
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &user_preceptor.id, user_preceptor.cadastro, user_preceptor.nome, user_preceptor.email, user_preceptor.senha, &user_preceptor.mes, &user_preceptor.ano, &user_preceptor.residencia);
+
+        if(strcmp(user_preceptor.nome, nome)==0 && strcmp(user_preceptor.senha, senha)==0){
+            fclose(f);
+            return user_preceptor;
+        }
+    }  
+
+    Preceptor user_preceptor;
+
+    user_preceptor.id = -1;
+    return user_preceptor;
+    fclose(f);
+}
+
+Gestor buscar_gestor(char nome[200], char senha[200]){
+    FILE *f;
+
+    f = fopen("bin/gestor.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i = 0; i<quant; i++){
+        Gestor user_gestor;
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %d", &user_gestor.id, user_gestor.nome, user_gestor.email, user_gestor.senha, &user_gestor.residencia);
+
+        if(strcmp(user_gestor.nome, nome)==0 && strcmp(user_gestor.senha, senha)==0){
+            fclose(f);
+            return user_gestor;
+        }
+    }  
+
+    Gestor user_gestor;
+
+    user_gestor.id = -1;
+    return user_gestor;
+    fclose(f);
+}
 // frequencia
 
 void salvar_frequencia(Presenca marcar_presenca){

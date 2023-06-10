@@ -7,7 +7,7 @@ typedef struct data{
     int ano;
 }Data;
 
-struct residente{
+typedef struct residente{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
     char nome[200];
@@ -17,9 +17,9 @@ struct residente{
     int ano;
     int residencia;
     struct residente *next;
-};
+}Residente;
 
-struct preceptor{
+typedef struct preceptor{
     int id; //Numero unico de usuario
     char cadastro[20]; //Cadastro de residente no hospital
     char nome[200];
@@ -29,16 +29,16 @@ struct preceptor{
     int ano;
     int residencia;
     struct preceptor *next;
-};
+}Preceptor;
 
-struct gestor{
+typedef struct gestor{
     int id; //Numero unico de usuario
     char nome[200];
     char email[250];
     char senha[200];
     int residencia;
     struct gestor *next;
-};
+}Gestor;
 
 typedef struct presenca{
     int id_residente;

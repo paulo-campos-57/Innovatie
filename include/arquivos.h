@@ -4,11 +4,13 @@
 #include "structs.h"
 
 int quant_usuarios(char* nome_arquivo);
-void registrar_preceptor(struct preceptor novo_precptor);
-void registrar_residente(struct residente novo_residente);
-void registrar_gestor(struct gestor novo_gestor);
+void registrar_preceptor(Preceptor novo_precptor);
+void registrar_residente(Residente novo_residente);
+void registrar_gestor(Gestor novo_gestor);
 
-struct residente buscar_residente(char nome[200], char* senha);
+Residente buscar_residente(char nome[200], char senha[200]);
+Preceptor buscar_preceptor(char nome[200], char senha[200]);
+Gestor buscar_gestor(char nome[200], char senha[200]);
 
 void salvar_frequencia(Presenca marcar_presenca);
 

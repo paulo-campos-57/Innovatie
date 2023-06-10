@@ -24,11 +24,46 @@ int main() {
         int exec = true;
         menu_inicial();
         //testes_sofia();
-        //login_residente();
         scanf("%d", &selec);
         switch (selec) {
             case 1:
-                break;
+
+                while (exec){
+                    limpa_tela();
+                    Residente user_residente;
+                    Preceptor user_preceptor;
+                    Gestor user_gestor;
+                    menu_login();
+                    scanf("%d", &opcoes);
+                    if(opcoes == 1){
+                        user_residente = login_residente(0);
+                        limpa_tela();
+                        exec = false;
+                        break;
+                    }
+                    else if(opcoes == 2){
+                        user_preceptor = login_preceptor(0);
+                        limpa_tela();
+                        exec = false;
+                        break;
+                    }
+                    else if(opcoes == 3){
+                        user_gestor = login_gestor(0);
+                        limpa_tela();
+                        exec = false;
+                        break;
+                    }
+                    else if(opcoes == 0){
+                        printf("Execucao encerrada.");
+                        exec = false;
+                        break;
+                    }
+                    else{
+                        printf("Opcao invalida\n");
+                        pausa();
+                    }                  
+                }
+
             case 2:
 
                 while (exec) {
@@ -37,9 +72,9 @@ int main() {
                     scanf("%d", &opcoes);
                     limpa_tela();
                     
-                    struct residente novo_residente;
-                    struct preceptor novo_preceptor;
-                    struct gestor novo_gestor;
+                    Residente novo_residente;
+                    Preceptor novo_preceptor;
+                    Gestor novo_gestor;
 
                     int aux;
                     switch (opcoes) {
@@ -77,16 +112,16 @@ int main() {
                             printf("Nome: %s\n", novo_gestor.nome);
                             printf("E-mail: %s\n", novo_gestor.email);
                             printf("Senha: %s\n", novo_gestor.senha);
-                            printf("Respons�vel pelas resid�ncias de de %s", define_residencia(novo_gestor.residencia));
+                            printf("Responsavel pelas residencias de de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
                             exec = false;
                             break;
                         case 0:
-                            printf("Execu��o encerrada.");
+                            printf("Execucao encerrada.");
                             exec = false;
                             break;
                         default:
-                            printf("Op��o inv�lida\n");
+                            printf("Opcao invalida\n");
                     }
                     pausa();
                     limpa_tela();
@@ -98,7 +133,7 @@ int main() {
                     int op;
                     if (opcoes == 1) {
                         menu_residente();
-                        printf("Selecione uma das op��es e tecle ENTER: ");
+                        printf("Selecione uma das opcoes e tecle ENTER: ");
                         scanf("%d", &op);
                         limpa_tela();
                         int feed;
@@ -128,11 +163,11 @@ int main() {
                                     scanf(" %[^\n]", texto);
                                     printf("\n\nObrigado pelo seu feedback!");
                                 } else if (feed == 2) {
-                                    printf("Informe seu feedback para a gest�o do HC: ");
+                                    printf("Informe seu feedback para a gestao do HC: ");
                                     scanf(" %[^\n]", texto);
                                     printf("\n\nObrigado pelo seu feedback!");
                                 } else {
-                                    printf("Opera��o encerrada.\n");
+                                    printf("Operacao encerrada.\n");
                                 }
                                 break; 
                             case 4:
@@ -142,12 +177,12 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Op��o inv�lida.");
+                                printf("Opcao invalida.");
                                 break;
                         }
                     } else if (opcoes == 2) {
                         menu_preceptor();
-                        printf("Selecione uma das op��es e tecle ENTER: ");
+                        printf("Selecione uma das opcaes e tecle ENTER: ");
                         scanf("%d", &op);
                         char nome_res[200];
                         char texto[10000];
@@ -170,12 +205,12 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Op��o inv�lida.");
+                                printf("Opcao invalida.");
                                 break;
                         }
                     } else if (opcoes == 3) {
                         menu_gestor();
-                        printf("Selecione uma das op��es e tecle ENTER: ");
+                        printf("Selecione uma das opcoes e tecle ENTER: ");
                         scanf("%d", &op);
                         switch (op) {
                             case 1:
@@ -189,18 +224,18 @@ int main() {
                             case 0:
                                 break;
                             default:
-                                printf("Op��o inv�lida.");
+                                printf("Opcao invalida.");
                                 break;
                         }
                     }
                 }
                 break;
             case 0:
-                printf("Execu��o encerrada.");
+                printf("Execucao encerrada.");
                 execing = false;
                 break;
             default:
-                printf("Op��o inv�lida");
+                printf("Opcao invalida");
                 break;
         }
         pausa();

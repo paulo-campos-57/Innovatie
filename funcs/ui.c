@@ -34,6 +34,15 @@ void menu_inicial() {
     printf("Selecione uma das opcoes e tecle ENTER: ");
 }
 
+void menu_login(){
+    printf("=============== LOGIN ===============\n");
+    printf("[1] - Residente\n");
+    printf("[2] - Preceptor\n");
+    printf("[3] - Gestor\n");
+    printf("[0] - Voltar para menu\n");
+    printf("Selecione uma das opcoes de login e tecle ENTER: ");
+}
+
 void menu_residente() {
     printf("Bem-Vindo, Residente!\n\n");
     printf("[1] - Marcar Presenca\n");    

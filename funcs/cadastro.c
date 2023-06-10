@@ -72,7 +72,7 @@ int new_id(){
     return novo_id;
 }
 
-void cadastro_residente(struct residente* novo_residente){
+void cadastro_residente(Residente* novo_residente){
 
     printf("Ola novo residente!\n");
     printf("Preencha suas informacoes para realizar o cadastro!\n\n");
@@ -88,7 +88,7 @@ void cadastro_residente(struct residente* novo_residente){
     novo_residente->residencia = residencia(2);
 }
 
-void cadastro_preceptor(struct preceptor* novo_preceptor){
+void cadastro_preceptor(Preceptor* novo_preceptor){
     printf("Ola novo preceptor!\n");
     printf("Preencha suas informacoes para realizar o cadastro!\n");
     printf("Informe o seu nome: ");
@@ -103,7 +103,7 @@ void cadastro_preceptor(struct preceptor* novo_preceptor){
     novo_preceptor->residencia = residencia(2);
 }
 
-void cadastro_gestor(struct gestor* novo_gestor){
+void cadastro_gestor(Gestor* novo_gestor){
     printf("Ola novo gestor!\n");
     printf("Preencha suas informacoes para realizar o cadastro!\n");
     printf("Informe o seu nome: ");
