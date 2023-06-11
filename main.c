@@ -22,6 +22,8 @@ int main() {
     Residente user_residente;
     Preceptor user_preceptor;
     Gestor user_gestor;
+    Aviso quadro_de_avisos;
+
     do {
         int opcoes;
         int exec = true;
@@ -234,16 +236,16 @@ int main() {
                                             limpa_tela();
                                             printf("=================== Criando Aviso ===================\n");
                                             printf("\nInsira um Titulo Para o Aviso: ");
-                                            scanf(" %[^\n]", &titulo);
+                                            scanf(" %[^\n]", &quadro_de_avisos.titulo);
                                             printf("Escreva Seu Aviso: ");
-                                            scanf(" %[^\n]", &aviso_texto);
+                                            scanf(" %[^\n]", &quadro_de_avisos.texto);
                                             printf("Insira a Data de Publicacao\n(Siga o formato exemplo: 01/01/2023): ");
-                                            scanf(" %[^\n]", &data);
+                                            scanf(" %[^\n]", &quadro_de_avisos.data);
                                             getchar();
                                             limpa_tela();
-                                            printf("====================== %s ======================\n\n", titulo); //titulo do aviso
-                                            printf("%s\n\n", aviso_texto);
-                                            printf("Data de Publicacao: %s\n\n", data);
+                                            printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
+                                            printf("%s\n\n", quadro_de_avisos.texto);
+                                            printf("Data de Publicacao: %s\n\n", quadro_de_avisos.data);
                                             printf("================================================="); //titulo do aviso
                                             pausa();
                                             break;

@@ -53,8 +53,8 @@ typedef struct aviso{
     char autor[150];
     // char residencia[100];
     char texto[5000];
-    Data data_do_aviso;
+    char data[11];
     struct aviso *next;
 }Aviso;
 
-#endif //__STRUCTS_LIB__
+#endif //
