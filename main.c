@@ -144,6 +144,24 @@ int main() {
                         char nome_prec[200];
                         switch (op) {
                             case 1:
+                                limpa_tela();
+                                int opcao_frequencia;
+                                menu_frequencia_residente(0, 0, 0);
+                                scanf("%d", &opcao_frequencia);
+                                if(opcao_frequencia == 1){
+                                    limpa_tela();
+                                    Presenca presenca_registrada = registrar_presenca(user_residente.id);
+                                    printf("== FREQUENCIA REGISTRADA== \n");
+                                    printf("\nID RESIDENTE: %d\n", presenca_registrada.id_residente);
+                                    printf("DATA: %d/%d/%d\n", presenca_registrada.nova_data.dia, presenca_registrada.nova_data.mes, presenca_registrada.nova_data.ano);
+                                    pausa();
+                                }
+                                else if(opcao_frequencia == 2){
+                                    printf("Ver historico\n");
+                                }
+                                else{
+                                    limpa_tela();
+                                }
                                 break;
                             case 2:
                                 break;
@@ -185,6 +203,7 @@ int main() {
                             case 5:
                                 break;
                             case 0:
+                                exit(1);
                                 break;
                             default:
                                 printf("Opcao invalida.");
@@ -203,6 +222,7 @@ int main() {
                         char data[11];
                         switch (op) {
                             case 1:
+                                confirmar_presenca();
                                 break;
                             case 2:
                                 break;
@@ -257,6 +277,7 @@ int main() {
                                         }
                                 break;
                             case 0:
+                                exit(1);
                                 break;
                             default:
                                 printf("Opcao invalida.");
@@ -276,6 +297,7 @@ int main() {
                             case 4: //avisos
                                 break;
                             case 0:
+                                exit(1);
                                 break;
                             default:
                                 printf("Opcao invalida.");

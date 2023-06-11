@@ -19,6 +19,50 @@ int quant_usuarios(char* nome_arquivo){
     return quant;
 }
 
+char *nome_por_id(int id, char *nome_arquivo, int tipo){
+    FILE *f = NULL;
+
+    f = fopen(nome_arquivo, "r");
+    
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }    
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    if(tipo == 1){
+        for(int i=0; i<quant; i++){
+            int id_teste;
+            char cadastro[20];
+            char *nome = malloc(sizeof(char)*200);
+
+            fscanf(f, "%d, %[^,], %[^,], %*[^\n]", &id_teste, cadastro, nome);
+
+            if(id == id_teste){
+                fclose(f);
+                return nome;
+            }
+        }        
+    }else{
+        for(int i=0; i<quant; i++){
+            int id_teste;
+            char *nome = malloc(sizeof(char)*200);
+
+            fscanf(f, "%d, %[^,], %*[^\n]", &id_teste, nome);
+
+            if(id == id_teste){
+                fclose(f);
+                return nome;
+            }
+        } 
+    }
+
+    fclose(f);
+    return "NOME NÃO ENCONTRADO";    
+}
+
 int *ids_lista(char* nome_arquivo){
     FILE *f = NULL;
 
@@ -224,6 +268,91 @@ void salvar_frequencia(Presenca marcar_presenca){
     fprintf(f, "\n%d, %d, %d, %d, %d, %d", marcar_presenca.id_residente, marcar_presenca.nova_data.dia, marcar_presenca.nova_data.mes, marcar_presenca.nova_data.ano, marcar_presenca.frequencia, marcar_presenca.confirmacao);
     fclose(f);
 }
+
+Presenca *frequencias_nao_confirmadas(){
+    Presenca *presenca_head = NULL;
+
+    FILE *f = NULL;
+
+    f = fopen("bin/frequencia.txt", "r+");
+
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i=0; i<quant; i++){
+        Presenca *nova_presenca = malloc(sizeof(Presenca));
+
+        fscanf(f, "\n%d, %d, %d, %d, %d, %d", &nova_presenca->id_residente, &nova_presenca->nova_data.dia, &nova_presenca->nova_data.mes, &nova_presenca->nova_data.ano, &nova_presenca->frequencia, &nova_presenca->confirmacao);
+
+        if(nova_presenca->frequencia == 1 && nova_presenca->confirmacao==0){
+            if(presenca_head==NULL){
+                presenca_head = nova_presenca;
+                presenca_head->next = NULL;
+            }else{
+                nova_presenca->next = presenca_head;
+                presenca_head = nova_presenca;
+            }
+        }
+    }
+    
+    fclose(f);
+    return presenca_head;
+}
+
+void confirmar_frequencia(Presenca* presencas_confirmadas) {
+    Presenca* presenca_head = presencas_confirmadas;
+
+    FILE* f = fopen("bin/frequencia.txt", "r");
+    FILE* tempFile = fopen("bin/temp_frequencia.txt", "w");
+    int vefir_linha = 0;
+
+    if (f == NULL || tempFile == NULL) {
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+    fprintf(tempFile, "%d", quant);
+
+    for (int i = 0; i < quant; i++) {
+        Presenca ler_presencas;
+
+        fscanf(f, "%d, %d, %d, %d, %d, %d", &ler_presencas.id_residente, &ler_presencas.nova_data.dia, &ler_presencas.nova_data.mes, &ler_presencas.nova_data.ano, &ler_presencas.frequencia, &ler_presencas.confirmacao);
+
+        Presenca* n = presenca_head;
+
+        while (n != NULL) {
+            if (n->id_residente == ler_presencas.id_residente && n->nova_data.dia == ler_presencas.nova_data.dia &&
+                n->nova_data.mes == ler_presencas.nova_data.mes && n->nova_data.ano == ler_presencas.nova_data.ano) {
+                fprintf(tempFile, "\n%d, %d, %d, %d, %d, %d", n->id_residente, n->nova_data.dia, n->nova_data.mes, n->nova_data.ano, n->frequencia, n->confirmacao);
+                vefir_linha = 1;
+                break;
+            }
+
+            n = n->next;
+        }
+
+        if(vefir_linha==0){
+            fprintf(tempFile, "\n%d, %d, %d, %d, %d, %d", ler_presencas.id_residente, ler_presencas.nova_data.dia, ler_presencas.nova_data.mes, ler_presencas.nova_data.ano, ler_presencas.frequencia, ler_presencas.confirmacao);
+        }else{
+            vefir_linha = 0;
+        }
+    }
+
+    fclose(f);
+    fclose(tempFile);
+
+    remove("bin/frequencia.txt");
+    rename("bin/temp_frequencia.txt", "bin/frequencia.txt");
+}
+
+
 
 void salvar_falta(){
     Data dia_atual = data_atual();

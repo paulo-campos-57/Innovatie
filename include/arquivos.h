@@ -5,6 +5,7 @@
 
 //Geral
 int quant_usuarios(char* nome_arquivo);
+char *nome_por_id(int id, char *nome_arquivo, int tipo);
 
 //Cadastro
 void registrar_preceptor(Preceptor novo_precptor);
@@ -18,6 +19,8 @@ Gestor buscar_gestor(char nome[200], char senha[200]);
 
 //Frequência
 void salvar_frequencia(Presenca marcar_presenca);
+Presenca *frequencias_nao_confirmadas();
+void confirmar_frequencia(Presenca* prensencas_confirmadas);
 int *ids_lista(char* nome_arquivo);
 
 //Feedbacks

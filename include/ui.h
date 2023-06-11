@@ -11,5 +11,7 @@ void menu_gestor();
 void menu_cadastro();
 char *define_mes(int num);
 char *define_residencia(int num);
+void menu_frequencia_residente(int presenca, int falta, int nao_confirmada);
+void menu_frequencia_preceptor(int acoes);
 
 #endif

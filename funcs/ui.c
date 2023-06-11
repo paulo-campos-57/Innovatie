@@ -141,3 +141,27 @@ char *define_residencia(int num){
             break;
     }
 }
+
+void menu_frequencia_residente(int presenca, int falta, int nao_confirmada){
+    printf("=============== FREQUENCIA ===============\n");
+    printf("Presencas: %d\n", presenca);
+    printf("Faltas: %d\n", falta);
+    printf("Nao confimadas: %d\n", nao_confirmada);
+
+    printf("\nVoce pode seguir as seguintes acoes:\n");
+    printf("[1] - Registrar frequencia\n");
+    printf("[2] - Vizualizar historico mais detalhado\n");
+    printf("[3] - Voltar para menu\n");
+    printf("Selecione uma opcao: ");
+}
+
+void menu_frequencia_preceptor(int acoes){
+    printf("=============== FREQUENCIA ===============\n");
+    printf("Presensas a confimar: %d\n", acoes);
+
+    printf("\nVoce pode seguir as seguintes acoes:\n");
+    printf("[1] - Confirmar frequencias\n");
+    printf("[2] - Buscar historico de residente\n");
+    printf("[0] - Voltar para menu");
+    printf("Selecione uma opcao: ");
+}
