@@ -152,7 +152,7 @@ int main() {
                                 if(opcao_frequencia == 1){
                                     limpa_tela();
                                     Presenca presenca_registrada = registrar_presenca(user_residente.id);
-                                    printf("== FREQUENCIA REGISTRADA== \n");
+                                    printf("== FREQUENCIA REGISTRADA == \n");
                                     printf("\nID RESIDENTE: %d\n", presenca_registrada.id_residente);
                                     printf("DATA: %d/%d/%d\n", presenca_registrada.nova_data.dia, presenca_registrada.nova_data.mes, presenca_registrada.nova_data.ano);
                                     pausa();
@@ -243,39 +243,41 @@ int main() {
                                     printf("Selecione uma das opcoes e tecle ENTER: ");
                                     printf("\n\n[1] - Visualizar Quadro de Avisos\n");
                                     printf("[2] - Criar Aviso\n");
+                                    printf("[3] - Editar Avisos\n");
                                     printf("[0] - Voltar Para o Menu Inicial\n");
                                     scanf("%d", &av);
                                     getchar();
-                                }while (av > 2 || av < 0);
-                                    if (av == 1){
-                                            limpa_tela();
-                                            printf("================== Quadro de Avisos ==================\n\n exibir todos os avisos aq");
-                                            pausa();
-                                            limpa_tela();
-                                            break;
-                                    }else if (av == 2){
-                                            limpa_tela();
-                                            printf("=================== Criando Aviso ===================\n");
-                                            printf("\nInsira um Titulo Para o Aviso: ");
-                                            scanf(" %[^\n]", &quadro_de_avisos.titulo);
-                                            printf("Escreva Seu Aviso: ");
-                                            scanf(" %[^\n]", &quadro_de_avisos.texto);
-                                            printf("Insira a Data de Publicacao\n(Siga o formato exemplo: 01/01/2023): ");
-                                            scanf(" %[^\n]", &quadro_de_avisos.data);
-                                            getchar();
-                                            limpa_tela();
-                                            printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
-                                            printf("%s\n\n", quadro_de_avisos.texto);
-                                            printf("Data de Publicacao: %s\n\n", quadro_de_avisos.data);
-                                            printf("================================================="); //titulo do aviso
-                                            pausa();
-                                            break;
-                                            limpa_tela();
-
-                                    }else{
+                                }while (av > 3 || av < 0);
+                                if (av == 1){
+                                        limpa_tela();
+                                        printf("================== Quadro de Avisos ==================\n\n");
+                                        printf("exibir todos os avisos aqui");
+                                        pausa();
                                         limpa_tela();
                                         break;
-                                        }
+                                }else if (av == 2){
+                                        limpa_tela();
+                                        printf("=================== Criando Aviso ===================\n");
+                                        printf("\nInsira um Titulo Para o Aviso: ");
+                                        scanf(" %[^\n]", &quadro_de_avisos.titulo);
+                                        printf("Escreva Seu Aviso: ");
+                                        scanf(" %[^\n]", &quadro_de_avisos.texto);
+                                        quadro_de_avisos.data_do_aviso = data_atual();
+                                        getchar();
+                                        limpa_tela();
+                                        printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
+                                        printf("%s\n\n", quadro_de_avisos.texto);
+                                        printf("Data de Publicacao: %d/%d/%d\n\n", quadro_de_avisos.data_do_aviso.dia, quadro_de_avisos.data_do_aviso.mes, quadro_de_avisos.data_do_aviso.ano);
+                                        printf("================================================="); //titulo do aviso
+                                        pausa();
+                                        limpa_tela();
+                                        break;
+                                }else if (av == 3){
+                                    break;
+                                }else{
+                                    limpa_tela();
+                                    break;
+                                }
                                 break;
                             case 0:
                                 exit(1);

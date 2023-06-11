@@ -6,7 +6,7 @@
 #include "structs.h"
 #include "geral.h"
 #include "arquivos.h"
-#include "ui.h";
+#include "ui.h"
 
 void testes_sofia(){
     Presenca presenca_test;
