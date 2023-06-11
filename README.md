@@ -5,7 +5,7 @@
 
 O LEIMER, Leitor Intercomunicativo de Medicina e Residência, é a aplicação da equipe Innovatie, em formato de Dashboard, feita para auxiliar com diversos processos dos gestores, preceptores e residentes do Hospital das Clínicas. O seu foco está no gerenciamento de frequência através de uma checkbox que os residentes preenchem e os preceptores confirmam, uma agenda para o gerenciamento de atividades, um quadro de avisos que os ajude com suas responsabilidades e um sistema de feedback entre os Preceptores e Residentes, para que ambos possam melhorar em seu trabalho.
 
-Para mais detalhes da nossa solução e do nosso processo para chegar até ela, no nosso [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit).
+Para mais detalhes da nossa solução e do nosso processo para chegar até ela, no nosso <b>[Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit).</b>
 
 # ⚙️ Funcionalidades
 
@@ -29,11 +29,9 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  4. O usuário deverá abrir o seu Visual Studio Code na versão certa e com as extensões baixadas, e apertará no botão "File".
  5. Após isso, ele deverá navegar até "Open Folder", escolhendo a pasta que ele nomeou e aplicou o git clone.
  6. O usuário deverá clicar com o botão direito do mouse em "Innovatie" e escolher a opção "Open in Integrated Terminal".
- 7. Após isso, ele deverá abrir o main.c e verificar se no seu código está escrito "setlocale(LC_ALL, "Portuguese_Brazil");".
- 8. Caso não esteja, insira-o dentro do "int main() {" e deverá navegar até o UTF-8 e apertá-lo.
- 9. Após isso, ele deverá apertar em "Reopen With Encoding" e escolher a opção "Western (ISO 8859-1)".
- 10. O usuário deverá então no terminal digitar "gcc main.c ./funcs/*.c -I include -o bin/saida.exe" para compilar o sistema e após isso "./bin/saida.exe" para rodar o sistema.
- 11. Então ele poderá interagir com o sistema.
+ 7. O usuário deverá então no terminal digitar "gcc main.c ./funcs/*.c -I include -o bin/saida.exe" para compilar o sistema.
+ 8. Após isso "./bin/saida.exe" para rodar o sistema.
+ 9. Então ele poderá interagir com o sistema.
 
 ## 📂 Repositórios:
 - [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
