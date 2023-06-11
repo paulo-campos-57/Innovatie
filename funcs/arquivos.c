@@ -229,3 +229,47 @@ void salvar_falta(){
     Data dia_atual = data_atual();
 
 }
+
+//Feedbacks
+
+void feed_residente_precept(char *nome_precept, char *texto, char *nome_arquivo) {
+    FILE *f = NULL;
+
+    f = fopen(nome_arquivo, "r+");
+
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s, %s", nome_precept, texto);
+    fclose(f);
+}
+
+void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char *nome_arquivo) {
+    FILE *f = NULL;
+
+    f = fopen(nome_arquivo, "r+");
+
+    if (f == NULL) {
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s, %s, %s", nome_precept, nome_res, texto);
+    fclose(f);
+}

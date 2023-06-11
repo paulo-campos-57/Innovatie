@@ -19,6 +19,9 @@ int main() {
     limpa_tela();
     int execing = true;
     int selec;
+    Residente user_residente;
+    Preceptor user_preceptor;
+    Gestor user_gestor;
     do {
         int opcoes;
         int exec = true;
@@ -30,9 +33,6 @@ int main() {
 
                 while (exec){
                     limpa_tela();
-                    Residente user_residente;
-                    Preceptor user_preceptor;
-                    Gestor user_gestor;
                     menu_login();
                     scanf("%d", &opcoes);
                     if(opcoes == 1){
@@ -157,10 +157,11 @@ int main() {
                                 } while (feed != 1 || feed != 2 || feed != 0);
                                 if (feed == 1) {
                                     //char nome_prec[200];
-                                    printf("Informe o nome do residente que deseja deixar feedback: ");
+                                    printf("Informe o nome do preceptor que deseja deixar feedback: ");
                                     scanf(" %[^\n]", nome_prec);
                                     printf("Informe seu feedback para o preceptor %s: ", nome_prec);
                                     scanf(" %[^\n]", texto);
+                                    feed_residente_precept(nome_prec, texto, "bin/feedback_residente.txt");
                                     printf("\n\nObrigado pelo seu feedback!");
                                 } else if (feed == 2) {
                                     printf("Informe seu feedback para a gestao do HC: ");
@@ -198,6 +199,7 @@ int main() {
                                 scanf(" %[^\n]", nome_res);
                                 printf("Informe seu feedback sobre o residente %s: ", nome_res);
                                 scanf(" %[^\n]", texto);
+                                feed_preceptor_resid(user_preceptor.nome, nome_res, texto, "bin/feedback_preceptor.txt");
                                 printf("\n\nObrigado pelo seu feedback!");
                                 break;
                             case 4:
