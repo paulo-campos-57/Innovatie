@@ -30,6 +30,7 @@ int main() {
         menu_inicial();
         //testes_sofia();
         scanf("%d", &selec);
+        limpa_tela();
         switch (selec) {
             case 1:
 
@@ -91,7 +92,7 @@ int main() {
                             printf("Entrou em %s de %d\n", define_mes(novo_residente.mes), novo_residente.ano);
                             printf("Residente de %s", define_residencia(novo_residente.residencia));
                             registrar_residente(novo_residente);
-                            exec = false;
+                            //exec = false;
                             break;
                         case 2:
                             cadastro_preceptor(&novo_preceptor);
@@ -104,7 +105,7 @@ int main() {
                             printf("Entrou em %s de %d\n", define_mes(novo_preceptor.mes), novo_preceptor.ano);
                             printf("Preceptor de %s", define_residencia(novo_preceptor.residencia));
                             registrar_preceptor(novo_preceptor);
-                            exec = false;
+                            //exec = false;
                             break;
                         case 3:
                             cadastro_gestor(&novo_gestor);
@@ -116,7 +117,7 @@ int main() {
                             printf("Senha: %s\n", novo_gestor.senha);
                             printf("Responsavel pelas residencias de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
-                            exec = false;
+                            //exec = false;
                             break;
                         case 0:
                             printf("Execucao encerrada.");
