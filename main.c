@@ -112,7 +112,7 @@ int main() {
                             printf("Nome: %s\n", novo_gestor.nome);
                             printf("E-mail: %s\n", novo_gestor.email);
                             printf("Senha: %s\n", novo_gestor.senha);
-                            printf("Responsavel pelas residencias de de %s", define_residencia(novo_gestor.residencia));
+                            printf("Responsavel pelas residencias de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
                             exec = false;
                             break;
@@ -137,6 +137,7 @@ int main() {
                         scanf("%d", &op);
                         limpa_tela();
                         int feed;
+                        int av;
                         char texto[10000];
                         char nome_prec[200];
                         switch (op) {
@@ -171,7 +172,13 @@ int main() {
                                     printf("Operacao encerrada.\n");
                                 }
                                 break; 
-                            case 4:
+                            case 4: //avisos
+                                do{
+                                    printf("Selecione uma das opcoes do quadro de avisos\n");
+                                    printf("[1] - Visualizar Quadro de Avisos\n");
+                                    printf("[0] - Voltar Para o Menu Inicial\n");
+                                    scanf("%d", &av);
+                                }while (av != 1 || av != 0);
                                 break;
                             case 5:
                                 break;
@@ -183,10 +190,15 @@ int main() {
                         }
                     } else if (opcoes == 2) {
                         menu_preceptor();
-                        printf("Selecione uma das opcaes e tecle ENTER: ");
+                        printf("Selecione uma das opcoes e tecle ENTER: ");
                         scanf("%d", &op);
-                        char nome_res[200];
+                        int av;
                         char texto[10000];
+                        char nome_res[200];
+                        char titulo[250];
+                        char autor[150];
+                        char aviso_texto[5000];
+                        char data[11];
                         switch (op) {
                             case 1:
                                 break;
@@ -202,7 +214,45 @@ int main() {
                                 feed_preceptor_resid(user_preceptor.nome, nome_res, texto, "bin/feedback_preceptor.txt");
                                 printf("\n\nObrigado pelo seu feedback!");
                                 break;
-                            case 4:
+                            case 4: //avisos
+                                do{
+                                    limpa_tela();
+                                    printf("Selecione uma das opcoes e tecle ENTER: ");
+                                    printf("\n\n[1] - Visualizar Quadro de Avisos\n");
+                                    printf("[2] - Criar Aviso\n");
+                                    printf("[0] - Voltar Para o Menu Inicial\n");
+                                    scanf("%d", &av);
+                                    getchar();
+                                }while (av > 2 || av < 0);
+                                    if (av == 1){
+                                            limpa_tela();
+                                            printf("================== Quadro de Avisos ==================\n\n exibir todos os avisos aq");
+                                            pausa();
+                                            limpa_tela();
+                                            break;
+                                    }else if (av == 2){
+                                            limpa_tela();
+                                            printf("=================== Criando Aviso ===================\n");
+                                            printf("\nInsira um Titulo Para o Aviso: ");
+                                            scanf(" %[^\n]", &titulo);
+                                            printf("Escreva Seu Aviso: ");
+                                            scanf(" %[^\n]", &aviso_texto);
+                                            printf("Insira a Data de Publicacao\n(Siga o formato exemplo: 01/01/2023): ");
+                                            scanf(" %[^\n]", &data);
+                                            getchar();
+                                            limpa_tela();
+                                            printf("====================== %s ======================\n\n", titulo); //titulo do aviso
+                                            printf("%s\n\n", aviso_texto);
+                                            printf("Data de Publicacao: %s\n\n", data);
+                                            printf("================================================="); //titulo do aviso
+                                            pausa();
+                                            break;
+                                            limpa_tela();
+
+                                    }else{
+                                        limpa_tela();
+                                        break;
+                                        }
                                 break;
                             case 0:
                                 break;
@@ -221,7 +271,7 @@ int main() {
                                 break;
                             case 3:
                                 break;
-                            case 4:
+                            case 4: //avisos
                                 break;
                             case 0:
                                 break;

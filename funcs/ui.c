@@ -75,10 +75,10 @@ void menu_gestor() {
 void menu_cadastro() {
     printf("Seja bem vindo ao Leimer!\n");
     printf("Selecione uma das opcoes para realizar o seu cadastro!\n");
-    printf("1 - RESIDENTE\n");
-    printf("2 - PRECEPTOR\n");
-    printf("3 - GESTOR\n");
-    printf("0 - SAIR\n");
+    printf("[1] - RESIDENTE\n");
+    printf("[2] - PRECEPTOR\n");
+    printf("[3] - GESTOR\n");
+    printf("[0] - SAIR\n");
 }
 
 char *define_mes(int num) {
