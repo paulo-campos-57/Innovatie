@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "arquivos.h"
 
 //funcao para limpar tela
 void limpa_tela() {
@@ -142,12 +143,7 @@ char *define_residencia(int num){
     }
 }
 
-void menu_frequencia_residente(int presenca, int falta, int nao_confirmada){
-    printf("=============== FREQUENCIA ===============\n");
-    printf("Presencas: %d\n", presenca);
-    printf("Faltas: %d\n", falta);
-    printf("Nao confimadas: %d\n", nao_confirmada);
-
+void menu_frequencia_residente(){
     printf("\nVoce pode seguir as seguintes acoes:\n");
     printf("[1] - Registrar frequencia\n");
     printf("[2] - Vizualizar historico mais detalhado\n");
@@ -155,13 +151,22 @@ void menu_frequencia_residente(int presenca, int falta, int nao_confirmada){
     printf("Selecione uma opcao: ");
 }
 
-void menu_frequencia_preceptor(int acoes){
+void menu_frequencia_preceptor(){
     printf("=============== FREQUENCIA ===============\n");
-    printf("Presensas a confimar: %d\n", acoes);
 
     printf("\nVoce pode seguir as seguintes acoes:\n");
     printf("[1] - Confirmar frequencias\n");
     printf("[2] - Buscar historico de residente\n");
-    printf("[0] - Voltar para menu");
+    printf("[0] - Voltar para menu\n");
     printf("Selecione uma opcao: ");
+}
+
+void lista_residentes(char *nome_arquivo){
+    int quant_residentes = quant_usuarios("bin/residente.txt");
+    int *lista_ids = ids_lista("bin/residente.txt");
+
+    for(int i=0; i<quant_residentes; i++){
+        char *nome = nome_por_id(lista_ids[i], "bin/residente.txt", 1);
+        printf("ID: %d    NOME: %s\n", lista_ids[i], nome);
+    }
 }

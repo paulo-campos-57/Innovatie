@@ -145,9 +145,10 @@ int main() {
                         char nome_prec[200];
                         switch (op) {
                             case 1:
-                                limpa_tela();
+                                printf("\n=============== FREQUENCIA ===============\n");
+                                Presenca *lista_presencas_residente = presencas_residente(user_residente.id);
                                 int opcao_frequencia;
-                                menu_frequencia_residente(0, 0, 0);
+                                menu_frequencia_residente();
                                 scanf("%d", &opcao_frequencia);
                                 if(opcao_frequencia == 1){
                                     limpa_tela();
@@ -158,7 +159,8 @@ int main() {
                                     pausa();
                                 }
                                 else if(opcao_frequencia == 2){
-                                    printf("Ver historico\n");
+                                    limpa_tela();
+                                    imprimir_freuencias(lista_presencas_residente);
                                 }
                                 else{
                                     limpa_tela();
@@ -221,11 +223,39 @@ int main() {
                         char autor[150];
                         char aviso_texto[5000];
                         char data[11];
+                        int opcao_freq;
+                        limpa_tela();
                         switch (op) {
                             case 1:
-                                confirmar_presenca();
+                                
+                                menu_frequencia_preceptor();
+                                scanf("%d", &opcao_freq);
+                                if(opcao_freq == 1){
+                                    limpa_tela();
+                                    confirmar_presenca();
+                                    pausa();
+                                }
+                                else if(opcao_freq == 2){
+                                    limpa_tela();
+                                    int id_recidente_opc;
+                                    printf("== LISTA RESIDENTES ==\n");
+                                    lista_residentes("bin/residentes.txt");
+                                    printf("Selecione o residente pelo ID: ");
+                                    scanf("%d", &id_recidente_opc);
+                                    limpa_tela();
+
+                                    Presenca *frequencias_residente = presencas_residente(id_recidente_opc);
+                                    imprimir_freuencias(frequencias_residente);
+                                    pausa();
+                                    limpa_tela();
+                                }
+                                else{
+                                    limpa_tela();
+                                }
+                                
                                 break;
                             case 2:
+    
                                 break;
                             case 3:
                                 //char nome_res[200];

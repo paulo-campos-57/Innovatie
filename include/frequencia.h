@@ -10,4 +10,7 @@ void confirmar_presenca();
 void exibir_frequencias_nao_confirmadas(Presenca *lista_nao_confirmadas);
 Presenca *exibir_frequencias_nao_confirmadas_do_residente(Presenca *lista_nao_confirmadas, int id);
 
+Presenca *presencas_residente(int id);
+void imprimir_freuencias(Presenca *presencas_residente);
+
 #endif
