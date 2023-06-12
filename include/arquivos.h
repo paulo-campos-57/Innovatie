@@ -26,4 +26,5 @@ int *ids_lista(char* nome_arquivo);
 //Feedbacks
 void feed_residente_precept(char *nome_precept, char *texto, char *nome_arquivo);
 void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char *nome_arquivo);
+void visualizar_feed_residente(char nome_residente[200]);
 #endif

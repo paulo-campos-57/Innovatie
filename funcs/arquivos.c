@@ -402,3 +402,23 @@ void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char 
     fprintf(f, "\n%s, %s, %s", nome_precept, nome_res, texto);
     fclose(f);
 }
+
+void visualizar_feed_residente(char nome_residente[200]) {
+    char texto[10000];
+    FILE *f = NULL;
+    f = fopen("bin/feedback_residente.txt", "r");
+    int quant;
+    fscanf(f, "%d", &quant);
+    for (int i = 0; i < quant; i++) {
+        char nome_teste[200];
+        fscanf(f, "%[^,], %[^\n]", nome_teste, texto);
+        if ((strcmp(nome_residente, nome_teste)) == 0) {
+            break;
+        }
+        texto[0] = '\0';
+    }
+    
+    printf("%s", texto);
+
+    fclose(f);
+}

@@ -83,7 +83,8 @@ int main() {
                     switch (opcoes) {
                         case 1:
                             cadastro_residente(&novo_residente);
-                            printf("\nCadastro Finalizado!");
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
                             pausa();
                             limpa_tela();
                             printf("Nome: %s\n", novo_residente.nome);
@@ -92,11 +93,12 @@ int main() {
                             printf("Entrou em %s de %d\n", define_mes(novo_residente.mes), novo_residente.ano);
                             printf("Residente de %s", define_residencia(novo_residente.residencia));
                             registrar_residente(novo_residente);
-                            //exec = false;
+                            exit(1);
                             break;
                         case 2:
                             cadastro_preceptor(&novo_preceptor);
-                            printf("\nCadastro Finalizado!");
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
                             pausa();
                             limpa_tela();
                             printf("Nome: %s\n", novo_preceptor.nome);
@@ -105,11 +107,12 @@ int main() {
                             printf("Entrou em %s de %d\n", define_mes(novo_preceptor.mes), novo_preceptor.ano);
                             printf("Preceptor de %s", define_residencia(novo_preceptor.residencia));
                             registrar_preceptor(novo_preceptor);
-                            //exec = false;
+                            exit(1);
                             break;
                         case 3:
                             cadastro_gestor(&novo_gestor);
-                            printf("\nCadastro Finalizado!");
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
                             pausa();
                             limpa_tela();
                             printf("Nome: %s\n", novo_gestor.nome);
@@ -117,7 +120,7 @@ int main() {
                             printf("Senha: %s\n", novo_gestor.senha);
                             printf("Responsavel pelas residencias de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
-                            //exec = false;
+                            exit(1);
                             break;
                         case 0:
                             printf("Execucao encerrada.");
@@ -170,13 +173,11 @@ int main() {
                                 //int feed;
                                 //char texto[10000];
                                 printf("Residente, todos os seus feedbacks sao anonimos, nao tenha medo de dar sua opiniao!\n");
-                                do {
-                                    printf("Selecione uma das opcoes de feedback.\n");
-                                    printf("[1] - Feedback para preceptor\n");
-                                    printf("[2] - Feedback para gestao\n");
-                                    printf("[0] - Sair.\n");
-                                    scanf("%d", &feed);
-                                } while (feed != 1 || feed != 2 || feed != 0);
+                                printf("Selecione uma das opcoes de feedback.\n");
+                                printf("[1] - Feedback para preceptor\n");
+                                printf("[2] - Feedback para gestao\n");
+                                printf("[0] - Sair.\n");
+                                scanf("%d", &feed);
                                 if (feed == 1) {
                                     //char nome_prec[200];
                                     printf("Informe o nome do preceptor que deseja deixar feedback: ");
