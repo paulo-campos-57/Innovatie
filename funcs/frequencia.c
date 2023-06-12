@@ -30,6 +30,7 @@ Presenca registrar_presenca(int id_residente){
     regs_presenca.frequencia = 1;
     regs_presenca.confirmacao = 0;
 
+    registrar_falta();
     salvar_frequencia(regs_presenca);
 
     return regs_presenca;
@@ -50,9 +51,6 @@ void confirmar_presenca(){
     Presenca *presencas_confirmadas = exibir_frequencias_nao_confirmadas_do_residente(lista_nao_confirmadas, id_rest);
 
     confirmar_frequencia(presencas_confirmadas);
-    pausa();
-
-    limpa_tela();
 }
 
 void exibir_frequencias_nao_confirmadas(Presenca *lista_nao_confirmadas){
@@ -94,7 +92,7 @@ Presenca *exibir_frequencias_nao_confirmadas_do_residente(Presenca *lista_nao_co
             }
             else if (opcao_conf_pres==2){
                 nova_confirmada->frequencia=0;
-                nova_confirmada->confirmacao=0;     
+                nova_confirmada->confirmacao=1;     
             } 
             else{
                 printf("Opcao invalida, confirmacao dessa frequencia sera resetada!!!\n");
@@ -117,4 +115,63 @@ Presenca *exibir_frequencias_nao_confirmadas_do_residente(Presenca *lista_nao_co
     }
 
     return confirmadas_head;
+}
+
+Presenca *presencas_residente(int id){
+    Presenca *residente = frequencias_residente(id);
+
+    int presenca = 0;
+    int falta = 0;
+    int nao_confirmada = 0;
+
+    Presenca *n = residente;
+
+    while(n!=NULL){
+        if(n->frequencia == 0){
+            falta++;
+        }
+        else{
+            if(n->confirmacao == 1){
+                presenca++;
+            }
+            else{
+                nao_confirmada++;
+            }
+        }
+
+        n = n->next;
+    }
+
+    printf("Presencas: %d\n", presenca);
+    printf("Faltas: %d\n", falta);
+    printf("Nao confimadas: %d\n", nao_confirmada);
+
+    return residente;
+}
+
+void imprimir_freuencias(Presenca *presencas_residente){
+    Presenca *n = presencas_residente;
+
+    
+    char *nome_residente = nome_por_id(n->id_residente, "bin/residente.txt", 1);
+    printf("Residente: %s\n", nome_residente);
+
+    while(n!=NULL){
+        printf("Data: %2d/%2d/%4d", n->nova_data.dia, n->nova_data.mes, n->nova_data.ano);
+
+        char status[50];
+        if(n->frequencia == 1 && n->confirmacao ==1){
+            strcpy(status, "Presente");
+        }
+        else if(n->frequencia == 0){
+            strcpy(status, "Falta");
+        }
+        else if(n->confirmacao ==0){
+            strcpy(status, "Nao confirmada");
+        }
+
+        printf("  |  %s\n", status);
+
+        n = n->next;
+    }
 }
