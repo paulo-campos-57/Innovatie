@@ -417,9 +417,6 @@ void registrar_falta(){
     int quant_users = quant_usuarios("bin/residente.txt");
     int *lista_ids_residentes = ids_lista("bin/residente.txt");
 
-    if(dia_atual.dia == dia_arquivo.dia && dia_atual.mes == dia_arquivo.mes && dia_atual.ano == dia_arquivo.ano){
-        return;
-    }
 
     FILE *f = NULL;
 
@@ -433,76 +430,60 @@ void registrar_falta(){
     int quant;
     fscanf(f, "%d", &quant);
 
-
-
-}
-
-void salvar_falta() {
-    Data dia_atual = data_atual();
-    int quant_users = quant_usuarios("bin/resitente.txt");
-    int *lista_ids_residentes = ids_lista("bin/resitente.txt");
-
-    FILE *f = fopen("bin/frequencia.txt", "r+");
-
-    if (f == NULL) {
-        printf("Erro ao abrir banco!!!\n");
-        return;
-    }
-
-    // Verificar se o arquivo está vazio
-    fseek(f, 0, SEEK_END);
-    if (ftell(f) == 0) {
-        fclose(f);
-        return;
-    }
-    fseek(f, 0, SEEK_SET);
-
-    int quant;
-    fscanf(f, "%d", &quant);
-
-    if (quant == 0) {
+    if (quant == 0){
         fclose(f);
         return;
     }
 
-    Data ultima_data = {0, 0, 0};
-    long posicao = 0;
+    if(dia_atual.dia == dia_arquivo.dia && dia_atual.mes == dia_arquivo.mes && dia_atual.ano == dia_arquivo.ano){
+        return;
+    }
 
-    for (int i = 0; i < quant; i++) {
-        Data teste_data;
-        long teste_posicao = ftell(f);
-        int id;
+    int lista_presentes[quant_users];
+    int k = 0;
 
-        fscanf(f, "\n%d, %d, %d, %d, %*[^\n]", &id, &teste_data.dia, &teste_data.mes, &teste_data.ano);
+    for(int i=0; i<quant; i++){
+        Presenca presenca_existente;
+        int test = 0;
 
-        if (i == 0 || (teste_data.dia != ultima_data.dia || teste_data.mes != ultima_data.mes || teste_data.ano != ultima_data.ano)) {
-            ultima_data = teste_data;
-            posicao = teste_posicao;
+        fscanf(f, "\n%d, %d, %d, %d, %d, %d", &presenca_existente.id_residente, &presenca_existente.nova_data.dia, &presenca_existente.nova_data.mes, &presenca_existente.nova_data.ano, &presenca_existente.frequencia, &presenca_existente.confirmacao);
+
+        for(int j=0; j<quant_users; j++){
+            if(presenca_existente.id_residente == lista_presentes[j] && dia_arquivo.dia == presenca_existente.nova_data.dia && dia_arquivo.mes == presenca_existente.nova_data.mes && dia_arquivo.ano == presenca_existente.nova_data.ano){
+                lista_presentes[k] = presenca_existente.id_residente;
+                k++;
+                break;
+            }
         }
     }
 
-    if (dia_atual.dia == ultima_data.dia && dia_atual.mes == ultima_data.mes && dia_atual.ano == ultima_data.ano) {
-        fclose(f);
-        return;
-    } else {
-        int count_quant = 0;
-        for (int i = 0; i < quant_users; i++) {
-            fseek(f, posicao, SEEK_SET);
-            int id_teste;
 
-            while (fscanf(f, "\n%d%*[^\n]", &id_teste) != EOF) {
-                if (id_teste == lista_ids_residentes[i]) {
-                    fseek(f, 0, SEEK_END);
-                    fprintf(f, "\n%d, %d, %d, %d, %d, %d", lista_ids_residentes[i], ultima_data.dia, ultima_data.mes, ultima_data.ano, 0, 0);
-                    count_quant++;
-                    break;
-                }
-                id_teste = 0;
+    int lista_faltas[quant_users];
+    int z = 0;
+
+    for(int i=0; i<k; i++){
+        int vefi2 = 0;
+        for(int j=0; j<quant_users; j++){
+            if(lista_ids_residentes[i]==lista_presentes[j]){
+                vefi2 = 1;
+                break;
             }
         }
 
-        fseek(f, 0, SEEK_SET);
-        fprintf(f, "%d", quant + count_quant);
+        if(vefi2 == 0){
+            lista_faltas[z] = lista_ids_residentes[i];
+            k++;
+        }
+    }
+
+    int count = quant + z;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+
+    for(int i=0; i<z; i++){
+        fprintf(f, "\n%d, %d, %d, %d, %d, %d", lista_faltas[i], dia_arquivo.dia, dia_arquivo.mes, dia_arquivo.ano, 0, 1);
     }
 
     fclose(f);

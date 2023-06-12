@@ -30,10 +30,7 @@ Presenca registrar_presenca(int id_residente){
     regs_presenca.frequencia = 1;
     regs_presenca.confirmacao = 0;
 
-    //salvar_falta();
-    Data data_arquivo = data_no_arquivo();
-    printf("Data: %d/%d/%d\n", data_arquivo.dia, data_arquivo.mes, data_arquivo.ano);
-    
+    registrar_falta();
     salvar_frequencia(regs_presenca);
 
     return regs_presenca;
@@ -54,9 +51,6 @@ void confirmar_presenca(){
     Presenca *presencas_confirmadas = exibir_frequencias_nao_confirmadas_do_residente(lista_nao_confirmadas, id_rest);
 
     confirmar_frequencia(presencas_confirmadas);
-    pausa();
-
-    limpa_tela();
 }
 
 void exibir_frequencias_nao_confirmadas(Presenca *lista_nao_confirmadas){
