@@ -23,6 +23,8 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
 
 # 👣 Usando o LEIMER
 
+<b>Passos para a instalação da Aplicação:</b>
+```
  1. O usuário deverá criar uma pasta em seu computador com um nome informativo da aplicação, como "Aplicação LEIMER".
  2. O usuário então deverá apertar com o botão direito do mouse dentro da pasta e abrir o terminal da pasta.
  3. Após isso, ele deverá inserir no terminal o comando "git clone https://github.com/paulo-campos-57/Innovatie.git".
@@ -32,6 +34,30 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  7. O usuário deverá então no terminal digitar "gcc main.c ./funcs/*.c -I include -o bin/saida.exe" para compilar o sistema.
  8. Após isso "./bin/saida.exe" para rodar o sistema.
  9. Então ele poderá interagir com o sistema.
+```
+
+<b>Usuários Residente para Testagem:</b>
+
+```
+Nome: Lúcia Oliveira 
+Email: lucia.oli@email.com
+Senha: Lucia123
+```
+
+<b>Usuários Preceptor para Testagem:</b>
+
+```
+Nome: Carlos Lacerda 
+Email: carlos.lacerda@email.com
+Senha: Carlos123
+```
+
+<b>Usuários Gestor para Testagem:</b>
+```
+Nome: Marcela Guerra 
+Email: marcela.guerra@email.com
+Senha: Marcela123
+```
 
 ## 📂 Repositórios:
 - [Google Sites](https://sites.google.com/d/1qKF9_0WKPtYAXA6IbFuaWe9Azb1qlWIE/p/1vNE8liT_0x9pcVxP8QQC8LkuAyzp8kcQ/edit)<br></br>
