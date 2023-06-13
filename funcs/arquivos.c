@@ -190,6 +190,43 @@ Residente *residentes_sem_cadastro(){
     return residentes_head;
 }
 
+Residente *residentes_com_cadastro(){
+    Residente *residentes_head = NULL;
+    Residente *residentes_tail = NULL;
+
+    FILE* f;
+
+    f = fopen("bin/residente.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }   
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i=0; i<quant; i++){
+        Residente *residente = malloc(sizeof(Residente));
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &residente->id, residente->cadastro, residente->nome, residente->email, residente->senha, &residente->mes, &residente->ano, &residente->residencia);
+
+        if(strcmp(residente->cadastro, "0")!=0){
+            if(residentes_head == NULL){
+                residentes_tail = residente;
+                residentes_tail->next = NULL;
+                residentes_head = residentes_tail;
+            }else{
+                residentes_tail->next = residente;
+                residentes_tail = residentes_tail->next;
+                residentes_tail->next = NULL;
+            }
+        }
+    }
+
+    return residentes_head;
+}
+
 void cadastra_residente_hospital(int id, char cadastro[20]){
     
     FILE* f = fopen("bin/residente.txt", "r");
@@ -249,6 +286,43 @@ Preceptor *preceptores_sem_cadastro(){
         fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor->id, preceptor->cadastro, preceptor->nome, preceptor->email, preceptor->senha, &preceptor->mes, &preceptor->ano, &preceptor->residencia);
 
         if(strcmp(preceptor->cadastro, "0")==0){
+            if(preceptores_head == NULL){
+                preceptores_tail = preceptor;
+                preceptores_tail->next = NULL;
+                preceptores_head = preceptores_tail;
+            }else{
+                preceptores_tail->next = preceptor;
+                preceptores_tail = preceptores_tail->next;
+                preceptores_tail->next = NULL;
+            }
+        }
+    }
+
+    return preceptores_head;
+}
+
+Preceptor *preceptores_com_cadastro(){
+    Preceptor *preceptores_head = NULL;
+    Preceptor *preceptores_tail = NULL;
+
+    FILE* f;
+
+    f = fopen("bin/preceptor.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }   
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i=0; i<quant; i++){
+        Preceptor *preceptor = malloc(sizeof(Residente));
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor->id, preceptor->cadastro, preceptor->nome, preceptor->email, preceptor->senha, &preceptor->mes, &preceptor->ano, &preceptor->residencia);
+
+        if(strcmp(preceptor->cadastro, "0")!=0){
             if(preceptores_head == NULL){
                 preceptores_tail = preceptor;
                 preceptores_tail->next = NULL;
@@ -678,22 +752,29 @@ void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char 
     fclose(f);
 }
 
-void visualizar_feed_residente(char nome_residente[200]) {
+ int visualizar_feed_residente(char nome_residente[200]) {
+    int encontro = 0;
     char texto[10000];
     FILE *f = NULL;
-    f = fopen("bin/feedback_residente.txt", "r");
+    f = fopen("bin/feedback_preceptor.txt", "r");
     int quant;
     fscanf(f, "%d", &quant);
     for (int i = 0; i < quant; i++) {
         char nome_teste[200];
         fscanf(f, "%[^,], %[^\n]", nome_teste, texto);
         if ((strcmp(nome_residente, nome_teste)) == 0) {
+            encontro = 1;
             break;
         }
         texto[0] = '\0';
+    }  
+
+    if (encontro == 1) {
+        printf("%s", texto);
+        return 1;
+    } else {
+        return 0;
     }
-    
-    printf("%s", texto);
 
     fclose(f);
 }

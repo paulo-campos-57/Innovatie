@@ -171,6 +171,12 @@ int main() {
                                 }
                                 break;
                             case 2:
+                                printf("Olá %s", user_residente.nome);
+                                if (visualizar_feed_residente(user_residente.nome) == 0) {
+                                    printf("Ainda nao ha feedbacks para voce!");
+                                } else {
+                                    visualizar_feed_residente(user_residente.nome);
+                                }
                                 break;
                             case 3:
                                 //int feed;

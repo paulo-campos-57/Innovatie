@@ -16,6 +16,8 @@ Residente *residentes_sem_cadastro();
 void cadastra_residente_hospital(int id, char cadastro[20]);
 Preceptor *preceptores_sem_cadastro();
 void cadastra_preceptor_hospital(int id, char cadastro[20]);
+Residente *residentes_com_cadastro();
+Preceptor *preceptores_com_cadastro();
 
 //Login
 Residente buscar_residente(char nome[200], char senha[200]);
@@ -35,5 +37,5 @@ void registrar_falta();
 //Feedbacks
 void feed_residente_precept(char *nome_precept, char *texto, char *nome_arquivo);
 void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char *nome_arquivo);
-void visualizar_feed_residente(char nome_residente[200]);
+int visualizar_feed_residente(char nome_residente[200]);
 #endif
