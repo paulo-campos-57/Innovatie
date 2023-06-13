@@ -38,4 +38,8 @@ void registrar_falta();
 void feed_residente_precept(char *nome_precept, char *texto, char *nome_arquivo);
 void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char *nome_arquivo);
 int visualizar_feed_residente(char nome_residente[200]);
-#endif
+
+//Avisos
+void criar_aviso(Aviso *quadro_de_avisos);
+
+#endif //__ARQUIVOS_LIB__

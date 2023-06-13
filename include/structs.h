@@ -51,7 +51,6 @@ typedef struct presenca{
 typedef struct aviso{
     char titulo[250];
     char autor[150];
-    // char residencia[100];
     char texto[5000];
     Data data_do_aviso;
     struct aviso *next;

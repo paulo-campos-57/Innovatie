@@ -227,10 +227,6 @@ int main() {
                         int av;
                         char texto[10000];
                         char nome_res[200];
-                        char titulo[250];
-                        char autor[150];
-                        char aviso_texto[5000];
-                        char data[11];
                         int opcao_freq;
                         limpa_tela();
                         switch (op) {
@@ -278,14 +274,15 @@ int main() {
                             case 4: //avisos
                                 do{
                                     limpa_tela();
-                                    printf("Selecione uma das opcoes e tecle ENTER: ");
                                     printf("\n\n[1] - Visualizar Quadro de Avisos\n");
                                     printf("[2] - Criar Aviso\n");
                                     printf("[3] - Editar Avisos\n");
-                                    printf("[0] - Voltar Para o Menu Inicial\n");
+                                    printf("[4] - Excluir Avisos\n");
+                                    printf("[0] - Voltar Para o Menu Inicial\n\n");
+                                    printf("Selecione uma das opcoes e tecle ENTER: ");
                                     scanf("%d", &av);
                                     getchar();
-                                }while (av > 3 || av < 0);
+                                }while (av > 4 || av < 0);
                                 if (av == 1){
                                         limpa_tela();
                                         printf("================== Quadro de Avisos ==================\n\n");
@@ -301,6 +298,7 @@ int main() {
                                         printf("Escreva Seu Aviso: ");
                                         scanf(" %[^\n]", &quadro_de_avisos.texto);
                                         quadro_de_avisos.data_do_aviso = data_atual();
+                                        criar_aviso(&quadro_de_avisos);
                                         getchar();
                                         limpa_tela();
                                         printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
@@ -311,6 +309,10 @@ int main() {
                                         limpa_tela();
                                         break;
                                 }else if (av == 3){
+                                    limpa_tela();
+                                    break;
+                                }else if (av == 4){
+                                    limpa_tela();
                                     break;
                                 }else{
                                     limpa_tela();

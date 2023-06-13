@@ -778,3 +778,25 @@ void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char 
 
     fclose(f);
 }
+
+void criar_aviso(Aviso *quadro_de_avisos){
+
+    FILE *f = NULL;
+
+    f = fopen("bin/avisos.txt", "r+");
+
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s, %s, %d/%d/%d;", quadro_de_avisos->titulo, quadro_de_avisos->texto, quadro_de_avisos->data_do_aviso.dia, quadro_de_avisos->data_do_aviso.mes, quadro_de_avisos->data_do_aviso.ano);
+    fclose(f);
+}
