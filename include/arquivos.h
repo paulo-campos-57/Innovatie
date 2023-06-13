@@ -12,6 +12,9 @@ void registrar_preceptor(Preceptor novo_precptor);
 void registrar_residente(Residente novo_residente);
 void registrar_gestor(Gestor novo_gestor);
 
+Residente *residentes_sem_cadastro();
+void cadastra_residente_hospital(int id, char cadastro[20]);
+
 //Login
 Residente buscar_residente(char nome[200], char senha[200]);
 Preceptor buscar_preceptor(char nome[200], char senha[200]);

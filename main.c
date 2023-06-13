@@ -321,8 +321,27 @@ int main() {
                         menu_gestor();
                         printf("Selecione uma das opcoes e tecle ENTER: ");
                         scanf("%d", &op);
+                        int opc_gest_cadastro;
                         switch (op) {
                             case 1:
+                                limpa_tela();
+                                printf("Qual seu tipo de usuario:\n");
+                                printf("[1] - Residente\n");
+                                printf("[2] - Preceptor\n");
+                                printf("[0] - Voltar para menu\n");
+                                printf("Selecione uma opcao: ");
+                                scanf("%d", &opc_gest_cadastro);
+                                limpa_tela();
+
+                                if(opc_gest_cadastro==1){
+                                    cadastra_res_hospital();
+                                    pausa();
+                                    limpa_tela();
+                                }else if(opc_gest_cadastro==2){
+
+                                }else{
+                                    limpa_tela();
+                                }
                                 break;
                             case 2:
                                 break;

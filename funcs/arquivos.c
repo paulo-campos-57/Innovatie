@@ -153,6 +153,79 @@ void registrar_gestor(Gestor novo_gestor){
     fclose(f);
 }
 
+Residente *residentes_sem_cadastro(){
+    Residente *residentes_head = NULL;
+    Residente *residentes_tail = NULL;
+
+    FILE* f;
+
+    f = fopen("bin/residente.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }   
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i=0; i<quant; i++){
+        Residente *residente = malloc(sizeof(Residente));
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &residente->id, residente->cadastro, residente->nome, residente->email, residente->senha, &residente->mes, &residente->ano, &residente->residencia);
+
+        if(strcmp(residente->cadastro, "0")==0){
+            if(residentes_head == NULL){
+                residentes_tail = residente;
+                residentes_tail->next = NULL;
+                residentes_head = residentes_tail;
+            }else{
+                residentes_tail->next = residente;
+                residentes_tail = residentes_tail->next;
+                residentes_tail->next = NULL;
+            }
+        }
+    }
+
+    return residentes_head;
+}
+
+void cadastra_residente_hospital(int id, char cadastro[20]){
+    
+    FILE* f = fopen("bin/residente.txt", "r");
+    FILE* tempFile = fopen("bin/temp_residente.txt", "w");
+    int vefir_linha = 0;
+
+    if (f == NULL || tempFile == NULL) {
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+    fprintf(tempFile, "%d", quant);
+
+    for (int i = 0; i < quant; i++) {
+        Residente residente;
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &residente.id, residente.cadastro, residente.nome, residente.email, residente.senha, &residente.mes, &residente.ano, &residente.residencia);
+
+        if(residente.id != id){
+            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", residente.id, residente.cadastro, residente.nome, residente.email, residente.senha, residente.mes, residente.ano, residente.residencia);
+        }else{
+            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", residente.id, cadastro, residente.nome, residente.email, residente.senha, residente.mes, residente.ano, residente.residencia);
+        }
+
+
+    }
+
+    fclose(f);
+    fclose(tempFile);
+
+    remove("bin/residente.txt");
+    rename("bin/temp_residente.txt", "bin/residente.txt");
+
+}
 // login
 
 Residente buscar_residente(char nome[200], char senha[200]){

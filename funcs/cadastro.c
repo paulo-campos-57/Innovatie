@@ -115,3 +115,22 @@ void cadastro_gestor(Gestor* novo_gestor){
     printf("\nInforme a residencia a qual eh responsavel\n");
     novo_gestor->residencia = residencia(3);
 }
+
+void cadastra_res_hospital(){
+    Residente *res = residentes_sem_cadastro();
+    printf("\n=== LISTA RESITENTES NAO CADASTRADOS ===\n");
+    
+    while(res != NULL){
+        printf("ID: %d   Nome: %s\n", res->id, res->nome);
+        res = res->next;
+    }
+    int id;
+    printf("\nSelecione um residente pelo ID: ");
+    scanf("%d", &id);
+
+    char cadastro[20];
+    printf("\nDigite o cadastro do usuario: ");
+    scanf("%s", cadastro);
+
+    cadastra_residente_hospital(id, cadastro);
+}
