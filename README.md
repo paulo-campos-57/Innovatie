@@ -50,7 +50,7 @@ Apagar banco de dados: "rm ./bin/*.txt"
 <b>Usuários Residente para Testagem:</b>
 
 ```
-Nome: Lúcia Oliveira 
+Nome: Lucia Oliveira 
 Email: lucia.oli@email.com
 Senha: Lucia123
 ```
