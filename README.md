@@ -36,6 +36,17 @@ Para mais detalhes da nossa solução e do nosso processo para chegar até ela, 
  9. Então ele poderá interagir com o sistema.
 ```
 
+<b>Comandos Importantes para a Aplicação:</b>
+```
+Compilar sistema: "gcc main.c ./funcs/*.c -I include -o bin/saida.exe"
+
+Rodar sistema: "./bin/saida.exe"
+
+Criar banco de dados: "gcc criando_bd.c -o ./bin/criando_bd.exe" e "./bin/criando_bd.exe"
+
+Apagar banco de dados: "rm ./bin/*.txt"
+```
+
 <b>Usuários Residente para Testagem:</b>
 
 ```
