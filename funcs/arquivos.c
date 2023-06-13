@@ -228,9 +228,7 @@ Residente *residentes_com_cadastro(){
 }
 
 void cadastra_residente_hospital(int id, char cadastro[20]){
-
     FILE* f = fopen("bin/residente.txt", "r+");
-    int vefir_linha = 0;
 
     if (f == NULL) {
         printf("Erro ao abrir banco!!!\n");
@@ -329,9 +327,7 @@ Preceptor *preceptores_com_cadastro(){
 }
 
 void cadastra_preceptor_hospital(int id, char cadastro[20]){
-    
     FILE* f = fopen("bin/preceptor.txt", "r+");
-    int vefir_linha = 0;
 
     if (f == NULL) {
         printf("Erro ao abrir banco!!!\n");
@@ -349,7 +345,7 @@ void cadastra_preceptor_hospital(int id, char cadastro[20]){
 
         if(preceptor.id == id){
             fseek(f, posicion, SEEK_SET);
-            fprintf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", preceptor.id, preceptor.cadastro, preceptor.nome, preceptor.email, preceptor.senha, preceptor.mes, preceptor.ano, preceptor.residencia);
+            fprintf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", preceptor.id, cadastro, preceptor.nome, preceptor.email, preceptor.senha, preceptor.mes, preceptor.ano, preceptor.residencia);
         }
     }
 
