@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "arquivos.h"
 #include "structs.h"
 #include "ui.h"
@@ -18,6 +19,10 @@ Residente login_residente(int nun){
     Residente user_residente=buscar_residente(nome, senha);
 
     if(user_residente.id != -1){
+        if(strcmp(user_residente.cadastro, "0")==0){
+            printf("Voce nao esta cadastrado no sistema do hospital, fale com a gestao em caso de erro!!\n");
+            exit(1);
+        }
         return user_residente;
     }
     else{
@@ -47,6 +52,10 @@ Preceptor login_preceptor(int nun){
     Preceptor user_preceptor=buscar_preceptor(nome, senha);
 
     if(user_preceptor.id != -1){
+        if(strcmp(user_preceptor.cadastro, "0")==0){
+            printf("Voce nao esta cadastrado no sistema do hospital, fale com a gestao em caso de erro!!\n");
+            exit(1);
+        }
         return user_preceptor;
     }
     else{

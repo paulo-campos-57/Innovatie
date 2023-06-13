@@ -154,6 +154,7 @@ int main() {
                                 int opcao_frequencia;
                                 menu_frequencia_residente();
                                 scanf("%d", &opcao_frequencia);
+                                getchar();
                                 if(opcao_frequencia == 1){
                                     limpa_tela();
                                     Presenca presenca_registrada = registrar_presenca(user_residente.id);
@@ -161,6 +162,7 @@ int main() {
                                     printf("\nID RESIDENTE: %d\n", presenca_registrada.id_residente);
                                     printf("DATA: %d/%d/%d\n", presenca_registrada.nova_data.dia, presenca_registrada.nova_data.mes, presenca_registrada.nova_data.ano);
                                     pausa();
+                                    limpa_tela();
                                 }
                                 else if(opcao_frequencia == 2){
                                     limpa_tela();
