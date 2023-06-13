@@ -339,7 +339,10 @@ int main() {
                                     pausa();
                                     limpa_tela();
                                 }else if(opc_gest_cadastro==2){
-
+                                    cadastro_pre_hospital();
+                                    pausa();
+                                    limpa_tela();
+                                    
                                 }else{
                                     limpa_tela();
                                 }

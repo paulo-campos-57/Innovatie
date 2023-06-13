@@ -13,5 +13,6 @@ void cadastro_preceptor(Preceptor* novo_preceptor);
 void cadastro_gestor(Gestor* novo_gestor);
 
 void cadastra_res_hospital();
+void cadastro_pre_hospital();
 
 #endif

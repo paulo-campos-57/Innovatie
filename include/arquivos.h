@@ -14,7 +14,7 @@ void registrar_gestor(Gestor novo_gestor);
 
 Residente *residentes_sem_cadastro();
 void cadastra_residente_hospital(int id, char cadastro[20]);
-Residente *preceptores_sem_cadastro();
+Preceptor *preceptores_sem_cadastro();
 void cadastra_preceptor_hospital(int id, char cadastro[20]);
 
 //Login

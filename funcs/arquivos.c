@@ -227,9 +227,9 @@ void cadastra_residente_hospital(int id, char cadastro[20]){
 
 }
 
-Residente *preceptores_sem_cadastro(){
-    Residente *preceptores_head = NULL;
-    Residente *preceptores_tail = NULL;
+Preceptor *preceptores_sem_cadastro(){
+    Preceptor *preceptores_head = NULL;
+    Preceptor *preceptores_tail = NULL;
 
     FILE* f;
 
@@ -244,7 +244,7 @@ Residente *preceptores_sem_cadastro(){
     fscanf(f, "%d", &quant);
 
     for(int i=0; i<quant; i++){
-        Residente *preceptor = malloc(sizeof(Residente));
+        Preceptor *preceptor = malloc(sizeof(Residente));
 
         fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor->id, preceptor->cadastro, preceptor->nome, preceptor->email, preceptor->senha, &preceptor->mes, &preceptor->ano, &preceptor->residencia);
 
@@ -280,7 +280,7 @@ void cadastra_preceptor_hospital(int id, char cadastro[20]){
     fprintf(tempFile, "%d", quant);
 
     for (int i = 0; i < quant; i++) {
-        Residente preceptor;
+        Preceptor preceptor;
 
         fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor.id, preceptor.cadastro, preceptor.nome, preceptor.email, preceptor.senha, &preceptor.mes, &preceptor.ano, &preceptor.residencia);
 
@@ -294,8 +294,8 @@ void cadastra_preceptor_hospital(int id, char cadastro[20]){
     fclose(f);
     fclose(tempFile);
 
-    remove("bin/residente.txt");
-    rename("bin/temp_residente.txt", "bin/residente.txt");
+    remove("bin/preceptor.txt");
+    rename("bin/temp_preceptor.txt", "bin/preceptor.txt");
 
 }
 // login

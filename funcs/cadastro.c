@@ -138,3 +138,23 @@ void cadastra_res_hospital(){
 
     cadastra_residente_hospital(id, cadastro);
 }
+
+void cadastro_pre_hospital(){
+    Preceptor *prec = preceptores_sem_cadastro();
+    printf("\n=== LISTA PRECEPTORES NAO CADASTRADOS ===\n");
+
+    while(prec != NULL){
+        printf("ID: %d    Nome: %s\n", prec->id, prec->nome);
+        prec =prec->next;
+    }
+    int id;
+    printf("\nSelecione um residente pelo ID: ");
+    scanf("%d", &id);
+
+    char cadastro[20];
+    printf("\nDigite o cadastro do usuario: ");
+    scanf("%s", cadastro);
+    getchar();
+
+    cadastra_preceptor_hospital(id, cadastro);
+}
