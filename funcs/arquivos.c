@@ -226,6 +226,78 @@ void cadastra_residente_hospital(int id, char cadastro[20]){
     rename("bin/temp_residente.txt", "bin/residente.txt");
 
 }
+
+Residente *preceptores_sem_cadastro(){
+    Residente *preceptores_head = NULL;
+    Residente *preceptores_tail = NULL;
+
+    FILE* f;
+
+    f = fopen("bin/preceptor.txt", "r");
+
+    if(f == 0){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }   
+
+    int quant;
+    fscanf(f, "%d", &quant);
+
+    for(int i=0; i<quant; i++){
+        Residente *preceptor = malloc(sizeof(Residente));
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor->id, preceptor->cadastro, preceptor->nome, preceptor->email, preceptor->senha, &preceptor->mes, &preceptor->ano, &preceptor->residencia);
+
+        if(strcmp(preceptor->cadastro, "0")==0){
+            if(preceptores_head == NULL){
+                preceptores_tail = preceptor;
+                preceptores_tail->next = NULL;
+                preceptores_head = preceptores_tail;
+            }else{
+                preceptores_tail->next = preceptor;
+                preceptores_tail = preceptores_tail->next;
+                preceptores_tail->next = NULL;
+            }
+        }
+    }
+
+    return preceptores_head;
+}
+
+void cadastra_preceptor_hospital(int id, char cadastro[20]){
+    
+    FILE* f = fopen("bin/preceptor.txt", "r");
+    FILE* tempFile = fopen("bin/temp_preceptor.txt", "w");
+    int vefir_linha = 0;
+
+    if (f == NULL || tempFile == NULL) {
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int quant;
+    fscanf(f, "%d", &quant);
+    fprintf(tempFile, "%d", quant);
+
+    for (int i = 0; i < quant; i++) {
+        Residente preceptor;
+
+        fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &preceptor.id, preceptor.cadastro, preceptor.nome, preceptor.email, preceptor.senha, &preceptor.mes, &preceptor.ano, &preceptor.residencia);
+
+        if(preceptor.id != id){
+            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", preceptor.id, preceptor.cadastro, preceptor.nome, preceptor.email, preceptor.senha, preceptor.mes, preceptor.ano, preceptor.residencia);
+        }else{
+            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", preceptor.id, cadastro, preceptor.nome, preceptor.email, preceptor.senha, preceptor.mes, preceptor.ano, preceptor.residencia);
+        }
+    }
+
+    fclose(f);
+    fclose(tempFile);
+
+    remove("bin/residente.txt");
+    rename("bin/temp_residente.txt", "bin/residente.txt");
+
+}
 // login
 
 Residente buscar_residente(char nome[200], char senha[200]){
