@@ -229,39 +229,29 @@ Residente *residentes_com_cadastro(){
 
 void cadastra_residente_hospital(int id, char cadastro[20]){
     
-    FILE* f = fopen("bin/residente.txt", "r");
-    FILE* tempFile = fopen("bin/temp_residente.txt", "w");
+    FILE* f = fopen("bin/residente.txt", "r+");
     int vefir_linha = 0;
 
-    if (f == NULL || tempFile == NULL) {
+    if (f == NULL) {
         printf("Erro ao abrir banco!!!\n");
         exit(1);
     }
 
     int quant;
     fscanf(f, "%d", &quant);
-    fprintf(tempFile, "%d", quant);
-
     for (int i = 0; i < quant; i++) {
         Residente residente;
+        long posicion = ftell(f);
 
         fscanf(f, "\n%d, %[^,], %[^,], %[^,], %[^,], %d, %d, %d", &residente.id, residente.cadastro, residente.nome, residente.email, residente.senha, &residente.mes, &residente.ano, &residente.residencia);
 
-        if(residente.id != id){
-            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", residente.id, residente.cadastro, residente.nome, residente.email, residente.senha, residente.mes, residente.ano, residente.residencia);
-        }else{
-            fprintf(tempFile, "\n%d, %s, %s, %s, %s, %d, %d, %d", residente.id, cadastro, residente.nome, residente.email, residente.senha, residente.mes, residente.ano, residente.residencia);
+        if(residente.id == id){
+            fseek(f, posicion, SEEK_SET);
+            fprintf(f, "\n%d, %s, %s, %s, %s, %d, %d, %d", residente.id, cadastro, residente.nome, residente.email, residente.senha, residente.mes, residente.ano, residente.residencia);
         }
-
-
     }
 
     fclose(f);
-    fclose(tempFile);
-
-    remove("bin/residente.txt");
-    rename("bin/temp_residente.txt", "bin/residente.txt");
-
 }
 
 Preceptor *preceptores_sem_cadastro(){
