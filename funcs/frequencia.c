@@ -30,7 +30,7 @@ Presenca registrar_presenca(int id_residente){
     regs_presenca.frequencia = 1;
     regs_presenca.confirmacao = 0;
 
-    registrar_falta();
+    //registrar_falta();
     salvar_frequencia(regs_presenca);
 
     return regs_presenca;

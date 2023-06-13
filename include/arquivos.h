@@ -30,9 +30,9 @@ Presenca *frequencias_nao_confirmadas();
 void confirmar_frequencia(Presenca* prensencas_confirmadas);
 int *ids_lista(char* nome_arquivo);
 Presenca *frequencias_residente(int id);
-void salvar_falta();
-Data data_no_arquivo();
-void registrar_falta();
+//void salvar_falta();
+//Data data_no_arquivo();
+//void registrar_falta();
 
 //Feedbacks
 void feed_residente_precept(char *nome_precept, char *texto, char *nome_arquivo);
