@@ -605,7 +605,7 @@ Presenca *frequencias_residente(int id){
     return frequencias_head;
 }
 
-Data data_no_arquivo(){
+/*Data data_no_arquivo(){
     Data dia_arquivo;
 
     FILE *f = NULL;
@@ -730,7 +730,7 @@ void registrar_falta() {
 
     remove("bin/frequencia.txt");
     rename("bin/temp_frequencia.txt", "bin/frequencia.txt");
-}
+}*/
 
 //Feedbacks
 

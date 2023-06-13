@@ -10,8 +10,9 @@ Residente login_residente(int nun){
     char senha[200];
 
     limpa_tela();
+    getchar();
     printf("Digite seu nome de usuario: ");
-    scanf("%s", nome);
+    scanf("%[^\n]", nome);
 
     printf("\nDigite sua senha: ");
     scanf("%s", senha);
@@ -43,8 +44,9 @@ Preceptor login_preceptor(int nun){
     char senha[200];
 
     limpa_tela();
+    getchar();
     printf("Digite seu nome de usuario: ");
-    scanf("%s", nome);
+    scanf("%[^\n]", nome);
 
     printf("\nDigite sua senha: ");
     scanf("%s", senha);
@@ -76,8 +78,9 @@ Gestor login_gestor(int nun){
     char senha[200];
 
     limpa_tela();
+    getchar();
     printf("Digite seu nome de usuario: ");
-    scanf("%s", nome);
+    scanf("%[^\n]", nome);
 
     printf("\nDigite sua senha: ");
     scanf("%s", senha);
