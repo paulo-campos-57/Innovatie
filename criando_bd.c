@@ -39,4 +39,5 @@ int main(void){
     criar_arquivo("bin/avisos.txt");
     criar_arquivo("bin/feedback_residente.txt");
     criar_arquivo("bin/feedback_preceptor.txt");
+    criar_arquivo("bin/feedback_gestao.txt");
 }

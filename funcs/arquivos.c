@@ -776,7 +776,28 @@ void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char 
     fclose(f);
 }
 
- int visualizar_feed_residente(char nome_residente[200]) {
+void feed_residente_gestao(char *texto, char *nome_arquivo) {
+    FILE *f = NULL;
+
+    f = fopen(nome_arquivo, "r+");
+
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    int count;
+    fscanf(f, "%d", &count);
+    count++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", count);
+
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s", texto);
+    fclose(f);
+}
+
+int visualizar_feed_residente(char nome_residente[200]) {
     int encontro = 0;
     char texto[10000];
     FILE *f = NULL;
@@ -802,6 +823,57 @@ void feed_preceptor_resid(char *nome_precept, char *nome_res, char *texto, char 
 
     fclose(f);
 }
+
+int visualizar_feed_preceptor(char nome_preceptor[200]) {
+    int encontro = 0;
+    char texto[10000];
+    FILE *f = NULL;
+    f = fopen("bin/feedback_residente.txt", "r");
+    int quant;
+    fscanf(f, "%d", &quant);
+    for (int i = 0; i < quant; i++) {
+        char nome_teste[200];
+        fscanf(f, "%[^,], %[^\n]", nome_teste, texto);
+        if ((strcmp(nome_preceptor, nome_teste)) == 0) {
+            encontro = 1;
+            break;
+        }
+        texto[0] = '\0';
+    }  
+
+    if (encontro == 1) {
+        printf("%s", texto);
+        return 1;
+    } else {
+        return 0;
+    }
+
+    fclose(f);
+}
+
+int visualizar_feed_gestor() {
+    int status;
+    char texto[10000];
+    FILE *f = NULL;
+    f = fopen("bin/feedback_residente.txt", "r");
+    if (f == NULL) {
+        status = 0;
+    } else {
+        fscanf(f, " %[^\n]", texto);
+        status = 1;
+    }
+
+    if (status == 1) {
+        printf("%s", texto);
+        return 1;
+    } else {
+        return 0;
+    }
+
+    fclose(f);
+} 
+
+// Avisos
 
 void criar_aviso(Aviso *quadro_de_avisos){
 

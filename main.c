@@ -201,6 +201,8 @@ int main() {
                                     printf("Informe seu feedback para a gestao do HC: ");
                                     scanf(" %[^\n]", texto);
                                     printf("\n\nObrigado pelo seu feedback!");
+                                    feed_residente_gestao(texto, "bin/feedback_gestao.txt");
+                                    printf("\n\nObrigado pelo seu feedback!");
                                 } else {
                                     printf("Operacao encerrada.\n");
                                 }
@@ -360,6 +362,13 @@ int main() {
                             case 2:
                                 break;
                             case 3:
+                                printf("Ola Gestor!\n");
+                                printf("Consulte aqui o feedback anonimo passado pelos residentes!\n");
+                                if (visualizar_feed_gestor() == 0) {
+                                    printf("Ainda nao ha feedbacks para voce!");
+                                } else {
+                                    visualizar_feed_gestor();
+                                }
                                 break;
                             case 4: //avisos
                                 break;
