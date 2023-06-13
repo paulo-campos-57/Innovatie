@@ -584,7 +584,7 @@ Presenca *frequencias_residente(int id){
     return frequencias_head;
 }
 
-/*Data data_no_arquivo(){
+Data data_no_arquivo(){
     Data dia_arquivo;
 
     FILE *f = NULL;
@@ -679,37 +679,25 @@ void registrar_falta() {
 
     fclose(f);
 
-    FILE *f2 = fopen("bin/frequencia.txt", "r");
-    FILE *tempFile = fopen("bin/temp_frequencia.txt", "w");
+    FILE *f2 = fopen("bin/frequencia.txt", "r+");
 
-    if (f2 == NULL || tempFile == NULL) {
+    if (f2 == NULL) {
         printf("Erro ao abrir banco!!!\n");
         exit(1);
     }
 
-    int quant2;
-    fscanf(f2, "%d", &quant2);
-    fprintf(tempFile, "%d", quant2 + z);
+    fprintf(f2, "%d", quant + z);
 
-    for (int i = 0; i < quant; i++) {
-        Presenca presencas;
-        fscanf(f2, "\n%d, %d, %d, %d, %d, %d", &presencas.id_residente, &presencas.nova_data.dia,
-               &presencas.nova_data.mes, &presencas.nova_data.ano, &presencas.frequencia, &presencas.confirmacao);
-        fprintf(tempFile, "\n%d, %d, %d, %d, %d, %d", presencas.id_residente, presencas.nova_data.dia,
-                presencas.nova_data.mes, presencas.nova_data.ano, presencas.frequencia, presencas.confirmacao);
-    }
+    fseek(f2, 0, SEEK_END);
 
     for (int i = 0; i < z; i++) {
-        fprintf(tempFile, "\n%d, %d, %d, %d, %d, %d", lista_faltas[i], dia_arquivo.dia, dia_arquivo.mes,
+        fprintf(f2, "\n%d, %d, %d, %d, %d, %d", lista_faltas[i], dia_arquivo.dia, dia_arquivo.mes,
                 dia_arquivo.ano, 0, 1);
     }
 
     fclose(f2);
-    fclose(tempFile);
+}
 
-    remove("bin/frequencia.txt");
-    rename("bin/temp_frequencia.txt", "bin/frequencia.txt");
-}*/
 
 //Feedbacks
 
