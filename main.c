@@ -83,43 +83,43 @@ int main() {
                     switch (opcoes) {
                         case 1:
                             cadastro_residente(&novo_residente);
-                            printf("\nCadastro Finalizado!\n");
-                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
-                            pausa();
                             limpa_tela();
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n\n");
                             printf("Nome: %s\n", novo_residente.nome);
                             printf("E-mail: %s\n", novo_residente.email);
                             printf("Senha: %s\n", novo_residente.senha);
                             printf("Entrou em %s de %d\n", define_mes(novo_residente.mes), novo_residente.ano);
                             printf("Residente de %s", define_residencia(novo_residente.residencia));
                             registrar_residente(novo_residente);
+                            pausa();
                             exit(1);
                             break;
                         case 2:
                             cadastro_preceptor(&novo_preceptor);
-                            printf("\nCadastro Finalizado!\n");
-                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
-                            pausa();
                             limpa_tela();
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n\n");
                             printf("Nome: %s\n", novo_preceptor.nome);
                             printf("E-mail: %s\n", novo_preceptor.email);
                             printf("Senha: %s\n", novo_preceptor.senha);
                             printf("Entrou em %s de %d\n", define_mes(novo_preceptor.mes), novo_preceptor.ano);
                             printf("Preceptor de %s", define_residencia(novo_preceptor.residencia));
                             registrar_preceptor(novo_preceptor);
+                            pausa();
                             exit(1);
                             break;
                         case 3:
                             cadastro_gestor(&novo_gestor);
-                            printf("\nCadastro Finalizado!\n");
-                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n");
-                            pausa();
                             limpa_tela();
+                            printf("\nCadastro Finalizado!\n");
+                            printf("O programa vai ser encerrado, entre novamente apos a confirmacao do seu gestor!\n\n");
                             printf("Nome: %s\n", novo_gestor.nome);
                             printf("E-mail: %s\n", novo_gestor.email);
                             printf("Senha: %s\n", novo_gestor.senha);
                             printf("Responsavel pelas residencias de %s", define_residencia(novo_gestor.residencia));
                             registrar_gestor(novo_gestor);
+                            pausa();
                             exit(1);
                             break;
                         case 0:
@@ -131,6 +131,7 @@ int main() {
                     }
                     pausa();
                     limpa_tela();
+                    break;
                 }
 
                 exec = true;

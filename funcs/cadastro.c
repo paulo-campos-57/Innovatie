@@ -86,6 +86,7 @@ void cadastro_residente(Residente* novo_residente){
     scanf("%d", &novo_residente->ano);
     printf("\nInforme sua residencia\n");
     novo_residente->residencia = residencia(2);
+    getchar();
 }
 
 void cadastro_preceptor(Preceptor* novo_preceptor){
@@ -101,6 +102,7 @@ void cadastro_preceptor(Preceptor* novo_preceptor){
     scanf("%d", &novo_preceptor->ano);
     printf("\nInforme a residencia a qual eh responsavel\n");
     novo_preceptor->residencia = residencia(2);
+    getchar();
 }
 
 void cadastro_gestor(Gestor* novo_gestor){
@@ -114,6 +116,7 @@ void cadastro_gestor(Gestor* novo_gestor){
     strcpy(novo_gestor->senha, senha());
     printf("\nInforme a residencia a qual eh responsavel\n");
     novo_gestor->residencia = residencia(3);
+    getchar();
 }
 
 void cadastra_res_hospital(){
@@ -131,6 +134,7 @@ void cadastra_res_hospital(){
     char cadastro[20];
     printf("\nDigite o cadastro do usuario: ");
     scanf("%s", cadastro);
+    getchar();
 
     cadastra_residente_hospital(id, cadastro);
 }
