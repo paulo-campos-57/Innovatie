@@ -869,11 +869,11 @@ int visualizar_avisos(char *nome_do_arquivo){
     int num_avisos;
     char titulo[250];
     char texto[5000];
-    Data data;
     int id_aviso;
+    Data data;
     
     FILE *f = NULL;
-    f = fopen("bin/avisos.txt", "r");
+    f = fopen(nome_do_arquivo, "r");
     
     if(f == NULL){
         printf("Erro ao abrir banco!!!\n");
@@ -882,9 +882,8 @@ int visualizar_avisos(char *nome_do_arquivo){
 
     fseek(f, 0, SEEK_SET);
     fscanf(f, "%d", &num_avisos);
-    printf("\n\nQuantidade de Avisos = %d\n\n", num_avisos);
 
-    for(int i=0;i<num_avisos;i++){    
+    for(int i=0;i<num_avisos;i++){//passar condicao pra ver se o valor é diferente de \n ou \0
         fscanf(f, "%[^,],", titulo);
         fscanf(f, "%[^,],", texto);
         fscanf(f, "%d", &data.dia);
@@ -894,42 +893,27 @@ int visualizar_avisos(char *nome_do_arquivo){
 
         printf("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
         printf("%s\n", titulo);
-        printf("\n\t%s\n", texto);
+        printf("\n%s\n", texto);
         printf("\nId: %d", id_aviso);
         printf("\nData da Publicacao: %d/%d/%d\n", data.dia, data.mes, data.ano);
         printf("\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
     }
-
-    // frewind(f);
-
+    
     return 0;
 
     fclose(f);
 }
 
-void editar_aviso(char *filename){
-    int id_aviso;
-    char *temp;
-    char *linha;
-
-    FILE *f = NULL;
-    f = fopen("bin/avisos.txt", "r");
-    
-    if(f == NULL){
-        printf("Erro ao abrir banco!!!\n");
-        exit(1);
+void apagar_avisos(char* arquivo) {
+    FILE* file = fopen(arquivo, "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
     }
 
-    fseek(f, 0, SEEK_SET);
+    fprintf(file, "0");
 
-    fscanf(f, "%[^\n]\n", &linha);
-    
-    temp = strpbrk(linha, "\n");
+    fclose(file);
 
-    // while(temp != NULL){
-    //     temp = strpbrk(temp, );
-    // }
-    
-
-    printf("id aviso", id_aviso);
+    printf("Texto removido e 0 adicionado com sucesso.\n");
 }

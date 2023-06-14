@@ -59,6 +59,7 @@ int main() {
                     else if(opcoes == 0){
                         printf("Execucao encerrada.");
                         exec = false;
+                        exit(1);
                         break;
                     }
                     else{
@@ -125,10 +126,11 @@ int main() {
                         case 0:
                             printf("Execucao encerrada.");
                             exec = false;
+                            exit(1);
                             break;
                         default:
                             printf("Opcao invalida\n");
-                    }
+                        }
                     pausa();
                     limpa_tela();
                     break;
@@ -209,13 +211,29 @@ int main() {
                                 break; 
                             case 4: //avisos
                                 do{
-                                    printf("Selecione uma das opcoes do quadro de avisos\n");
+                                    limpa_tela();
+                                    printf("Selecione uma das opcoes do quadro de avisos\n\n");
                                     printf("[1] - Visualizar Quadro de Avisos\n");
                                     printf("[0] - Voltar Para o Menu Inicial\n");
+                                    printf("Selecione uma das opcoes e tecle ENTER: ");
                                     scanf("%d", &av);
-                                }while (av != 1 || av != 0);
+                                    getchar();
+                                    limpa_tela();
+                                }while (av != 1 && av != 0);
+                            
+                                if (av == 1){
+                                    limpa_tela();
+                                    printf("================== Quadro de Avisos ==================\n");
+                                    visualizar_avisos("bin/avisos.txt");
+                                    pausa();
+                                    limpa_tela();
+                                    break;
+                                }else if (av == 0){
+                                    break;
+                                }
+
                                 break;
-                            case 5:
+                            case 5: //faltas
                                 break;
                             case 0:
                                 exit(1);
@@ -280,16 +298,15 @@ int main() {
                                     limpa_tela();
                                     printf("\n\n[1] - Visualizar Quadro de Avisos\n");
                                     printf("[2] - Criar Aviso\n");
-                                    printf("[3] - Editar Avisos\n");
-                                    printf("[4] - Excluir Avisos\n");
+                                    printf("[3] - Excluir Avisos\n");
                                     printf("[0] - Voltar Para o Menu Inicial\n\n");
                                     printf("Selecione uma das opcoes e tecle ENTER: ");
                                     scanf("%d", &av);
                                     getchar();
-                                }while (av > 4 || av < 0);
+                                }while (av > 3 || av < 0);
                                 if (av == 1){
                                         limpa_tela();
-                                        printf("================== Quadro de Avisos ==================");
+                                        printf("================== Quadro de Avisos ==================\n");
                                         visualizar_avisos("bin/avisos.txt");
                                         pausa();
                                         limpa_tela();
@@ -308,16 +325,30 @@ int main() {
                                         printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
                                         printf("%s\n\n", quadro_de_avisos.texto);
                                         printf("Data da Publicacao: %d/%d/%d\n\n", quadro_de_avisos.data_do_aviso.dia, quadro_de_avisos.data_do_aviso.mes, quadro_de_avisos.data_do_aviso.ano);
-                                        printf("================================================="); //titulo do aviso
+                                        printf("=================================================\n"); //titulo do aviso
                                         pausa();
                                         limpa_tela();
                                         break;
                                 }else if (av == 3){
-                                    limpa_tela();
-                                    break;
-                                }else if (av == 4){
-                                    limpa_tela();
-                                    break;
+                                    int x;
+                                    do{
+                                        limpa_tela();
+                                        printf("Essa acao deletara todos os avisos! Deseja continuar?\n\n[1] - Sim\n[0] - Voltar ao Menu\n");
+                                        printf("Selecione uma das opcoes e tecle ENTER: ");
+                                        scanf("%d", &x);
+                                        getchar();
+                                    } while (x != 1 && x != 0);
+                                    if (x == 1){
+                                        apagar_avisos("bin/avisos.txt");
+                                        limpa_tela();
+                                        printf("Avisos deletados com sucesso.");
+                                        pausa();
+                                        limpa_tela();
+                                        break;
+                                    }else{
+                                        limpa_tela();
+                                        break;
+                                    }
                                 }else{
                                     limpa_tela();
                                     break;
@@ -335,6 +366,7 @@ int main() {
                         printf("Selecione uma das opcoes e tecle ENTER: ");
                         scanf("%d", &op);
                         int opc_gest_cadastro;
+                        int av;
                         switch (op) {
                             case 1:
                                 limpa_tela();
@@ -371,6 +403,73 @@ int main() {
                                 }
                                 break;
                             case 4: //avisos
+                                do{
+                                limpa_tela();
+                                printf("\n\n[1] - Visualizar Quadro de Avisos\n");
+                                printf("[2] - Criar Aviso\n");
+                                printf("[3] - Excluir Avisos\n");
+                                printf("[0] - Voltar Para o Menu Inicial\n\n");
+                                printf("Selecione uma das opcoes e tecle ENTER: ");
+                                scanf("%d", &av);
+                                getchar();
+                                } while (av > 3 || av < 0);
+                                if (av == 1)
+                                {
+                                limpa_tela();
+                                printf("================== Quadro de Avisos ==================\n");
+                                visualizar_avisos("bin/avisos.txt");
+                                pausa();
+                                limpa_tela();
+                                break;
+                        }else if (av == 2){
+                            limpa_tela();
+                            printf("=================== Criando Aviso ===================\n");
+                            printf("\nInsira um Titulo Para o Aviso: ");
+                            scanf(" %[^\n]", &quadro_de_avisos.titulo);
+                            printf("Escreva Seu Aviso: ");
+                            scanf(" %[^\n]", &quadro_de_avisos.texto);
+                            quadro_de_avisos.data_do_aviso = data_atual();
+                            criar_aviso(&quadro_de_avisos);
+                            getchar();
+                            limpa_tela();
+                            printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); // titulo do aviso
+                            printf("%s\n\n", quadro_de_avisos.texto);
+                            printf("Data da Publicacao: %d/%d/%d\n\n", quadro_de_avisos.data_do_aviso.dia, quadro_de_avisos.data_do_aviso.mes, quadro_de_avisos.data_do_aviso.ano);
+                            printf("================================================="); // titulo do aviso
+                            pausa();
+                            limpa_tela();
+                            break;
+                        }
+                        else if (av == 3)
+                        {
+                            int x;
+                            do
+                            {
+                                limpa_tela();
+                                printf("Essa acao deletara todos os avisos! Deseja continuar?\n\n[1] - Sim\n[0] - Voltar ao Menu\n");
+                                printf("Selecione uma das opcoes e tecle ENTER: ");
+                                scanf("%d", &x);
+                                getchar();
+                            } while (x != 1 && x != 0);
+                            if (x == 1){
+                                apagar_avisos("bin/avisos.txt");
+                                limpa_tela();
+                                printf("Avisos deletados com sucesso.");
+                                pausa();
+                                limpa_tela();
+                                break;
+                            
+                            }else{
+                                limpa_tela();
+                                break;
+                            }
+                            break;
+                        }else{
+                            limpa_tela();
+                            break;
+                        }
+                        break;
+
                                 break;
                             case 0:
                                 exit(1);

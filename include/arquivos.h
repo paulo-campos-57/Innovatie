@@ -45,6 +45,6 @@ int visualizar_feed_gestor();
 //Avisos
 void criar_aviso(Aviso *quadro_de_avisos);
 int visualizar_avisos(char *nome_do_arquivo);
-void editar_aviso(char *filename);
+void apagar_avisos(char *arquivo);
 
 #endif //__ARQUIVOS_LIB__
