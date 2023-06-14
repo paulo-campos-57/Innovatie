@@ -289,8 +289,8 @@ int main() {
                                 }while (av > 4 || av < 0);
                                 if (av == 1){
                                         limpa_tela();
-                                        printf("================== Quadro de Avisos ==================\n\n");
-                                        printf("exibir todos os avisos aqui");
+                                        printf("================== Quadro de Avisos ==================");
+                                        visualizar_avisos("bin/avisos.txt");
                                         pausa();
                                         limpa_tela();
                                         break;
@@ -307,7 +307,7 @@ int main() {
                                         limpa_tela();
                                         printf("====================== %s ======================\n\n", quadro_de_avisos.titulo); //titulo do aviso
                                         printf("%s\n\n", quadro_de_avisos.texto);
-                                        printf("Data de Publicacao: %d/%d/%d\n\n", quadro_de_avisos.data_do_aviso.dia, quadro_de_avisos.data_do_aviso.mes, quadro_de_avisos.data_do_aviso.ano);
+                                        printf("Data da Publicacao: %d/%d/%d\n\n", quadro_de_avisos.data_do_aviso.dia, quadro_de_avisos.data_do_aviso.mes, quadro_de_avisos.data_do_aviso.ano);
                                         printf("================================================="); //titulo do aviso
                                         pausa();
                                         limpa_tela();

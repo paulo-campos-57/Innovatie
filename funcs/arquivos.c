@@ -860,6 +860,76 @@ void criar_aviso(Aviso *quadro_de_avisos){
     fprintf(f, "%d", count);
 
     fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%s, %s, %d/%d/%d;", quadro_de_avisos->titulo, quadro_de_avisos->texto, quadro_de_avisos->data_do_aviso.dia, quadro_de_avisos->data_do_aviso.mes, quadro_de_avisos->data_do_aviso.ano);
+    fprintf(f, "\n");
+    fprintf(f, "%s,%s,%d %d %d %d", quadro_de_avisos->titulo, quadro_de_avisos->texto, quadro_de_avisos->data_do_aviso.dia, quadro_de_avisos->data_do_aviso.mes, quadro_de_avisos->data_do_aviso.ano, count);
     fclose(f);
+}
+
+int visualizar_avisos(char *nome_do_arquivo){
+    int num_avisos;
+    char titulo[250];
+    char texto[5000];
+    Data data;
+    int id_aviso;
+    
+    FILE *f = NULL;
+    f = fopen("bin/avisos.txt", "r");
+    
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    fseek(f, 0, SEEK_SET);
+    fscanf(f, "%d", &num_avisos);
+    printf("\n\nQuantidade de Avisos = %d\n\n", num_avisos);
+
+    for(int i=0;i<num_avisos;i++){    
+        fscanf(f, "%[^,],", titulo);
+        fscanf(f, "%[^,],", texto);
+        fscanf(f, "%d", &data.dia);
+        fscanf(f, "%d", &data.mes);
+        fscanf(f, "%d", &data.ano);
+        fscanf(f, "%d", &id_aviso);
+
+        printf("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+        printf("%s\n", titulo);
+        printf("\n\t%s\n", texto);
+        printf("\nId: %d", id_aviso);
+        printf("\nData da Publicacao: %d/%d/%d\n", data.dia, data.mes, data.ano);
+        printf("\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
+    }
+
+    // frewind(f);
+
+    return 0;
+
+    fclose(f);
+}
+
+void editar_aviso(char *filename){
+    int id_aviso;
+    char *temp;
+    char *linha;
+
+    FILE *f = NULL;
+    f = fopen("bin/avisos.txt", "r");
+    
+    if(f == NULL){
+        printf("Erro ao abrir banco!!!\n");
+        exit(1);
+    }
+
+    fseek(f, 0, SEEK_SET);
+
+    fscanf(f, "%[^\n]\n", &linha);
+    
+    temp = strpbrk(linha, "\n");
+
+    // while(temp != NULL){
+    //     temp = strpbrk(temp, );
+    // }
+    
+
+    printf("id aviso", id_aviso);
 }
